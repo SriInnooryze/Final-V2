@@ -22,6 +22,23 @@ function PageProducts({ navigate, focusId }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusId]);
 
+  const detailRef = React.useRef(null);
+  const [detailAnimKey, setDetailAnimKey] = React.useState(0);
+
+  // Fade-in highlight whenever the sub-category selection changes
+  React.useEffect(() => {
+    if (detailAnimKey === 0) return;
+    const el = detailRef.current;
+    if (!el) return;
+    el.classList.remove('is-refreshed');
+    void el.offsetWidth; // force reflow so animation restarts cleanly
+    el.classList.add('is-refreshed');
+    const t = setTimeout(() => {
+      if (detailRef.current) detailRef.current.classList.remove('is-refreshed');
+    }, 600);
+    return () => clearTimeout(t);
+  }, [detailAnimKey]);
+
   const selectGroup = (id) => {
     setActiveGroup(id);
     // scroll to the explorer top
@@ -34,14 +51,14 @@ function PageProducts({ navigate, focusId }) {
 
   const selectSub = (code) => {
     setActiveSubByGroup(s => ({ ...s, [group.id]: code }));
-    // scroll to detail panel on mobile
-    if (window.matchMedia('(max-width: 1000px)').matches) {
-      const el = document.getElementById('subcat-detail');
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 80;
-        setTimeout(() => window.scrollTo({ top, behavior: 'smooth' }), 80);
+    setDetailAnimKey(k => k + 1);
+    // Scroll to detail section on all screen sizes, with header offset
+    setTimeout(() => {
+      if (detailRef.current) {
+        const top = detailRef.current.getBoundingClientRect().top + window.scrollY - 80 - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
-    }
+    }, 60);
   };
 
   return (
@@ -198,7 +215,7 @@ function PageProducts({ navigate, focusId }) {
               </div>
 
               {/* SUB-CATEGORY DETAIL PANEL */}
-              <article id="subcat-detail" className="prodx-detail" aria-live="polite">
+              <article ref={detailRef} id="subcat-detail" className="prodx-detail" aria-live="polite">
                 <header
   className="prodx-detail-head"
   style={{

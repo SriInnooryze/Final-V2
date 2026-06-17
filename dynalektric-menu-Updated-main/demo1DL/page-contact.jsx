@@ -380,9 +380,21 @@ function PageContact({ navigate }) {
                 One business day for complete specifications. Larger scopes may take longer, subject to engineering review.
               </div>
             </div>
-            <div className="contact-map placeholder-stripe">
-              <span>Map placeholder</span>
-            </div>
+        <div className="contact-map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.2830804704245!2d77.62583052848488!3d12.769318741084197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae69fde1bc74cd%3A0x9dbf3aaa6f14c1c7!2sDynalektric%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1781670618586!5m2!1sen!2sin"
+    width="100%"
+    height="400"
+    style={{
+      border: 0,
+      borderRadius: "12px"
+    }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Dynalektric Equipment Private Limited"
+  ></iframe>
+</div>
           </aside>
         </div>
       </section>
