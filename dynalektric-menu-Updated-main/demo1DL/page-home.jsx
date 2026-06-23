@@ -506,7 +506,7 @@ function HeroVideo({ navigate }) {
             height: '100%',
             display: 'block',
             objectFit: 'cover',
-            objectPosition: '50% 50%',
+            objectPosition: 'center top',
           }}
         >
           <source src="./public/videos/Dynalektric_Hero.mp4" type="video/mp4" />
