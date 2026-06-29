@@ -68,7 +68,7 @@ function PageRnd({ navigate }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="./assets/engineering-npd.jpg"
+              src="./assets/innovation-hero.png"
               alt="Dynalektric engineering and product development"
               width="720"
               height="540"

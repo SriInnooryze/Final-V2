@@ -342,7 +342,7 @@ function PageExport({ navigate }) {
             </div>
             <div className="page-hero-visual">
               <img
-                src="./assets/card-integrated.jpg"
+                src="./assets/export-hero.jpg"
                 alt="Dynalektric integrated and assembled engineered systems"
                 width="720"
                 height="540"

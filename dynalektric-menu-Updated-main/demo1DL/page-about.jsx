@@ -16,7 +16,7 @@ function PageAbout({ navigate }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="./assets/hero-poster.jpg"
+              src="assets\about-hero.jpg"
               alt="Dynalektric manufacturing facility"
               width="720"
               height="540"
@@ -168,10 +168,28 @@ function PageAbout({ navigate }) {
             <div><h2>One floor, one team, one engineering culture.</h2></div>
           </div>
           <div className="about-facility-grid">
-            <div className="placeholder-stripe" style={{ aspectRatio: '16/9' }}><span>Facility wide-shot, placeholder</span></div>
+            <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '8px' }}>
+              <img
+                src="./assets/facility-wide-shot.jpg"
+                alt="Dynalektric manufacturing facility"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
             <div className="about-facility-sub">
-              <div className="placeholder-stripe"><span>Winding floor</span></div>
-              <div className="placeholder-stripe"><span>Test bay</span></div>
+              <div style={{ overflow: 'hidden', borderRadius: '8px', height: '100%' }}>
+                <img
+                  src="./assets/winding-floor.jpg"
+                  alt="Winding floor — transformer and magnetics winding"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div style={{ overflow: 'hidden', borderRadius: '8px', height: '100%' }}>
+                <img
+                  src="./assets/test-bay.jpg"
+                  alt="Dynalektric test bay"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
             </div>
           </div>
         </div>
