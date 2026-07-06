@@ -748,62 +748,120 @@ function EngineeringVisual({ variant = 'grid' }) {
    ============================================================ */
 function Footer() {
   const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="container">
+
         <div className="footer-grid">
+
           <div className="footer-col">
-            <img className="footer-logo" src={(window.__resources && window.__resources.dynaLogoReversed) || "assets/Dynalektric-logo-reversed2.png"} alt="Dynalektric logo" width="320" height="200" loading="lazy" />
-            <p className="footer-tag">Magnetics, control panels, power electronics and cross-segment components. Engineered in India for industrial, power, railway, renewable and material handling applications worldwide.</p>
+            <img
+              className="footer-logo"
+              src={
+                (window.__resources &&
+                  window.__resources.dynaLogoReversed) ||
+                "assets/Dynalektric-logo-reversed2.png"
+              }
+              alt="Dynalektric logo"
+              width="320"
+              height="200"
+              loading="lazy"
+            />
+
+            <p className="footer-tag">
+              Magnetics, control panels, power electronics and cross-segment
+              components. Engineered in India for industrial, power, railway,
+              renewable and material handling applications worldwide.
+            </p>
           </div>
+
           <div className="footer-col">
             <h4>Sitemap</h4>
+
             <nav aria-label="Footer navigation">
               <ul>
                 <li><a href="./Dynalektric.html">Home</a></li>
                 <li><a href="./about.html">About</a></li>
-                <li><a href="./products-solutions.html">Products &amp; Solutions</a></li>
-                <li><a href="./innovation-rd.html">Innovation Portfolio</a></li>
-                <li><a href="./industries-applications.html">Industries &amp; Applications</a></li>
+                <li>
+                  <a href="./products-solutions.html">
+                    Products &amp; Solutions
+                  </a>
+                </li>
+                <li>
+                  <a href="./innovation-rd.html">
+                    Innovation Portfolio
+                  </a>
+                </li>
+                <li>
+                  <a href="./industries-applications.html">
+                    Industries &amp; Applications
+                  </a>
+                </li>
                 <li><a href="./export.html">Export</a></li>
                 <li><a href="./contact.html">Contact</a></li>
               </ul>
             </nav>
           </div>
+
           <div className="footer-col">
             <h4>Product groups</h4>
+
             <ul>
-              {PRODUCTS.map(p => (
-                <li key={p.id}><a href={`./products-solutions.html?focus=${p.id}`}>{p.name}</a></li>
+              {PRODUCTS.map((p) => (
+                <li key={p.id}>
+                  <a href={`./products-solutions.html?focus=${p.id}`}>
+                    {p.name}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
+
           <div className="footer-col">
             <h4>Enquiries</h4>
+
             <ul>
               <li><a>+91 (placeholder)</a></li>
               <li><a>sales01@dynalektric.com</a></li>
               <li><a>enquiry@dynalektric.com</a></li>
-              <li><a href="./contact.html">Submit RFQ →</a></li>
+              <li>
+                <a href="./contact.html">
+                  Submit RFQ →
+                </a>
+              </li>
             </ul>
           </div>
+
+
+          {/* D-U-N-S REGISTERED SEAL */}
+
+          <div className="footer-duns-seal">
+            <iframe
+              id="Iframe1"
+              src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1"
+              width="114"
+              height="97"
+              frameBorder="0"
+              scrolling="no"
+              allowTransparency="true"
+              title="D-U-N-S Registered Seal"
+            />
+          </div>
+
         </div>
+
+
         <div className="footer-bottom">
-          <span>© {currentYear} Dynalektric · Power · Motion · Safety</span>
-          <span>Engineered in India · Exported worldwide</span>
+          <span>
+            © {currentYear} Dynalektric · Power · Motion · Safety
+          </span>
+
+          <span>
+            Engineered in India · Exported worldwide
+          </span>
         </div>
-         <div className="footer-duns-seal">
-  <iframe
-    id="Iframe1"
-    src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1"
-    width="114"
-    height="97"
-    frameBorder="0"
-    scrolling="no"
-    allowTransparency="true"
-    title="D-U-N-S Registered Seal"
-    />
-    </div>
+
       </div>
     </footer>
   );

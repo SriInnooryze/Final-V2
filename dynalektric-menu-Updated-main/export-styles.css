@@ -619,7 +619,7 @@
 
 /* ===== SECTION 9 — RFQ + FAQ ===== */
 .export-final-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: start; margin-bottom: 56px; }
-.export-rfq-wrap { }
+/*.export-rfq-wrap { }*/
 .export-aftersales {
   background: var(--bg-alt);
   border: 1px solid var(--rule);
@@ -669,7 +669,7 @@
 .exp-rfq-done h3 { max-width: 24ch; margin: 0 auto 12px; }
 .exp-rfq-done p { max-width: 46ch; margin: 0 auto 24px; }
 
-.export-faq-block { }
+/*.export-faq-block { }*/
 .export-faq-title { font-size: 22px; margin-bottom: 20px; }
 .exp-faq { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
 .exp-faq-item { border-bottom: 1px solid var(--rule); }
