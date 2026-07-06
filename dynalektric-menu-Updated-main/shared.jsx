@@ -793,6 +793,18 @@ function Footer() {
           <span>Engineered in India · Exported worldwide</span>
         </div>
       </div>
+      <div className="footer-duns-seal">
+  <iframe
+    id="Iframe1"
+    src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1"
+    width="114"
+    height="97"
+    frameBorder="0"
+    scrolling="no"
+    allowTransparency="true"
+    title="D-U-N-S Registered Seal"
+  />
+</div>
     </footer>
   );
 }
