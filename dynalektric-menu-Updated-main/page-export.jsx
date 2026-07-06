@@ -221,13 +221,13 @@ const JOURNEY_PHASES = [
     name: 'Enquiry & Proposal',
     steps: [
       {
-        n: '01',
+        n: '01.1',
         title: 'Technical Review',
         desc: 'Customer drawings, application requirements and compliance expectations reviewed.',
         items: ['Drawings review', 'Technical clarification', 'Customer discussions'],
       },
       {
-        n: '02',
+        n: '01.2',
         title: 'Commercial Proposal',
         desc: 'Commercial offer prepared with delivery schedule, Incoterms and lead time commitments.',
         items: ['Commercial offer', 'Incoterms', 'Lead time estimation'],
@@ -239,13 +239,13 @@ const JOURNEY_PHASES = [
     name: 'Engineering & Production',
     steps: [
       {
-        n: '03',
+        n: '02.1',
         title: 'Engineering & Manufacturing',
         desc: 'Design, planning and manufacturing executed for the confirmed order.',
         items: ['Transformers', 'Control Panels', 'Battery Chargers', 'Custom assemblies'],
       },
       {
-        n: '04',
+        n: '02.2',
         title: 'Testing & FAT',
         desc: 'Routine quality tests and Factory Acceptance Tests conducted before dispatch.',
         items: ['Routine tests', 'Factory Acceptance Test', 'Third-party inspection'],
@@ -257,13 +257,13 @@ const JOURNEY_PHASES = [
     name: 'Documentation & Logistics',
     steps: [
       {
-        n: '05',
+        n: '03.1',
         title: 'Documentation',
         desc: 'Export documentation prepared and verified for international shipment compliance.',
         items: ['Packing List', 'Commercial Invoice', 'Certificate of Origin', 'Test Certificates'],
       },
       {
-        n: '06',
+        n: '03.2',
         title: 'Shipping & Customs',
         desc: 'Export clearance and freight coordination managed end-to-end.',
         items: ['Export clearance', 'Freight coordination', 'Customs support'],
@@ -275,13 +275,13 @@ const JOURNEY_PHASES = [
     name: 'Delivery & Support',
     steps: [
       {
-        n: '07',
+        n: '04.1',
         title: 'Delivery',
         desc: 'Shipment dispatched on schedule with material handling and customer coordination.',
         items: ['On-time shipment', 'Material handling', 'Customer coordination'],
       },
       {
-        n: '08',
+        n: '04.2',
         title: 'After-Sales Support',
         desc: 'Technical assistance, spare part guidance and responsive customer communication post-delivery.',
         items: ['Technical support', 'Spare assistance', 'Customer communication'],
