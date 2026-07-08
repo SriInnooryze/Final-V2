@@ -6,7 +6,7 @@
 const CAPABILITIES = [
   {
     num: '01', productId: 'magnetics', slotId: 'cap-magnetics',
-    resKey: 'cardMagnetics', img: 'assets/card-magnetics.jpg',
+    resKey: 'cardMagnetics', img: 'assets/card-magnetics-optimized.webp',
     title: 'Power Transformation and Magnetics',
     back: 'Transformers, reactors and magnetic components engineered for power conversion, distribution, harmonic control and specialised industrial applications.',
     labels: ['Application-specific engineering', 'Manufacturing and testing', 'Industrial and infrastructure use'],
@@ -16,7 +16,7 @@ const CAPABILITIES = [
   },
   {
     num: '02', productId: 'control-panels', slotId: 'cap-control',
-    resKey: 'cardControl', img: 'assets/card-control.jpg',
+    resKey: 'cardControl', img: 'assets/card-control-optimized.webp',
     title: 'Control, Distribution and Panel Engineering',
     back: 'Panel and distribution assemblies developed around control, operating, safety and application requirements for railway, power and industrial equipment.',
     labels: ['Control integration', 'Assembly and wiring', 'Testing and documentation'],
@@ -26,7 +26,7 @@ const CAPABILITIES = [
   },
   {
     num: '03', productId: 'power-electronics', slotId: 'cap-power',
-    resKey: 'cardPower', img: 'assets/card-power.jpg',
+    resKey: 'cardPower', img: 'assets/card-power-optimized.webp',
     title: 'DC Power and Electronic Systems',
     back: 'DC power, charging and electronic systems configured for equipment duty, operational environments and specialised industrial applications.',
     labels: ['Duty-specific design', 'Power conversion', 'Validation and testing'],
@@ -36,7 +36,7 @@ const CAPABILITIES = [
   },
   {
     num: '04', productId: 'cross-segment', slotId: 'cap-integrated',
-    resKey: 'cardIntegrated', img: 'assets/card-integrated.jpg',
+    resKey: 'cardIntegrated', img: 'assets/card-integrated-optimized.webp',
     title: 'Integrated Components and Assemblies',
     back: 'Supporting electrical and electronic components integrated into railway, power, equipment and cross-sector industrial systems.',
     labels: ['Component integration', 'Custom assemblies', 'Cross-sector applications'],
@@ -69,6 +69,7 @@ function FlipCard({ cap, navigate }) {
             placeholder={cap.imgPlaceholder}
             aria-label={cap.imgAlt}
             shape="rect"
+            loading="lazy"
           ></image-slot>
           <div className="flip-front-scrim"></div>
           <div className="flip-front-top">
@@ -225,7 +226,7 @@ function CapabilityCarousel({ navigate }) {
 const HOME_INDUSTRIES = [
   {
     id: 'railways', num: '01', name: 'Railway & Traction',
-    img: 'assets/industry-railways.jpg', resKey: 'indRailways',
+    img: 'assets/industry-railways-optimized.webp', resKey: 'indRailways',
     desc: 'Electrical and electronic systems supporting onboard, trackside and railway equipment applications.',
     labels: ['Traction equipment', 'Onboard systems', 'Control and auxiliary power'],
     cta: 'Explore Railway Applications',
@@ -341,6 +342,7 @@ function IndustryStage({ navigate }) {
               placeholder={it.placeholder}
               aria-label={it.alt}
               shape="rect"
+              loading="lazy"
             ></image-slot>
           </div>
         ))}
@@ -491,7 +493,7 @@ function HeroVideo({ navigate }) {
           loop
           playsInline
           preload="metadata"
-          poster={(window.__resources && window.__resources.heroPoster) || 'assets/hero-poster.jpg'}
+          poster={(window.__resources && window.__resources.heroPoster) || 'assets/hero-poster-optimized.webp'}
           aria-label="Dynalektric factory, engineering and manufacturing"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
@@ -578,6 +580,7 @@ function OrgSection({ navigate }) {
               placeholder="Replace with a Dynalektric factory floor, engineering team or testing image"
               aria-label="Dynalektric manufacturing facility and production floor"
               shape="rect"
+              loading="lazy"
             ></image-slot>
           </div>
           <div className="org-body">
@@ -621,7 +624,7 @@ const FEATURED_CASES = [
     challenge: 'A leading industrial machinery manufacturer required a custom-engineered three-phase auto transformer capable of supporting multiple international input voltages while delivering a stable 400 V output for CNC woodworking equipment. The solution needed to operate reliably across global installations, maintain high electrical efficiency, withstand continuous industrial duty and integrate seamlessly into the customer\'s machine architecture while meeting applicable international electrical standards.',
     response: 'Dynalektric engineered and manufactured a 55 kVA three-phase copper-wound auto transformer specifically for this application. The design incorporated optimized magnetic construction, Class F insulation, tropicalized winding treatment and robust mechanical construction for dependable long-term operation. Every unit underwent comprehensive electrical testing and inspection before delivery, ensuring reliable voltage conversion, operational stability and consistent performance for demanding industrial manufacturing environments.',
     capability: ['Custom Transformer Engineering', 'Copper Winding Technology', 'Industrial Manufacturing', 'Factory Tested'],
-    img: 'assets/industry-railways.jpg', resKey: 'indRailways',
+    img: 'assets/industry-railways-optimized.webp', resKey: 'indRailways',
     placeholder: 'Replace with approved Dynalektric railway project or product-in-application image',
     alt: 'Representative railway and traction application image',
     to: 'railways',
@@ -689,6 +692,7 @@ function FeaturedCases({ navigate }) {
                 placeholder={it.placeholder}
                 aria-label={it.alt}
                 shape="rect"
+                loading="lazy"
               ></image-slot>
             </div>
           ))}
@@ -815,12 +819,13 @@ function PageHome({ navigate, tweaks }) {
               <div className="rnd-teaser-figure">
                 <image-slot
                   id="home-engineering-npd"
-                  src={(window.__resources && window.__resources.engineeringNpd) || 'assets/engineering-npd.jpg'}
+                  src={(window.__resources && window.__resources.engineeringNpd) || 'assets/engineering-npd-optimized.webp'}
                   fit="cover"
                   position="50% 50%"
                   placeholder="Replace with a Dynalektric in-house engineering and assembly image"
                   aria-label="Dynalektric engineers developing and assembling a custom electrical solution in-house"
                   shape="rect"
+                  loading="lazy"
                 ></image-slot>
               </div>
             </div>

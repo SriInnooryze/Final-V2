@@ -278,7 +278,7 @@ function PageContact({ navigate }) {
             </div>
             <div className="page-hero-visual">
               <img
-                src="./assets/card-magnetics.jpg"
+                src="./assets/card-magnetics-optimized.webp"
                 alt="Dynalektric precision magnetics and transformer manufacturing"
                 width="720"
                 height="540"

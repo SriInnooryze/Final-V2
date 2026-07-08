@@ -767,6 +767,7 @@ function Footer() {
               width="320"
               height="200"
               loading="lazy"
+              decoding="async"
             />
 
             <p className="footer-tag">
@@ -847,6 +848,7 @@ function Footer() {
               scrolling="no"
               allowTransparency="true"
               title="D-U-N-S Registered Seal"
+              loading="lazy"
             />
           </div>
 

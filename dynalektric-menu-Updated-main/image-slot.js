@@ -224,7 +224,7 @@
 
   class ImageSlot extends HTMLElement {
     static get observedAttributes() {
-      return ['shape', 'radius', 'mask', 'fit', 'position', 'placeholder', 'src', 'id'];
+      return ['shape', 'radius', 'mask', 'fit', 'position', 'placeholder', 'src', 'id', 'loading'];
     }
 
     constructor() {
@@ -613,6 +613,14 @@
         };
       }
       this._cap.textContent = this.getAttribute('placeholder') || 'Drop an image';
+      const loading = this.getAttribute('loading');
+      if (loading === 'lazy' || loading === 'eager') {
+        this._img.setAttribute('loading', loading);
+      } else {
+        this._img.removeAttribute('loading');
+      }
+      this._img.setAttribute('decoding', 'async');
+      this._ghost.setAttribute('decoding', 'async');
       // Toggle via style.display — the [hidden] attribute alone loses to
       // the display:flex / display:block rules in the stylesheet above.
       if (url) {

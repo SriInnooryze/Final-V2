@@ -24,7 +24,7 @@ function PageIndustries({ navigate, focusId }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="./assets/industry-railways.jpg"
+              src="./assets/industry-railways-optimized.webp"
               alt="Railway infrastructure — Dynalektric traction and industrial applications"
               width="720"
               height="540"

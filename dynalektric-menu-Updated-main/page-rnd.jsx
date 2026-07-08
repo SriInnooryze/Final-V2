@@ -68,7 +68,7 @@ function PageRnd({ navigate }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="./assets/innovation-hero.png"
+              src="./assets/innovation-hero-optimized.webp"
               alt="Dynalektric engineering and product development"
               width="720"
               height="540"
@@ -145,7 +145,7 @@ function PageRnd({ navigate }) {
             </div>
            <div style={{ aspectRatio: '4/3' }}>
             <img
-              src="./assets/engineering-npd.jpg"
+              src="./assets/engineering-npd-optimized.webp"
               alt="Dynalektric engineering and manufacturing"
               width="720"
               height="540"

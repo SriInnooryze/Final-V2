@@ -19,7 +19,7 @@ function Header() {
       <header className="topbar" role="banner">
         <div className="topbar-inner">
           <a className="topbar-logo" href="./Dynalektric.html" aria-label="Dynalektric home">
-            <img src={(window.__resources && window.__resources.dynaLogo) || "assets/dynalektric-logo.png"} alt="Dynalektric, Power Motion Safety" width="350" height="150" />
+            <img src={(window.__resources && window.__resources.dynaLogo) || "assets/dynalektric-logo.png"} alt="Dynalektric, Power Motion Safety" width="350" height="150" decoding="async" />
           </a>
           <nav className="topbar-nav" aria-label="Main navigation">
             {NAV_LINKS.map(n => (

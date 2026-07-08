@@ -16,7 +16,7 @@ function PageAbout({ navigate }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="assets/about-hero.jpg"
+              src="assets/about-hero-optimized.webp"
               alt="Dynalektric manufacturing facility"
               width="720"
               height="540"
@@ -172,7 +172,7 @@ function PageAbout({ navigate }) {
           <div className="about-facility-grid">
             <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '8px' }}>
               <img
-                src="./assets/facility-wide-shot.jpg"
+                src="./assets/facility-wide-shot-optimized.webp"
                 alt="Dynalektric manufacturing facility"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 loading="lazy"
