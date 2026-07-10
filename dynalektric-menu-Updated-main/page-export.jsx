@@ -630,8 +630,8 @@ function PageExport({ navigate }) {
                   <span className="exp-phase-name">{phase.name}</span>
                 </div>
                 <div className="exp-phase-body">
-                  {phase.steps.map(step => (
-                    <div className="exp-phase-step" key={step.n}>
+                  {phase.steps.map((step, idx) => (
+                    <div className={`exp-phase-step ${idx === 0 ? 'process-detail-primary' : ''}`} key={step.n}>
                       <div className="exp-step-hd">
                         <span className="exp-step-n">{step.n}</span>
                         <span className="exp-step-title">{step.title}</span>

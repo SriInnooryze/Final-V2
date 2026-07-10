@@ -622,8 +622,8 @@ const FEATURED_CASES = [
   {
     id: 'railway', industry: 'Industrial Machinery',
     title: '55 kVA Three-Phase Auto Transformer for CNC Woodworking Machinery',
-    challenge: 'A leading industrial machinery manufacturer required a custom-engineered three-phase auto transformer capable of supporting multiple international input voltages while delivering a stable 400 V output for CNC woodworking equipment. The solution needed to operate reliably across global installations, maintain high electrical efficiency, withstand continuous industrial duty and integrate seamlessly into the customer\'s machine architecture while meeting applicable international electrical standards.',
-    response: 'Dynalektric engineered and manufactured a 55 kVA three-phase copper-wound auto transformer specifically for this application. The design incorporated optimized magnetic construction, Class F insulation, tropicalized winding treatment and robust mechanical construction for dependable long-term operation. Every unit underwent comprehensive electrical testing and inspection before delivery, ensuring reliable voltage conversion, operational stability and consistent performance for demanding industrial manufacturing environments.',
+    challenge: 'A leading machinery manufacturer required a custom three-phase auto transformer to support multiple international input voltages and deliver a stable 400 V output for CNC woodworking equipment. The solution had to maintain high electrical efficiency under continuous industrial duty and integrate seamlessly into the customer\'s machine architecture while meeting international standards.',
+    response: 'Dynalektric engineered and manufactured a 55 kVA three-phase copper-wound auto transformer specifically for this application. The design incorporated optimized magnetic construction, Class F insulation, and tropicalized winding treatment. Every unit underwent comprehensive factory electrical testing and inspection before delivery, ensuring stable voltage conversion and reliable operation in demanding industrial manufacturing environments.',
     capability: ['Custom Transformer Engineering', 'Copper Winding Technology', 'Industrial Manufacturing', 'Factory Tested'],
     img: 'assets/industry-railways-optimized.webp', resKey: 'indRailways',
     placeholder: 'Replace with approved Dynalektric railway project or product-in-application image',
@@ -633,8 +633,8 @@ const FEATURED_CASES = [
   {
     id: 'renewable', industry: 'Power Quality & Renewable Energy',
     title: '25 kV Air Core Reactor for Static VAR Generator Applications',
-    challenge: 'A power quality improvement project required a high-performance air core reactor for integration into a Static VAR Generator (SVG) system. The solution needed to provide dependable harmonic mitigation, support reactive power compensation and maintain stable electrical characteristics during continuous operation within demanding industrial and utility environments while ensuring long operational life.',
-    response: 'Dynalektric developed an application-specific air core reactor engineered for optimized inductance, thermal stability and electrical reliability. The reactor was designed using proven electromagnetic engineering principles and manufactured under stringent quality processes. Comprehensive validation and routine testing ensured reliable integration into SVG systems while supporting improved grid stability and long-term power quality performance.',
+    challenge: 'A power quality project required a high-performance air core reactor for integration into a Static VAR Generator (SVG) system. The component had to deliver dependable harmonic mitigation and reactive power compensation while maintaining stable electrical characteristics under continuous operation in demanding industrial and utility environments.',
+    response: 'Dynalektric developed a custom air core reactor engineered for optimized inductance and thermal stability. Designed using proven electromagnetic principles and built under stringent quality controls, the reactor underwent comprehensive routine testing to ensure reliable integration into the SVG system, supporting improved grid stability and power quality.',
     capability: ['Power Quality Engineering', 'Custom Reactor Design', 'Thermal Optimization', 'Performance Validation'],
     img: 'assets/industry-renewables.jpg', resKey: 'indRenewables',
     placeholder: 'Replace with approved Dynalektric renewable-energy project image',
@@ -644,8 +644,8 @@ const FEATURED_CASES = [
   {
     id: 'power', industry: 'Industrial Power Systems',
     title: '300 kVA Copper Wound Dry Type Auto Transformer',
-    challenge: 'An industrial rectifier power application required a high-capacity dry type auto transformer capable of delivering reliable voltage transformation under continuous heavy-duty operating conditions. The design required excellent thermal performance, dependable insulation, optimized efficiency and robust mechanical construction while satisfying demanding industrial operating requirements.',
-    response: 'Dynalektric engineered and manufactured a 300 kVA copper-wound dry type auto transformer designed specifically for industrial power conversion applications. The transformer combined optimized winding geometry, robust insulation systems and precision manufacturing with comprehensive routine testing to ensure dependable electrical performance, operational reliability and long service life across critical industrial installations.',
+    challenge: 'An industrial rectifier power application required a high-capacity dry type auto transformer to deliver stable voltage transformation under continuous, heavy-duty operating conditions. The design demanded excellent thermal performance, dependable insulation, optimized electrical efficiency, and robust mechanical construction to satisfy demanding industrial operating environments.',
+    response: 'Dynalektric engineered and manufactured a 300 kVA copper-wound dry type auto transformer for industrial power conversion. The design combined optimized winding geometry, robust insulation systems, and precision manufacturing. Comprehensive routine testing validated all electrical performance parameters, ensuring dependable operation across critical industrial installations.',
     capability: ['Copper Winding', 'Dry Type Engineering', 'Heavy Duty Applications', 'Quality Assurance'],
     img: 'assets/industry-powergrid.jpg', resKey: 'indPowergrid',
     placeholder: 'Replace with approved Dynalektric utility or substation project image',
@@ -841,7 +841,7 @@ function PageHome({ navigate, tweaks }) {
             <div className="eyebrow"><span className="eyebrow-label">Standards and testing</span></div>
             <div>
               <h2>Type-tested designs, full documentation, traceable processes.</h2>
-              <p style={{ marginTop: 16, fontSize: 15, color: 'var(--ink-soft)' }}>
+              <p className="lead" style={{ marginTop: 16 }}>
                 Every product ships with routine and type test reports, QAP documentation and material traceability. Designs validated against IEC, IS and customer specifications.
               </p>
             </div>
@@ -883,22 +883,49 @@ function PageHome({ navigate, tweaks }) {
             </div>
           </div>
 
-          <div style={{ background: 'var(--panel-dark)', borderRadius: 'var(--radius-card)', padding: '48px 40px', marginTop: 56 }}>
-            <div className="stats-row">
-              {STATS.map((s, i) => (
-                <div className="stats-item reveal" key={i} style={{ transitionDelay: `${i * 80}ms`, textAlign: 'center' }}>
-                  <div className="big-num" style={{ color: '#ffffff' }}>
-                    {s.value.includes('+')
-                      ? <><Counter to={parseInt(s.value)} />+</>
-                      : s.value
-                    }
-                  </div>
-                  <div className="mono" style={{ marginTop: 12, color: 'rgba(244,244,241,0.55)' }}>{s.sub}</div>
-                  <div style={{ fontSize: 14, color: 'rgba(244,244,241,0.75)', marginTop: 8 }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
+<div className="stats-fullwidth">
+  <div className="stats-inner">
+    <div className="stats-row">
+      {STATS.map((s, i) => (
+        <div
+          className="stats-item reveal"
+          key={i}
+          style={{
+            transitionDelay: `${i * 80}ms`,
+            textAlign: 'center'
+          }}
+        >
+          <div className="big-num" style={{ color: '#ffffff' }}>
+            {s.value.includes('+')
+              ? <><Counter to={parseInt(s.value)} />+</>
+              : s.value
+            }
           </div>
+
+          <div
+            className="mono"
+            style={{
+              marginTop: 12,
+              color: 'rgba(244,244,241,0.55)'
+            }}
+          >
+            {s.sub}
+          </div>
+
+          <div
+            style={{
+              fontSize: 14,
+              color: 'rgba(244,244,241,0.75)',
+              marginTop: 8
+            }}
+          >
+            {s.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
         </div>
       </section>
 

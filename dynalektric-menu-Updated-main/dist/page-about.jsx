@@ -5,7 +5,7 @@ function PageAbout({ navigate }) {
 
   return (
     <main className="page-enter">
-      <section className="page-hero page-hero--split">
+      <section className="page-hero page-hero--split about-hero">
         <div className="container">
           <div className="page-hero-copy">
             <div className="mono">ABOUT DYNALEKTRIC</div>
@@ -30,23 +30,23 @@ function PageAbout({ navigate }) {
       <section className="section reveal">
         <div className="container">
           <div className="about-grid">
-            <div>
-              <div className="mono" style={{ color: 'var(--accent)', marginBottom: 16, fontWeight: 600 }}>Company</div>
-              <h2 style={{ marginBottom: 24 }}>An engineering-led manufacturer.</h2>
-              <div style={{ paddingTop: 24, borderTop: '1px solid var(--rule)' }}>
-                <div className="mono" style={{ marginBottom: 12 }}>Established</div>
-                <div style={{ fontSize: 18, fontWeight: 500, marginBottom: 20 }}>1980, India</div>
-                <div className="mono" style={{ marginBottom: 12 }}>Markets served</div>
-                <div style={{ fontSize: 18, fontWeight: 500, marginBottom: 20 }}>India, Europe, Middle East, Asia</div>
-                <div className="mono" style={{ marginBottom: 12 }}>Buyers we work with</div>
-                <div style={{ fontSize: 16, color: 'var(--ink-soft)', lineHeight: 1.5 }}>OEMs, EPC contractors, utilities, railways, industrial automation companies, procurement and SCM teams.</div>
+            <div className="about-col-left">
+              <div className="about-eyebrow">Company</div>
+              <h2 className="about-heading">An engineering-led manufacturer.</h2>
+              <div className="about-meta">
+                <div className="about-meta-label">Established</div>
+                <div className="about-meta-value">1980, India</div>
+                <div className="about-meta-label">Markets served</div>
+                <div className="about-meta-value">India, Europe, Middle East, Asia</div>
+                <div className="about-meta-label">Buyers we work with</div>
+                <div className="about-meta-value">OEMs, EPC contractors, utilities, railways, industrial automation companies, procurement and SCM teams.</div>
               </div>
             </div>
-            <div>
-              <p className="lead" style={{ marginBottom: 24 }}>
+            <div className="about-col-right">
+              <p className="about-desc">
                 We work as a long-term manufacturing partner. Our engineers take a customer specification, ask the right questions and supply a tested, documented solution on schedule.
               </p>
-              <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--ink-soft)' }}>
+              <p className="about-desc">
                 From single prototype builds to repeat production lines, the approach is the same: every Dynalektric product is designed, wound, wired, tested and documented in-house. Engineering, manufacturing and quality work on one floor, on one team.
               </p>
             </div>
@@ -138,24 +138,26 @@ function PageAbout({ navigate }) {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 40, padding: 24, background: 'var(--bg-card)', border: '1px solid var(--rule)' }}>
-            <div className="mono" style={{ marginBottom: 12, color: 'var(--accent)', fontWeight: 600 }}>Quality assurance process</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Routine testing</div>
-                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>100% electrical and thermal validation</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Type testing</div>
-                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>On-site and accredited external labs</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 500, marginBottom: 4 }}>FAT support</div>
-                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>Factory acceptance testing with the customer</div>
-              </div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Documentation</div>
-                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>Full QAP, test reports, GA drawings, BoM</div>
+          <div className="qa-process-section">
+            <div className="qa-process-heading mono">QUALITY ASSURANCE PROCESS</div>
+            <div className="qa-process-card">
+              <div className="qa-process-grid">
+                <div>
+                  <div className="qa-process-title">Routine testing</div>
+                  <div className="qa-process-desc">100% electrical and thermal validation</div>
+                </div>
+                <div>
+                  <div className="qa-process-title">Type testing</div>
+                  <div className="qa-process-desc">On-site and accredited external labs</div>
+                </div>
+                <div>
+                  <div className="qa-process-title">FAT support</div>
+                  <div className="qa-process-desc">Factory acceptance testing with the customer</div>
+                </div>
+                <div>
+                  <div className="qa-process-title">Documentation</div>
+                  <div className="qa-process-desc">Full QAP, test reports, GA drawings, BoM</div>
+                </div>
               </div>
             </div>
           </div>
@@ -167,7 +169,12 @@ function PageAbout({ navigate }) {
         <div className="container">
           <div className="section-head">
             <div className="eyebrow"><span className="mono">Facility</span></div>
-            <div><h2>One floor, one team, one engineering culture.</h2></div>
+            <div>
+              <h2>
+                One floor, one team,<br className="desktop-br" />
+                One engineering culture.
+              </h2>
+            </div>
           </div>
           <div className="about-facility-grid">
             <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '8px' }}>
@@ -191,7 +198,7 @@ function PageAbout({ navigate }) {
               </div>
               <div style={{ overflow: 'hidden', borderRadius: '8px', height: '100%' }}>
                 <img
-                  src="./assets/test-bay.jpg"
+                  src="./assets/test-bay.png"
                   alt="Dynalektric test bay"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   loading="lazy"
@@ -203,7 +210,16 @@ function PageAbout({ navigate }) {
         </div>
       </section>
 
-      <FinalCTA navigate={navigate} />
+      <FinalCTA
+        navigate={navigate}
+        heading={
+          <>
+            Send a specification.<br className="desktop-br" />
+            Get an engineering response<br className="desktop-br" />
+            in one business day.
+          </>
+        }
+      />
       <Footer navigate={navigate} />
     </main>
   );

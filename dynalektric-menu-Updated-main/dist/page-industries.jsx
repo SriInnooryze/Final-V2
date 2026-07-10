@@ -108,36 +108,48 @@ function PageIndustries({ navigate, focusId }) {
 
             {/* Detail panel */}
             <aside className="industry-detail">
-              <div className="num">Selected industry</div>
-              <h3>{activeIndustry.name}</h3>
-              <p>{activeIndustry.body}</p>
-              <div className="apps-label">Application examples</div>
-              <ul className="apps">
-                {activeIndustry.applications.map((a, i) => <li key={i}>{a}</li>)}
-              </ul>
-              <div className="apps-label">Typical buyer need</div>
-              <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.6, marginTop: 4 }}>{activeIndustry.buyer}</p>
-              {activeIndustry.qa && (
-                <>
-                  <div className="apps-label">Quality or testing consideration</div>
-                  <p style={{ fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.6, marginTop: 4 }}>{activeIndustry.qa}</p>
-                </>
-              )}
-              <div className="apps-label">Relevant product groups</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                {PRODUCTS.filter(p => p.industries.includes(activeRow)).map(p => (
-                  <button
-                    key={p.id}
-                    onClick={() => navigate('products', p.id)}
-                    style={{ background: 'var(--bg-alt)', border: '1px solid var(--rule)', padding: '8px 14px', fontSize: 12, cursor: 'pointer', borderRadius: 2, fontFamily: 'var(--font-mono)', letterSpacing: '0.05em', textTransform: 'uppercase', transition: 'all 200ms' }}
-                    onMouseEnter={e => { e.currentTarget.style.background = 'var(--ink)'; e.currentTarget.style.color = 'var(--bg)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-alt)'; e.currentTarget.style.color = 'var(--ink)'; }}
-                  >
-                    {p.name}
-                  </button>
-                ))}
+              <div className="industry-detail-header">
+                <div className="num">Selected industry</div>
+                <h3>{activeIndustry.name}</h3>
+                <p className="industry-desc">{activeIndustry.body}</p>
               </div>
-              <button className="btn btn-primary" style={{ marginTop: 32, width: '100%', justifyContent: 'center' }} onClick={() => navigate('contact')}>
+              
+              <div className="industry-detail-section">
+                <div className="apps-label">Application examples</div>
+                <ul className="apps">
+                  {activeIndustry.applications.map((a, i) => <li key={i}>{a}</li>)}
+                </ul>
+              </div>
+              
+              <div className="industry-info-row">
+                <div className="industry-info-col">
+                  <div className="apps-label">Typical buyer need</div>
+                  <p className="industry-info-text">{activeIndustry.buyer}</p>
+                </div>
+                {activeIndustry.qa && (
+                  <div className="industry-info-col">
+                    <div className="apps-label">Quality or testing consideration</div>
+                    <p className="industry-info-text">{activeIndustry.qa}</p>
+                  </div>
+                )}
+              </div>
+              
+              <div className="industry-detail-section" style={{ marginTop: 28 }}>
+                <div className="apps-label">Relevant product groups</div>
+                <div className="industry-chips-container">
+                  {PRODUCTS.filter(p => p.industries.includes(activeRow)).map(p => (
+                    <button
+                      key={p.id}
+                      className="industry-chip"
+                      onClick={() => navigate('products', p.id)}
+                    >
+                      {p.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <button className="btn btn-primary" style={{ marginTop: 28, width: '100%', justifyContent: 'center' }} onClick={() => navigate('contact')}>
                 Submit RFQ for this application <span className="arrow">→</span>
               </button>
             </aside>
@@ -166,7 +178,7 @@ function PageIndustries({ navigate, focusId }) {
                   <h3>{ind.name}</h3>
                   <p className="body" style={{ marginTop: 12 }}>{ind.body}</p>
                   <div className="apps-label" style={{ marginTop: 20 }}>Typical buyer need</div>
-                  <p className="body" style={{ marginTop: 4, fontSize: 13 }}>{ind.buyer}</p>
+                  <p className="body" style={{ marginTop: 4 }}>{ind.buyer}</p>
                   {ind.qa && (
                     <div className="qa-note">
                       <div className="case-label">Quality or testing consideration</div>
@@ -183,7 +195,7 @@ function PageIndustries({ navigate, focusId }) {
                 <div className="cta-col">
                   <div className="apps-label">Relevant product groups</div>
                   {PRODUCTS.filter(p => p.industries.includes(ind.id)).map(p => (
-                    <button key={p.id} style={{ background: 'none', border: 0, borderBottom: '1px solid var(--rule)', padding: '10px 0', fontSize: 13, cursor: 'pointer', textAlign: 'left', width: '100%', color: 'var(--ink)', fontWeight: 500 }} onClick={() => navigate('products', p.id)}>
+                    <button key={p.id} className="industry-product-link" onClick={() => navigate('products', p.id)}>
                       {p.name} →
                     </button>
                   ))}

@@ -153,7 +153,6 @@ function PageProducts({ navigate, focusId }) {
               <header className="prodx-group-head">
                 <div className="prodx-group-num">{group.num}</div>
                 <div className="prodx-group-meta">
-                  <div className="mono" style={{ color: 'var(--accent)', fontWeight: 600 }}>Product group {group.num}</div>
                   <h2>{group.name}</h2>
                   <p className="lead">{group.tagline}</p>
                 </div>
@@ -244,12 +243,7 @@ function PageProducts({ navigate, focusId }) {
 
   {/* Left side */}
   <div>
-    <div className="prodx-detail-crumbs">
-      <span className="mono">Selected</span>
-      <span className="mono crumb-group">{group.name}</span>
-      <span className="mono sep">/</span>
-      <span className="mono crumb-sub">{sub.name}</span>
-    </div>
+
 
     <h3>{sub.name}</h3>
 
@@ -362,7 +356,16 @@ function PageProducts({ navigate, focusId }) {
         </div>
       </section>
 
-      <FinalCTA navigate={navigate} />
+      <FinalCTA
+        navigate={navigate}
+        heading={
+          <>
+            Send a specification.<br className="desktop-br" />
+            Get an engineering response<br className="desktop-br" />
+            in one business day.
+          </>
+        }
+      />
       <Footer navigate={navigate} />
     </main>
   );

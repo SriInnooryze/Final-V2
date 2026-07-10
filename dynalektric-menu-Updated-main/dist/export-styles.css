@@ -113,7 +113,7 @@
   background: var(--accent-2);
   flex-shrink: 0;
 }
-.export-trust-chip.is-cond .export-trust-mark { background: var(--line-soft); }
+.export-trust-chip.is-cond .export-trust-mark { background: var(--accent-2); }
 .export-trust-label { font-size: 13px; font-weight: 600; color: var(--ink); }
 .export-trust-note {
   font-family: var(--font-mono);
@@ -710,13 +710,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 .exp-reach-panel {
   background: var(--bg-card);
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
 }
 .exp-reach-title {
   font-family: var(--font-mono);
@@ -997,6 +999,7 @@
 .exp-roadmap {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
   border: 1px solid var(--rule);
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -1006,6 +1009,7 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--rule);
+  height: 100%;
 }
 .exp-phase:last-child { border-right: none; }
 
@@ -1051,6 +1055,15 @@
 }
 .exp-phase-step:first-child { padding-top: 0; }
 .exp-phase-step:last-child { border-bottom: none; padding-bottom: 0; }
+
+@media (min-width: 961px) {
+  .process-detail-primary {
+    height: 195px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+}
 
 .exp-step-hd {
   display: flex;

@@ -425,7 +425,7 @@ function PageContact({ navigate }) {
      ============================ */
   return (
     <main className="page-enter">
-      <section className="page-hero page-hero--split">
+      <section className="page-hero page-hero--split contact-hero">
         <div className="container">
           <div className="page-hero-copy">
             <div className="mono">CONTACT DYNALEKTRIC</div>
@@ -487,7 +487,7 @@ function PageContact({ navigate }) {
               </div>
             </div>
 
-            <div className="form-section-head" style={{ marginTop: 32 }}>
+            <div className="form-section-head req-head">
               <div className="mono" style={{ color: 'var(--accent)', fontWeight: 600 }}>Requirement</div>
               <h2>Tell us what you need.</h2>
             </div>
@@ -584,7 +584,7 @@ function PageContact({ navigate }) {
 )}
 
             <div className="form-footer">
-              <p style={{ fontSize: 12, color: 'var(--ink-muted)', maxWidth: '46ch' }}>
+              <p className="contact-privacy-text" style={{ maxWidth: '46ch' }}>
                 Your details are used only to respond to this enquiry. They are not shared with third parties. Final supply terms are subject to engineering review.
               </p>
               <button
@@ -633,13 +633,13 @@ function PageContact({ navigate }) {
             </div>
             <div className="contact-info-block">
               <div className="label">For procurement teams</div>
-              <div className="value" style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.5 }}>
+              <div className="value">
                 Request our supplier qualification pack, ISO certificates and sample test reports by email.
               </div>
             </div>
             <div className="contact-info-block">
               <div className="label">Response window</div>
-              <div className="value" style={{ fontSize: 14, color: 'var(--ink-soft)', lineHeight: 1.5 }}>
+              <div className="value">
                 One business day for complete specifications. Larger scopes may take longer, subject to engineering review.
               </div>
             </div>
