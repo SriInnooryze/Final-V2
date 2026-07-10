@@ -39,7 +39,7 @@
   --font-mono: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 
   /* Density */
-  --section-y: 50px;
+  --section-y: 96px;
   --container-max: 1720px;
   --gutter: 72px;
 
@@ -59,7 +59,7 @@
 }
 
 @media (max-width: 1024px) {
-  :root { --section-y: 78px; --gutter: 40px; }
+  :root { --section-y: 72px; --gutter: 40px; }
 }
 
 @media (max-width: 768px) {
