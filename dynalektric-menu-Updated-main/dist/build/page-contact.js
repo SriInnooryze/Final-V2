@@ -158,6 +158,10 @@ function PageContact({ navigate }) {
     setErrors(errs);
     setSubmitError("");
     if (Object.keys(errs).length > 0) {
+      const formElement = document.querySelector(".contact-form");
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       return;
     }
     setIsSubmitting(true);
@@ -188,7 +192,8 @@ function PageContact({ navigate }) {
         uploadedDocument,
         receivedAt: (/* @__PURE__ */ new Date()).toISOString()
       };
-      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec";
+      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyJpPSi4gfIncq2YcD0QpdFE0DztfMgOTzaqrgtL_Bideq-6k3mnxqFVHFdFAZy2n1/exec";
+      console.log("Submitting payload:", payload);
       const response = await fetch(
         APPS_SCRIPT_URL,
         {
@@ -196,7 +201,9 @@ function PageContact({ navigate }) {
           body: JSON.stringify(payload)
         }
       );
+      console.log("Response status:", response.status);
       const result = await response.json();
+      console.log("Response result:", result);
       if (!result.success) {
         throw new Error(
           result.message || "Unable to submit your requirement."
@@ -211,6 +218,7 @@ function PageContact({ navigate }) {
         behavior: "smooth"
       });
     } catch (error) {
+      console.error("Submission error details:", error);
       setSubmitError(
         "Unable to submit your requirement. Please try again."
       );
