@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://dynalektric.com/sitemap.xml
+Disallow: /

@@ -192,8 +192,9 @@ function PageContact({ navigate }) {
         uploadedDocument,
         receivedAt: (/* @__PURE__ */ new Date()).toISOString()
       };
-      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwyJpPSi4gfIncq2YcD0QpdFE0DztfMgOTzaqrgtL_Bideq-6k3mnxqFVHFdFAZy2n1/exec";
+      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec";
       console.log("Submitting payload:", payload);
+      console.log("APPS_SCRIPT_URL", APPS_SCRIPT_URL);
       const response = await fetch(
         APPS_SCRIPT_URL,
         {
@@ -202,8 +203,18 @@ function PageContact({ navigate }) {
         }
       );
       console.log("Response status:", response.status);
-      const result = await response.json();
-      console.log("Response result:", result);
+      const raw = await response.text();
+      console.log("========== RAW RESPONSE ==========");
+      console.log(raw);
+      let result;
+      try {
+        result = JSON.parse(raw);
+        console.log("Parsed JSON:", result);
+      } catch (e2) {
+        console.error("NOT JSON");
+        console.error(raw);
+        throw e2;
+      }
       if (!result.success) {
         throw new Error(
           result.message || "Unable to submit your requirement."

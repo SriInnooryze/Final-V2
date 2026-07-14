@@ -17,13 +17,13 @@ const QTY_RANGES = [
 ];
 
 const INDUSTRY_OPTS = [
-  { id: 'railways',    label: 'Railway & Traction' },
-  { id: 'renewables',  label: 'Renewable Sectors' },
-  { id: 'powergrid',   label: 'Power & Utilities' },
-  { id: 'heavy',       label: 'Heavy Industries' },
-  { id: 'mhe',         label: 'Material Handling & Warehousing' },
-  { id: 'datacenter',  label: 'Data Centers' },
-  { id: 'other',       label: 'Other' },
+  { id: 'railways', label: 'Railway & Traction' },
+  { id: 'renewables', label: 'Renewable Sectors' },
+  { id: 'powergrid', label: 'Power & Utilities' },
+  { id: 'heavy', label: 'Heavy Industries' },
+  { id: 'mhe', label: 'Material Handling & Warehousing' },
+  { id: 'datacenter', label: 'Data Centers' },
+  { id: 'other', label: 'Other' },
 ];
 
 const ACCEPTED_FILE_TYPES = '.pdf,.doc,.docx,.xls,.xlsx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
@@ -46,54 +46,54 @@ function PageContact({ navigate }) {
 
   const submissionIdRef = React.useRef(
     crypto.randomUUID()
- );
+  );
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
 
   const fileToBase64 = (selectedFile) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
 
-    reader.onload = () => {
-      try {
-        const result = String(reader.result || '');
+      reader.onload = () => {
+        try {
+          const result = String(reader.result || '');
 
-        const base64Data =
-          result.split(',')[1];
+          const base64Data =
+            result.split(',')[1];
 
-        if (!base64Data) {
+          if (!base64Data) {
+            reject(
+              new Error(
+                'Unable to process the selected document.'
+              )
+            );
+
+            return;
+          }
+
+          resolve(base64Data);
+        } catch (error) {
           reject(
             new Error(
               'Unable to process the selected document.'
             )
           );
-
-          return;
         }
+      };
 
-        resolve(base64Data);
-      } catch (error) {
+      reader.onerror = () => {
         reject(
           new Error(
-            'Unable to process the selected document.'
+            'Unable to read the selected document.'
           )
         );
-      }
-    };
+      };
 
-    reader.onerror = () => {
-      reject(
-        new Error(
-          'Unable to read the selected document.'
-        )
+      reader.readAsDataURL(
+        selectedFile
       );
-    };
-
-    reader.readAsDataURL(
-      selectedFile
-    );
-  });
-};
+    });
+  };
 
   const onFileChange = (e) => {
     const f = e.target.files && e.target.files[0];
@@ -124,156 +124,168 @@ function PageContact({ navigate }) {
   };
 
   const submit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (isSubmitting) {
-    return;
-  }
-
-  const errs = {};
-
-  if (!form.name.trim()) {
-    errs.name = 'Required';
-  }
-
-  if (!form.company.trim()) {
-    errs.company = 'Required';
-  }
-
-  if (!form.email.trim()) {
-    errs.email = 'Required';
-  } else if (!/.+@.+\..+/.test(form.email)) {
-    errs.email = 'Invalid email';
-  }
-
-  if (!form.phone.trim()) {
-    errs.phone = 'Required';
-  }
-
-  if (!form.country.trim()) {
-    errs.country = 'Required';
-  }
-
-  setErrors(errs);
-  setSubmitError('');
-
-  if (Object.keys(errs).length > 0) {
-    const formElement = document.querySelector('.contact-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    return;
-  }
-
-  setIsSubmitting(true);
-
-  try {
-    let uploadedDocument = null;
-
-    if (file) {
-      const base64Data =
-        await fileToBase64(file);
-
-      uploadedDocument = {
-        name: file.name,
-        size: file.size,
-        type: file.type,
-        data: base64Data,
-      };
+    if (isSubmitting) {
+      return;
     }
 
-    const payload = {
-      submissionId:
-        submissionIdRef.current,
+    const errs = {};
 
-      leadSource:
-        'Website RFQ',
+    if (!form.name.trim()) {
+      errs.name = 'Required';
+    }
 
-      name:
-        form.name.trim(),
+    if (!form.company.trim()) {
+      errs.company = 'Required';
+    }
 
-      company:
-        form.company.trim(),
+    if (!form.email.trim()) {
+      errs.email = 'Required';
+    } else if (!/.+@.+\..+/.test(form.email)) {
+      errs.email = 'Invalid email';
+    }
 
-      email:
-        form.email.trim(),
+    if (!form.phone.trim()) {
+      errs.phone = 'Required';
+    }
 
-      phone:
-        form.phone.trim(),
+    if (!form.country.trim()) {
+      errs.country = 'Required';
+    }
 
-      country:
-        form.country.trim(),
+    setErrors(errs);
+    setSubmitError('');
 
-      productInterest:
-        form.product,
-
-      industry:
-        form.industry,
-
-      requirementType:
-        form.reqType,
-
-      quantityRange:
-        form.qty,
-
-      message:
-        form.message.trim(),
-
-      uploadedDocument:
-        uploadedDocument,
-
-      receivedAt:
-        new Date().toISOString(),
-    };
-
-    const APPS_SCRIPT_URL =
-      'https://script.google.com/macros/s/AKfycbwyJpPSi4gfIncq2YcD0QpdFE0DztfMgOTzaqrgtL_Bideq-6k3mnxqFVHFdFAZy2n1/exec';
-      
-    console.log("Submitting payload:", payload);
-
-    const response = await fetch(
-      APPS_SCRIPT_URL,
-      {
-        method: 'POST',
-        body: JSON.stringify(payload),
+    if (Object.keys(errs).length > 0) {
+      const formElement = document.querySelector('.contact-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    );
-
-    console.log("Response status:", response.status);
-
-    const result =
-      await response.json();
-
-    console.log("Response result:", result);
-
-    if (!result.success) {
-      throw new Error(
-        result.message ||
-        'Unable to submit your requirement.'
-      );
+      return;
     }
 
-    setLeadId(
-      result.leadId || ''
-    );
+    setIsSubmitting(true);
 
-    setSubmitted(true);
+    try {
+      let uploadedDocument = null;
 
-   window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+      if (file) {
+        const base64Data =
+          await fileToBase64(file);
 
-  } catch (error) {
-    console.error("Submission error details:", error);
+        uploadedDocument = {
+          name: file.name,
+          size: file.size,
+          type: file.type,
+          data: base64Data,
+        };
+      }
 
-    setSubmitError(
-      'Unable to submit your requirement. Please try again.'
-    );
+      const payload = {
+        submissionId:
+          submissionIdRef.current,
 
-    setIsSubmitting(false);
-  }
-};
+        leadSource:
+          'Website RFQ',
+
+        name:
+          form.name.trim(),
+
+        company:
+          form.company.trim(),
+
+        email:
+          form.email.trim(),
+
+        phone:
+          form.phone.trim(),
+
+        country:
+          form.country.trim(),
+
+        productInterest:
+          form.product,
+
+        industry:
+          form.industry,
+
+        requirementType:
+          form.reqType,
+
+        quantityRange:
+          form.qty,
+
+        message:
+          form.message.trim(),
+
+        uploadedDocument:
+          uploadedDocument,
+
+        receivedAt:
+          new Date().toISOString(),
+      };
+
+      const APPS_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec"
+
+
+      console.log("Submitting payload:", payload);
+      console.log("APPS_SCRIPT_URL", APPS_SCRIPT_URL)
+      const response = await fetch(
+        APPS_SCRIPT_URL,
+        {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        }
+      );
+
+      console.log("Response status:", response.status);
+
+      const raw = await response.text();
+
+      console.log("========== RAW RESPONSE ==========");
+      console.log(raw);
+
+      let result;
+
+      try {
+        result = JSON.parse(raw);
+        console.log("Parsed JSON:", result);
+      } catch (e) {
+        console.error("NOT JSON");
+        console.error(raw);
+        throw e;
+      }
+
+      if (!result.success) {
+        throw new Error(
+          result.message ||
+          "Unable to submit your requirement."
+        );
+      }
+
+      setLeadId(
+        result.leadId || ''
+      );
+
+      setSubmitted(true);
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+
+    } catch (error) {
+      console.error("Submission error details:", error);
+
+      setSubmitError(
+        'Unable to submit your requirement. Please try again.'
+      );
+
+      setIsSubmitting(false);
+    }
+  };
   /* ============================
      Success state
      ============================ */
@@ -308,28 +320,28 @@ function PageContact({ navigate }) {
               </p>
               <div className="success-summary">
                 <div
-  className="mono"
-  style={{
-    color: 'var(--ink-muted)',
-    marginBottom: 12
-  }}
->
-  Submission reference
-</div>
+                  className="mono"
+                  style={{
+                    color: 'var(--ink-muted)',
+                    marginBottom: 12
+                  }}
+                >
+                  Submission reference
+                </div>
 
-{leadId && (
-  <div className="success-row">
-    <span className="mono">
-      RFQ Reference
-    </span>
+                {leadId && (
+                  <div className="success-row">
+                    <span className="mono">
+                      RFQ Reference
+                    </span>
 
-    <span>
-      <strong>
-        {leadId}
-      </strong>
-    </span>
-  </div>
-)}
+                    <span>
+                      <strong>
+                        {leadId}
+                      </strong>
+                    </span>
+                  </div>
+                )}
 
 
 
@@ -365,63 +377,63 @@ function PageContact({ navigate }) {
                 )}
               </div>
               <div
-  style={{
-    display: 'flex',
-    gap: 16,
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    marginTop: 32
-  }}
->
-  <button
-    className="btn btn-secondary"
-    onClick={() => {
-      setSubmitted(false);
+                style={{
+                  display: 'flex',
+                  gap: 16,
+                  justifyContent: 'center',
+                  flexWrap: 'wrap',
+                  marginTop: 32
+                }}
+              >
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    setSubmitted(false);
 
-      setForm({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        country: '',
-        product: '',
-        industry: '',
-        reqType: '',
-        qty: '',
-        message: ''
-      });
+                    setForm({
+                      name: '',
+                      company: '',
+                      email: '',
+                      phone: '',
+                      country: '',
+                      product: '',
+                      industry: '',
+                      reqType: '',
+                      qty: '',
+                      message: ''
+                    });
 
-      setFile(null);
-      setFileError('');
-      setErrors({});
-      setSubmitError('');
-      setLeadId('');
-      setIsSubmitting(false);
+                    setFile(null);
+                    setFileError('');
+                    setErrors({});
+                    setSubmitError('');
+                    setLeadId('');
+                    setIsSubmitting(false);
 
-      submissionIdRef.current =
-        crypto.randomUUID();
+                    submissionIdRef.current =
+                      crypto.randomUUID();
 
-      const input =
-        document.getElementById(
-          'rfq-file-input'
-        );
+                    const input =
+                      document.getElementById(
+                        'rfq-file-input'
+                      );
 
-      if (input) {
-        input.value = '';
-      }
-    }}
-  >
-    Submit another
-  </button>
+                    if (input) {
+                      input.value = '';
+                    }
+                  }}
+                >
+                  Submit another
+                </button>
 
-  <button
-    className="btn btn-primary"
-    onClick={() => navigate('home')}
-  >
-    Back to home{' '}
-    <span className="arrow">→</span>
-  </button>
-</div>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => navigate('home')}
+                >
+                  Back to home{' '}
+                  <span className="arrow">→</span>
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -582,36 +594,36 @@ function PageContact({ navigate }) {
               {fileError && <span className="form-err">{fileError}</span>}
             </div>
             {submitError && (
-  <div
-    className="form-err"
-    style={{
-      marginTop: 16,
-      marginBottom: 16,
-    }}
-  >
-    {submitError}
-  </div>
-)}
+              <div
+                className="form-err"
+                style={{
+                  marginTop: 16,
+                  marginBottom: 16,
+                }}
+              >
+                {submitError}
+              </div>
+            )}
 
             <div className="form-footer">
               <p className="contact-privacy-text" style={{ maxWidth: '46ch' }}>
                 Your details are used only to respond to this enquiry. They are not shared with third parties. Final supply terms are subject to engineering review.
               </p>
               <button
-  type="submit"
-  className="btn btn-primary"
-  disabled={isSubmitting}
->
-  {isSubmitting ? (
-    'Submitting...'
-  ) : (
-    <>
-      Submit RFQ
-      {' '}
-      <span className="arrow">→</span>
-    </>
-  )}
-</button>
+                type="submit"
+                className="btn btn-primary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  'Submitting...'
+                ) : (
+                  <>
+                    Submit RFQ
+                    {' '}
+                    <span className="arrow">→</span>
+                  </>
+                )}
+              </button>
             </div>
           </form>
 
@@ -632,10 +644,10 @@ function PageContact({ navigate }) {
             <div className="contact-info-block">
               <div className="label">Address</div>
               <div className="value">Dynalektric Pvt. Ltd.<br />Manufacturing facility<br />No-49/2
-                 Vaderamanchanahalli Village,
-                 Kallubalu, Anekal Taluk,
-                 Jigani Hobli,
-                 Bangalore, India- 560105</div>
+                Vaderamanchanahalli Village,
+                Kallubalu, Anekal Taluk,
+                Jigani Hobli,
+                Bangalore, India- 560105</div>
             </div>
             <div className="contact-info-block">
               <div className="label">Working hours</div>
@@ -653,21 +665,21 @@ function PageContact({ navigate }) {
                 One business day for complete specifications. Larger scopes may take longer, subject to engineering review.
               </div>
             </div>
-        <div className="contact-map">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.2830804704245!2d77.62583052848488!3d12.769318741084197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae69fde1bc74cd%3A0x9dbf3aaa6f14c1c7!2sDynalektric%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1781670618586!5m2!1sen!2sin"
-    width="100%"
-    height="400"
-    style={{
-      border: 0,
-      borderRadius: "12px"
-    }}
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    title="Dynalektric Equipment Private Limited"
-  ></iframe>
-</div>
+            <div className="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.2830804704245!2d77.62583052848488!3d12.769318741084197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae69fde1bc74cd%3A0x9dbf3aaa6f14c1c7!2sDynalektric%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1781670618586!5m2!1sen!2sin"
+                width="100%"
+                height="400"
+                style={{
+                  border: 0,
+                  borderRadius: "12px"
+                }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Dynalektric Equipment Private Limited"
+              ></iframe>
+            </div>
           </aside>
         </div>
       </section>
