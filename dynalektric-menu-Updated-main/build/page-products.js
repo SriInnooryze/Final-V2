@@ -161,7 +161,7 @@ function PageProducts({ navigate, focusId }) {
       }
     },
     /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", null, sub.name), /* @__PURE__ */ React.createElement("p", null, subDetail.description || sub.detail)),
-    SUBCAT_IMG_SET.has(sub.code) && /* @__PURE__ */ React.createElement("div", { className: "prodx-detail-img-wrap" }, /* @__PURE__ */ React.createElement(
+    /* @__PURE__ */ React.createElement("div", { className: "prodx-detail-img-wrap" }, SUBCAT_IMG_SET.has(sub.code) ? /* @__PURE__ */ React.createElement(
       "img",
       {
         src: `./assets/${sub.code}.jpg`,
@@ -175,8 +175,17 @@ function PageProducts({ navigate, focusId }) {
           display: "block"
         }
       }
+    ) : /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        className: "prodx-img-placeholder",
+        role: "img",
+        "aria-label": `${sub.name} \u2014 image placeholder, official product photo to be added`
+      },
+      /* @__PURE__ */ React.createElement("svg", { width: "28", height: "28", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("rect", { x: "3", y: "3", width: "18", height: "18", rx: "2" }), /* @__PURE__ */ React.createElement("circle", { cx: "8.5", cy: "8.5", r: "1.5" }), /* @__PURE__ */ React.createElement("path", { d: "m21 15-5-5L5 21" })),
+      /* @__PURE__ */ React.createElement("span", null, `Replace with ${sub.name} image`)
     ))
-  ), /* @__PURE__ */ React.createElement("div", { className: "prodx-detail-body" }, /* @__PURE__ */ React.createElement("section", { className: "prodx-detail-block" }, /* @__PURE__ */ React.createElement("h4", null, "Typical applications"), /* @__PURE__ */ React.createElement("ul", { className: "prodx-list" }, (subDetail.applications || []).map((a, i) => /* @__PURE__ */ React.createElement("li", { key: i }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "+"), " ", /* @__PURE__ */ React.createElement("span", null, a))))), /* @__PURE__ */ React.createElement("section", { className: "prodx-detail-block prodx-detail-specs" }, /* @__PURE__ */ React.createElement("h4", null, "Specification placeholders"), /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-row prodx-spec-row-dense" }, (subDetail.specs || []).map((s) => /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-cell", key: s.k }, /* @__PURE__ */ React.createElement("div", { className: "k" }, s.k), /* @__PURE__ */ React.createElement("div", { className: "v" }, s.v))))), /* @__PURE__ */ React.createElement("section", { className: "prodx-detail-block" }, /* @__PURE__ */ React.createElement("h4", null, "Relevant industries"), /* @__PURE__ */ React.createElement("div", { className: "prodx-ind-chips" }, (subDetail.industries || []).map((iid) => {
+  ), /* @__PURE__ */ React.createElement("div", { className: "prodx-detail-body" }, /* @__PURE__ */ React.createElement("section", { className: "prodx-detail-block" }, /* @__PURE__ */ React.createElement("h4", null, "Typical applications"), /* @__PURE__ */ React.createElement("ul", { className: "prodx-list" }, (subDetail.applications || []).map((a, i) => /* @__PURE__ */ React.createElement("li", { key: i }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "+"), " ", /* @__PURE__ */ React.createElement("span", null, a))))), /* @__PURE__ */ React.createElement("section", { className: "prodx-detail-block prodx-detail-specs" }, /* @__PURE__ */ React.createElement("h4", null, "Specification placeholders"), sub.code === "03.1" ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-row-pair" }, (subDetail.specs || []).slice(0, 4).map((s) => /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-cell", key: s.k }, /* @__PURE__ */ React.createElement("div", { className: "k" }, s.k), /* @__PURE__ */ React.createElement("div", { className: "v" }, s.v)))), /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-row prodx-spec-row-dense", style: { marginTop: 16 } }, (subDetail.specs || []).slice(4).map((s) => /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-cell", key: s.k }, /* @__PURE__ */ React.createElement("div", { className: "k" }, s.k), /* @__PURE__ */ React.createElement("div", { className: "v" }, s.v))))) : /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-row prodx-spec-row-dense" }, (subDetail.specs || []).map((s) => /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-cell", key: s.k }, /* @__PURE__ */ React.createElement("div", { className: "k" }, s.k), /* @__PURE__ */ React.createElement("div", { className: "v" }, s.v))))), /* @__PURE__ */ React.createElement("section", { className: "prodx-detail-block" }, /* @__PURE__ */ React.createElement("h4", null, "Relevant industries"), /* @__PURE__ */ React.createElement("div", { className: "prodx-ind-chips" }, (subDetail.industries || []).map((iid) => {
     const ind = INDUSTRIES.find((x) => x.id === iid);
     if (!ind) return null;
     return /* @__PURE__ */ React.createElement(

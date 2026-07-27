@@ -1,5 +1,22 @@
 /* page-about.jsx */
 
+const FOUNDERS = [
+  { num: '01', name: 'Shashank Srivaths', role: 'Managing Director', linkedin: 'https://www.linkedin.com/in/shashankravindrasrivaths/' },
+  { num: '02', name: 'Vishnu Srivaths', role: 'Director', linkedin: 'https://www.linkedin.com/in/vsrivaths/' },
+  { num: '03', name: 'Sangam Patil', role: 'Director', linkedin: 'https://www.linkedin.com/in/sangamp53/' },
+];
+
+// No official Royal Group / Pride Group logo files or website URLs exist
+// anywhere in this project yet. `logoSlotId` renders via the site's existing
+// <image-slot> placeholder convention (see CAPABILITIES in page-home.jsx for
+// the same pattern) so the empty state is obvious and non-breaking. `url` is
+// intentionally blank — fill in the real website once provided, which
+// switches the "Visit Website" control from disabled text to a live link.
+const SUPPORTED_BY = [
+  { id: 'royal-group', name: 'Royal Group', logoSlotId: 'about-supported-royal-group', url: '' },
+  { id: 'pride-group', name: 'Pride Group', logoSlotId: 'about-supported-pride-group', url: '' },
+];
+
 function PageAbout({ navigate }) {
   useReveal();
 
@@ -35,11 +52,11 @@ function PageAbout({ navigate }) {
               <h2 className="about-heading">An engineering-led manufacturer.</h2>
               <div className="about-meta">
                 <div className="about-meta-label">Established</div>
-                <div className="about-meta-value">1980, India</div>
+                <div className="about-meta-value">2020, India</div>
                 <div className="about-meta-label">Markets served</div>
-                <div className="about-meta-value">India, Europe, Middle East, Asia</div>
+                <div className="about-meta-value">India, Europe, Middle East, Asia, USA, Canada</div>
                 <div className="about-meta-label">Buyers we work with</div>
-                <div className="about-meta-value">OEMs, EPC contractors, utilities, railways, industrial automation companies, procurement and SCM teams.</div>
+                <div className="about-meta-value">OEMs, EPC Contractors, Utilities, Railways & Traction, Government PSUs, Industrial Automation & Heavy Industries</div>
               </div>
             </div>
             <div className="about-col-right">
@@ -50,6 +67,77 @@ function PageAbout({ navigate }) {
                 From single prototype builds to repeat production lines, the approach is the same: every Dynalektric product is designed, wound, wired, tested and documented in-house. Engineering, manufacturing and quality work on one floor, on one team.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section reveal">
+        <div className="container">
+          <div className="section-head">
+            <div className="eyebrow"><span className="mono">Leadership</span></div>
+            <div><h2>Founders.</h2></div>
+          </div>
+
+          <div className="about-cap-grid">
+            {FOUNDERS.map(f => (
+              <div className="about-cap-item" key={f.name}>
+                <div className="mono num">{f.num}</div>
+                <h3>{f.name}</h3>
+                <p>{f.role}</p>
+                <a
+                  className="founder-linkedin"
+                  href={f.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${f.name} on LinkedIn`}
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  LinkedIn
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section reveal">
+        <div className="container">
+          <div className="section-head">
+            <div className="eyebrow"><span className="mono">Group companies</span></div>
+            <div><h2>Supported by.</h2></div>
+          </div>
+
+          <div className="about-partners-grid">
+            {SUPPORTED_BY.map(p => (
+              <div className="about-partner-item" key={p.id}>
+                <image-slot
+                  id={p.logoSlotId}
+                  style={{ width: 168, height: 64, marginBottom: 24 }}
+                  fit="contain"
+                  shape="rect"
+                  placeholder={`Replace with official ${p.name} logo`}
+                  aria-label={`${p.name} logo`}
+                ></image-slot>
+                <h3>{p.name}</h3>
+                {p.url ? (
+                  <a
+                    className="partner-visit"
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${p.name} website`}
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    Visit Website
+                  </a>
+                ) : (
+                  <span className="partner-visit partner-visit--pending" aria-disabled="true" title={`Official ${p.name} website URL to be added`}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    Visit Website
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -72,6 +160,34 @@ function PageAbout({ navigate }) {
               <div className="big-num" style={{ marginBottom: 16, color: '#ffffff' }}><Counter to={15} />+</div>
               <div className="mono" style={{ color: 'rgba(244,244,241,0.6)', marginBottom: 8 }}>Markets</div>
               <p style={{ fontSize: 14, color: 'rgba(244,244,241,0.75)' }}>Export destinations across three continents</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section reveal">
+        <div className="container">
+          <div className="section-head">
+            <div className="eyebrow"><span className="mono">Purpose</span></div>
+            <div><h2>Vision and mission.</h2></div>
+          </div>
+
+          <div className="about-vm-grid">
+            <div className="about-vm-item">
+              <h3>Vision</h3>
+              <p className="about-desc">
+                Dynalektric aspires to be a leader in all ventured sectors, seizing opportunities, and investing in the future. We seek to create benchmarks globally for quality, reliability, and customer satisfaction by endlessly raising our standards and consistently anticipating the requirements of our customers, and exceeding their needs and expectations.
+              </p>
+              <p className="about-desc">
+                Our goal is to challenge ourselves in the day-to-day making improvements in all our activities, we strive to achieve our goal by working together with a diverse team bringing our skills to the forefront.
+              </p>
+              <div className="mono" style={{ marginTop: 20, color: 'var(--accent)' }}>Inspired by "The Toyota Way"</div>
+            </div>
+            <div className="about-vm-item">
+              <h3>Mission</h3>
+              <p className="about-desc">
+                Our commitment is to deliver the most innovative smart solution with best-in-class quality at a reasonable price ensuring customer delight. Our products are aimed to deliver high performance throughout the product's service life with minimum to zero downtime and reduced operational costs.
+              </p>
             </div>
           </div>
         </div>

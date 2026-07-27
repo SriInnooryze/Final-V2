@@ -20,8 +20,8 @@ const PRODUCTS = [
       { k: 'Voltage class',   v: 'up to 36 kV' },
       { k: 'Insulation',      v: 'Class B, F or H' },
       { k: 'Cooling',         v: 'AN, AF, ONAN, OFAF' },
-      { k: 'Enclosure',       v: 'Indoor or outdoor IP rated' },
-      { k: 'Standards',       v: 'IEC 60076, IS 2026, IEC 60289' },
+      { k: 'Enclosure',       v: 'Indoor/Outdoor as per IP ratings' },
+      { k: 'Standards',       v: 'IEC 60076, IS 2026' },
     ],
     applications: ['Industrial substations', 'Renewable inverter stations', 'Traction power supply', 'Harmonic mitigation', 'Reactive compensation', 'Power conditioning'],
     industries: ['railways', 'renewables', 'powergrid', 'heavy', 'datacenter'],
@@ -61,10 +61,10 @@ const PRODUCTS = [
       { code: '03.3', name: 'Special Application Battery Chargers', detail: 'Special Application Battery Chargers are purpose-built charging systems developed to satisfy unique charging requirements across specialized industrial and mobility applications. They provide reliable charging performance while supporting custom voltage, current and enclosure configurations.' },
     ],
     placeholders: [
-      { k: 'Output voltage',   v: '24 V to 220 V DC' },
-      { k: 'Output current',   v: 'up to 400 A' },
-      { k: 'Chemistries',      v: 'Lead-acid, Li-ion, NiCd' },
-      { k: 'Connectivity',     v: 'CAN, Modbus, RS485' },
+      { k: 'Output voltage',   v: '24V to 80 VDC' },
+      { k: 'Output current',   v: 'Up to 200A' },
+      { k: 'Chemistries',      v: 'Lead-acid, Li-ion' },
+      { k: 'Connectivity',     v: 'CAN Bus & IoT (WiFi & Bluetooth)' },
       { k: 'Enclosure',        v: 'IP rated industrial' },
       { k: 'Tests',            v: 'Routine and type tested' },
     ],
@@ -92,7 +92,7 @@ const PRODUCTS = [
       { k: 'Standards',        v: 'IEC, IS, IRS as applicable' },
       { k: 'Voltage range',    v: 'LV to MV configurations' },
       { k: 'Applications',     v: 'Rolling stock, industrial, utility' },
-      { k: 'Tests',            v: 'Per customer QAP' },
+      { k: 'Tests',            v: 'As per approved Quality Assurance Plan & Test Protocol' },
       { k: 'Documentation',    v: 'Datasheets available on request' },
     ],
     applications: ['Rolling stock onboard systems', 'Industrial control', 'Critical load backup', 'Sensing and protection', 'OEM integration'],
@@ -178,7 +178,7 @@ const CERTIFICATIONS = [
 ];
 
 const STATS = [
-  { value: '40+',   label: 'Years of in-house engineering', sub: 'Established 1980' },
+  { value: '40+',   label: 'Years of in-house engineering', sub: 'Established 2020' },
   { value: '500+',  label: 'Custom designs delivered',      sub: 'Magnetics, panels and systems' },
   { value: '15+',   label: 'Export markets served',         sub: 'Europe, Middle East, Asia' },
   { value: '1 day', label: 'Typical RFQ response time',     sub: 'For complete specifications' },
@@ -372,8 +372,8 @@ const SUBCAT_DETAIL = {
     applications: ['Stackers', 'Reach Trucks', 'VNA Vehicles', 'Golf Cart Vehicles', 'Automated Guided Vehicles (AGVs)'],
     specs: [
       { k: 'Output voltage (single phase)', v: '24V–72V DC (10A–70A)' },
-      { k: 'Output voltage (three phase)',  v: '24V–80V DC (50A–200A)' },
       { k: 'Output current (single phase)', v: '10A–70A' },
+      { k: 'Output voltage (three phase)',  v: '24V–80V DC (50A–200A)' },
       { k: 'Output current (three phase)',  v: '50A–200A' },
       { k: 'Battery chemistry',            v: 'Flooded, VRLA, Gel, AGM and Lithium Batteries' },
       { k: 'Connectivity',                 v: 'IoT Connectivity (Wi-Fi & Bluetooth) — Optional' },
@@ -391,7 +391,7 @@ const SUBCAT_DETAIL = {
       { k: 'Output voltage',   v: '24V, 48V, 110V, 220V' },
       { k: 'Output current',   v: '15A–250A' },
       { k: 'Operating modes',  v: 'Float & Boost' },
-      { k: 'Connectivity',     v: 'Application specific' },
+      { k: 'Connectivity',     v: 'Modbus & RS485' },
       { k: 'Tests',            v: 'Standard production and quality tests' },
       { k: 'Standards',        v: 'IEC 60146-1-1, IS 16539-1-1' },
       { k: 'Custom options',   v: 'Available' },
@@ -771,9 +771,7 @@ function Footer() {
             />
 
             <p className="footer-tag">
-              Magnetics, control panels, power electronics and cross-segment
-              components. Engineered in India for industrial, power, railway,
-              renewable and material handling applications worldwide.
+              Magnetics, control panel assemblies, power electronics and cross segment solutions.
             </p>
           </div>
 

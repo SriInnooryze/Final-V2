@@ -1,3 +1,4 @@
+const HOME_CERTIFICATIONS = [...CERTIFICATIONS, { code: "UL", label: "USA & Canada" }];
 const CAPABILITIES = [
   {
     num: "01",
@@ -5,7 +6,7 @@ const CAPABILITIES = [
     slotId: "cap-magnetics",
     resKey: "cardMagnetics",
     img: "assets/card-magnetics-optimized.webp",
-    title: "Power Transformation and Magnetics",
+    title: "Magnetics",
     back: "Transformers, reactors and magnetic components engineered for power conversion, distribution, harmonic control and specialised industrial applications.",
     labels: ["Application-specific engineering", "Manufacturing and testing", "Industrial and infrastructure use"],
     cta: "Explore Magnetics",
@@ -18,7 +19,7 @@ const CAPABILITIES = [
     slotId: "cap-control",
     resKey: "cardControl",
     img: "assets/card-control-optimized.webp",
-    title: "Control, Distribution and Panel Engineering",
+    title: "Control Panel Assemblies",
     back: "Panel and distribution assemblies developed around control, operating, safety and application requirements for railway, power and industrial equipment.",
     labels: ["Control integration", "Assembly and wiring", "Testing and documentation"],
     cta: "Explore Panel Engineering",
@@ -31,7 +32,7 @@ const CAPABILITIES = [
     slotId: "cap-power",
     resKey: "cardPower",
     img: "assets/card-power-optimized.webp",
-    title: "DC Power and Electronic Systems",
+    title: "Power Electronics",
     back: "DC power, charging and electronic systems configured for equipment duty, operational environments and specialised industrial applications.",
     labels: ["Duty-specific design", "Power conversion", "Validation and testing"],
     cta: "Explore Power Electronics",
@@ -44,7 +45,7 @@ const CAPABILITIES = [
     slotId: "cap-integrated",
     resKey: "cardIntegrated",
     img: "assets/card-integrated-optimized.webp",
-    title: "Integrated Components and Assemblies",
+    title: "Cross Segment Solutions",
     back: "Supporting electrical and electronic components integrated into railway, power, equipment and cross-sector industrial systems.",
     labels: ["Component integration", "Custom assemblies", "Cross-sector applications"],
     cta: "Explore Integrated Solutions",
@@ -440,7 +441,7 @@ function HeroVideo({ navigate }) {
         objectPosition: "center top"
       }
     },
-    /* @__PURE__ */ React.createElement("source", { src: "./public/videos/Dynalektric_Hero-optimized.mp4", type: "video/mp4" }),
+    /* @__PURE__ */ React.createElement("source", { src: "./public/videos/Dynalektric_Hero.mp4", type: "video/mp4" }),
     "Your browser does not support background video."
   )), /* @__PURE__ */ React.createElement("div", { className: "hero-video-scrim" }), /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "hero-video-content" }, /* @__PURE__ */ React.createElement("div", { className: "hero-video-eyebrow mono" }, /* @__PURE__ */ React.createElement("span", { className: "hero-video-line", "aria-hidden": "true" }), "Engineered for industry"), /* @__PURE__ */ React.createElement("h1", null, "Engineering built for industrial progress."), /* @__PURE__ */ React.createElement("p", null, "In-house engineering, manufacturing and testing for infrastructure, mobility, energy and industrial applications."), /* @__PURE__ */ React.createElement("div", { className: "hero-video-actions" }, /* @__PURE__ */ React.createElement("button", { className: "btn btn-primary", onClick: () => navigate("about") }, "Discover Dynalektric ", /* @__PURE__ */ React.createElement("span", { className: "arrow" }, "\u2192")), /* @__PURE__ */ React.createElement("button", { type: "button", className: "hero-video-link", onClick: () => navigate("contact") }, "Discuss Your Requirement ", /* @__PURE__ */ React.createElement("span", { className: "arrow" }, "\u2192"))))), /* @__PURE__ */ React.createElement(
     "button",
@@ -519,6 +520,32 @@ const FEATURED_CASES = [
     placeholder: "Replace with approved Dynalektric utility or substation project image",
     alt: "Representative power and utilities application image",
     to: "powergrid"
+  },
+  {
+    id: "dc1-charger",
+    industry: "Material Handling Equipment",
+    title: "DC1 Single-Phase Industrial Battery Charger for Material Handling Equipment",
+    challenge: "Industrial warehouses and logistics facilities required a dependable charging solution for flooded lead-acid traction batteries used in pallet trucks, stackers, reach trucks, and other material handling equipment. The charger needed to provide safe, efficient charging, intelligent battery protection, and reliable continuous operation in demanding industrial environments while complying with DIN 41772 and IEC standards.",
+    response: "Dynalektric engineered a transformer-based SCR battery charger with DIN 41772 charging characteristics, intelligent microcontroller-based control, adaptive charging modes, comprehensive protection features, and robust thermal management. Every unit undergoes comprehensive testing to ensure reliable charging performance, extended battery life, and long-term industrial reliability.",
+    capability: ["DIN 41772 Charging", "Industrial Battery Charging", "Material Handling Equipment", "Transformer-Based SCR Technology"],
+    img: "assets/industry-mhe-optimized.webp",
+    resKey: "indMhe",
+    placeholder: "Replace with approved Dynalektric MHE battery charger application image",
+    alt: "Representative material handling equipment battery charging application image",
+    to: "mhe"
+  },
+  {
+    id: "scr-fcbc",
+    industry: "Industrial DC Power Systems",
+    title: "SCR Float Cum Boost Charger for Critical Industrial DC Power Applications",
+    challenge: "Industrial facilities required a reliable Float Cum Boost Charger capable of providing uninterrupted regulated DC power for critical systems while operating continuously under demanding industrial conditions with high reliability and IEC compliance.",
+    response: "Dynalektric developed an SCR-based Float Cum Boost Charger supporting automatic Float and Boost charging modes, regulated DC output, robust industrial construction, comprehensive quality assurance, Factory Acceptance Testing, and IEC 60146-1-1 compliant performance for long-term dependable industrial operation.",
+    capability: ["Float & Boost Charging", "IEC 60146-1-1", "Industrial DC Power", "Factory Acceptance Tested"],
+    img: "assets/industry-datacenter-optimized.webp",
+    resKey: "indDatacenter",
+    placeholder: "Replace with approved Dynalektric Float Cum Boost Charger application image",
+    alt: "Representative industrial DC power and SCR charger application image",
+    to: "powergrid"
   }
 ];
 function FeaturedCases({ navigate }) {
@@ -593,7 +620,7 @@ function PageHome({ navigate, tweaks }) {
       shape: "rect",
       loading: "lazy"
     }
-  )))))), /* @__PURE__ */ React.createElement("section", { className: "section reveal" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "section-head" }, /* @__PURE__ */ React.createElement("div", { className: "eyebrow" }, /* @__PURE__ */ React.createElement("span", { className: "eyebrow-label" }, "Standards and testing")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h2", null, "Type-tested designs, full documentation, traceable processes."), /* @__PURE__ */ React.createElement("p", { className: "lead", style: { marginTop: 16 } }, "Every product ships with routine and type test reports, QAP documentation and material traceability. Designs validated against IEC, IS and customer specifications."))), /* @__PURE__ */ React.createElement("div", { className: "standards-grid" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "mono", style: { marginBottom: 24, color: "var(--accent)", fontWeight: 600 } }, "Certifications and standards"), /* @__PURE__ */ React.createElement("div", { className: "cert-row" }, CERTIFICATIONS.map((c) => /* @__PURE__ */ React.createElement("div", { className: "cert-item", key: c.code }, /* @__PURE__ */ React.createElement("div", { className: "cert-code" }, c.code), /* @__PURE__ */ React.createElement("div", { className: "cert-label mono" }, c.label)))), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 16 }, className: "mono" }, "Certificate copies available on request")), /* @__PURE__ */ React.createElement("div", { className: "qa-card" }, /* @__PURE__ */ React.createElement("div", { className: "mono", style: { marginBottom: 16, color: "var(--accent)", fontWeight: 600 } }, "Quality process"), /* @__PURE__ */ React.createElement("ul", { style: { listStyle: "none", display: "flex", flexDirection: "column", gap: 12 } }, /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13, paddingBottom: 12, borderBottom: "1px solid var(--rule-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "Routine testing"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "100% electrical validation on every unit")), /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13, paddingBottom: 12, borderBottom: "1px solid var(--rule-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "Type testing"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "On-site labs plus accredited externals")), /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13, paddingBottom: 12, borderBottom: "1px solid var(--rule-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "FAT support"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "Customer factory acceptance testing")), /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13 } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "Documentation"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "QAP, GA drawings, test reports, BoM"))))), /* @__PURE__ */ React.createElement("div", { className: "stats-fullwidth" }, /* @__PURE__ */ React.createElement("div", { className: "stats-inner" }, /* @__PURE__ */ React.createElement("div", { className: "stats-row" }, STATS.map((s, i) => /* @__PURE__ */ React.createElement(
+  )))))), /* @__PURE__ */ React.createElement("section", { className: "section reveal" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "section-head" }, /* @__PURE__ */ React.createElement("div", { className: "eyebrow" }, /* @__PURE__ */ React.createElement("span", { className: "eyebrow-label" }, "Standards and testing")), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h2", null, "Type-tested designs, full documentation, traceable processes."), /* @__PURE__ */ React.createElement("p", { className: "lead", style: { marginTop: 16 } }, "Every product ships with routine and type test reports, QAP documentation and material traceability. Designs validated against IEC, IS and customer specifications."))), /* @__PURE__ */ React.createElement("div", { className: "standards-grid" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "mono", style: { marginBottom: 24, color: "var(--accent)", fontWeight: 600 } }, "Certifications and standards"), /* @__PURE__ */ React.createElement("div", { className: "cert-row" }, HOME_CERTIFICATIONS.map((c) => /* @__PURE__ */ React.createElement("div", { className: "cert-item", key: c.code }, /* @__PURE__ */ React.createElement("div", { className: "cert-code" }, c.code), /* @__PURE__ */ React.createElement("div", { className: "cert-label mono" }, c.label)))), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 16 }, className: "mono" }, "Certificate copies available on request")), /* @__PURE__ */ React.createElement("div", { className: "qa-card" }, /* @__PURE__ */ React.createElement("div", { className: "mono", style: { marginBottom: 16, color: "var(--accent)", fontWeight: 600 } }, "Quality process"), /* @__PURE__ */ React.createElement("ul", { style: { listStyle: "none", display: "flex", flexDirection: "column", gap: 12 } }, /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13, paddingBottom: 12, borderBottom: "1px solid var(--rule-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "Routine testing"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "100% electrical validation on every unit")), /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13, paddingBottom: 12, borderBottom: "1px solid var(--rule-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "Type testing"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "On-site labs plus accredited externals")), /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13, paddingBottom: 12, borderBottom: "1px solid var(--rule-soft)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "FAT support"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "Customer factory acceptance testing")), /* @__PURE__ */ React.createElement("li", { style: { fontSize: 13 } }, /* @__PURE__ */ React.createElement("div", { style: { fontWeight: 500, marginBottom: 4 } }, "Documentation"), /* @__PURE__ */ React.createElement("div", { style: { color: "var(--ink-soft)" } }, "QAP, GA drawings, test reports, BoM"))))), /* @__PURE__ */ React.createElement("div", { className: "stats-fullwidth" }, /* @__PURE__ */ React.createElement("div", { className: "stats-inner" }, /* @__PURE__ */ React.createElement("div", { className: "stats-row" }, STATS.map((s, i) => /* @__PURE__ */ React.createElement(
     "div",
     {
       className: "stats-item reveal",

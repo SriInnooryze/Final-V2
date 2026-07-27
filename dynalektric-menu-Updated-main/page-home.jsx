@@ -1,13 +1,20 @@
 /* page-home.jsx */
 
 /* ============================================================
+   Home-only addition to the shared CERTIFICATIONS list (shared.jsx),
+   kept local so the About/Export pages that reuse CERTIFICATIONS are
+   unaffected.
+   ============================================================ */
+const HOME_CERTIFICATIONS = [...CERTIFICATIONS, { code: 'UL', label: 'USA & Canada' }];
+
+/* ============================================================
    Capability flip carousel (Home — "What we engineer")
    ============================================================ */
 const CAPABILITIES = [
   {
     num: '01', productId: 'magnetics', slotId: 'cap-magnetics',
     resKey: 'cardMagnetics', img: 'assets/card-magnetics-optimized.webp',
-    title: 'Power Transformation and Magnetics',
+    title: 'Magnetics',
     back: 'Transformers, reactors and magnetic components engineered for power conversion, distribution, harmonic control and specialised industrial applications.',
     labels: ['Application-specific engineering', 'Manufacturing and testing', 'Industrial and infrastructure use'],
     cta: 'Explore Magnetics',
@@ -17,7 +24,7 @@ const CAPABILITIES = [
   {
     num: '02', productId: 'control-panels', slotId: 'cap-control',
     resKey: 'cardControl', img: 'assets/card-control-optimized.webp',
-    title: 'Control, Distribution and Panel Engineering',
+    title: 'Control Panel Assemblies',
     back: 'Panel and distribution assemblies developed around control, operating, safety and application requirements for railway, power and industrial equipment.',
     labels: ['Control integration', 'Assembly and wiring', 'Testing and documentation'],
     cta: 'Explore Panel Engineering',
@@ -27,7 +34,7 @@ const CAPABILITIES = [
   {
     num: '03', productId: 'power-electronics', slotId: 'cap-power',
     resKey: 'cardPower', img: 'assets/card-power-optimized.webp',
-    title: 'DC Power and Electronic Systems',
+    title: 'Power Electronics',
     back: 'DC power, charging and electronic systems configured for equipment duty, operational environments and specialised industrial applications.',
     labels: ['Duty-specific design', 'Power conversion', 'Validation and testing'],
     cta: 'Explore Power Electronics',
@@ -37,7 +44,7 @@ const CAPABILITIES = [
   {
     num: '04', productId: 'cross-segment', slotId: 'cap-integrated',
     resKey: 'cardIntegrated', img: 'assets/card-integrated-optimized.webp',
-    title: 'Integrated Components and Assemblies',
+    title: 'Cross Segment Solutions',
     back: 'Supporting electrical and electronic components integrated into railway, power, equipment and cross-sector industrial systems.',
     labels: ['Component integration', 'Custom assemblies', 'Cross-sector applications'],
     cta: 'Explore Integrated Solutions',
@@ -512,7 +519,7 @@ function HeroVideo({ navigate }) {
             objectPosition: 'center top',
           }}
         >
-          <source src="./public/videos/Dynalektric_Hero-optimized.mp4" type="video/mp4" />
+          <source src="./public/videos/Dynalektric_Hero.mp4" type="video/mp4" />
           Your browser does not support background video.
         </video>
       </div>
@@ -650,6 +657,28 @@ const FEATURED_CASES = [
     img: 'assets/industry-powergrid.jpg', resKey: 'indPowergrid',
     placeholder: 'Replace with approved Dynalektric utility or substation project image',
     alt: 'Representative power and utilities application image',
+    to: 'powergrid',
+  },
+  {
+    id: 'dc1-charger', industry: 'Material Handling Equipment',
+    title: 'DC1 Single-Phase Industrial Battery Charger for Material Handling Equipment',
+    challenge: 'Industrial warehouses and logistics facilities required a dependable charging solution for flooded lead-acid traction batteries used in pallet trucks, stackers, reach trucks, and other material handling equipment. The charger needed to provide safe, efficient charging, intelligent battery protection, and reliable continuous operation in demanding industrial environments while complying with DIN 41772 and IEC standards.',
+    response: 'Dynalektric engineered a transformer-based SCR battery charger with DIN 41772 charging characteristics, intelligent microcontroller-based control, adaptive charging modes, comprehensive protection features, and robust thermal management. Every unit undergoes comprehensive testing to ensure reliable charging performance, extended battery life, and long-term industrial reliability.',
+    capability: ['DIN 41772 Charging', 'Industrial Battery Charging', 'Material Handling Equipment', 'Transformer-Based SCR Technology'],
+    img: 'assets/industry-mhe-optimized.webp', resKey: 'indMhe',
+    placeholder: 'Replace with approved Dynalektric MHE battery charger application image',
+    alt: 'Representative material handling equipment battery charging application image',
+    to: 'mhe',
+  },
+  {
+    id: 'scr-fcbc', industry: 'Industrial DC Power Systems',
+    title: 'SCR Float Cum Boost Charger for Critical Industrial DC Power Applications',
+    challenge: 'Industrial facilities required a reliable Float Cum Boost Charger capable of providing uninterrupted regulated DC power for critical systems while operating continuously under demanding industrial conditions with high reliability and IEC compliance.',
+    response: 'Dynalektric developed an SCR-based Float Cum Boost Charger supporting automatic Float and Boost charging modes, regulated DC output, robust industrial construction, comprehensive quality assurance, Factory Acceptance Testing, and IEC 60146-1-1 compliant performance for long-term dependable industrial operation.',
+    capability: ['Float & Boost Charging', 'IEC 60146-1-1', 'Industrial DC Power', 'Factory Acceptance Tested'],
+    img: 'assets/industry-datacenter-optimized.webp', resKey: 'indDatacenter',
+    placeholder: 'Replace with approved Dynalektric Float Cum Boost Charger application image',
+    alt: 'Representative industrial DC power and SCR charger application image',
     to: 'powergrid',
   },
 ];
@@ -851,7 +880,7 @@ function PageHome({ navigate, tweaks }) {
             <div>
               <div className="mono" style={{ marginBottom: 24, color: 'var(--accent)', fontWeight: 600 }}>Certifications and standards</div>
               <div className="cert-row">
-                {CERTIFICATIONS.map(c => (
+                {HOME_CERTIFICATIONS.map(c => (
                   <div className="cert-item" key={c.code}>
                     <div className="cert-code">{c.code}</div>
                     <div className="cert-label mono">{c.label}</div>

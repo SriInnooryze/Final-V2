@@ -250,9 +250,10 @@ function PageProducts({ navigate, focusId }) {
     <p>{subDetail.description || sub.detail}</p>
   </div>
 
-  {/* Right side image — only rendered when an asset exists for this sub-code */}
-  {SUBCAT_IMG_SET.has(sub.code) && (
-    <div className="prodx-detail-img-wrap">
+  {/* Right side image — real asset when one exists for this sub-code,
+      otherwise a fillable placeholder so the slot is never left empty */}
+  <div className="prodx-detail-img-wrap">
+    {SUBCAT_IMG_SET.has(sub.code) ? (
       <img
         src={`./assets/${sub.code}.jpg`}
         alt={sub.name}
@@ -265,8 +266,21 @@ function PageProducts({ navigate, focusId }) {
           display: "block"
         }}
       />
-    </div>
-  )}
+    ) : (
+      <div
+        className="prodx-img-placeholder"
+        role="img"
+        aria-label={`${sub.name} — image placeholder, official product photo to be added`}
+      >
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <path d="m21 15-5-5L5 21" />
+        </svg>
+        <span>{`Replace with ${sub.name} image`}</span>
+      </div>
+    )}
+  </div>
 
 </header>
 
@@ -284,14 +298,37 @@ function PageProducts({ navigate, focusId }) {
                   {/* Specifications */}
                   <section className="prodx-detail-block prodx-detail-specs">
                     <h4>Specification placeholders</h4>
-                    <div className="prodx-spec-row prodx-spec-row-dense">
-                      {(subDetail.specs || []).map(s => (
-                        <div className="prodx-spec-cell" key={s.k}>
-                          <div className="k">{s.k}</div>
-                          <div className="v">{s.v}</div>
+                    {sub.code === '03.1' ? (
+                      <>
+                        {/* MHE Battery Chargers: single-phase and three-phase voltage/current
+                            paired two-per-row so each pair sits side by side. */}
+                        <div className="prodx-spec-row-pair">
+                          {(subDetail.specs || []).slice(0, 4).map(s => (
+                            <div className="prodx-spec-cell" key={s.k}>
+                              <div className="k">{s.k}</div>
+                              <div className="v">{s.v}</div>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                        <div className="prodx-spec-row prodx-spec-row-dense" style={{ marginTop: 16 }}>
+                          {(subDetail.specs || []).slice(4).map(s => (
+                            <div className="prodx-spec-cell" key={s.k}>
+                              <div className="k">{s.k}</div>
+                              <div className="v">{s.v}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <div className="prodx-spec-row prodx-spec-row-dense">
+                        {(subDetail.specs || []).map(s => (
+                          <div className="prodx-spec-cell" key={s.k}>
+                            <div className="k">{s.k}</div>
+                            <div className="v">{s.v}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </section>
 
                   {/* Relevant industries */}
