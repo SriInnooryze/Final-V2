@@ -75,7 +75,7 @@ function PageAbout({ navigate }) {
         <div className="container">
           <div className="section-head">
             <div className="eyebrow"><span className="mono">Leadership</span></div>
-            <div><h2>Founders.</h2></div>
+            <div><h2>Leadership driving Dynalektric's engineering vision.</h2></div>
           </div>
 
           <div className="about-cap-grid">
@@ -104,7 +104,7 @@ function PageAbout({ navigate }) {
         <div className="container">
           <div className="section-head">
             <div className="eyebrow"><span className="mono">Group companies</span></div>
-            <div><h2>Supported by.</h2></div>
+            <div><h2>Backed by trusted group companies.</h2></div>
           </div>
 
           <div className="about-partners-grid">
@@ -169,7 +169,7 @@ function PageAbout({ navigate }) {
         <div className="container">
           <div className="section-head">
             <div className="eyebrow"><span className="mono">Purpose</span></div>
-            <div><h2>Vision and mission.</h2></div>
+            <div><h2>Engineering excellence with a purpose.</h2></div>
           </div>
 
           <div className="about-vm-grid">
