@@ -773,6 +773,20 @@ function Footer() {
             <p className="footer-tag">
               Magnetics, control panel assemblies, power electronics and cross segment solutions.
             </p>
+
+            <div className="footer-duns-seal">
+              <iframe
+                id="Iframe1"
+                src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1"
+                width="114"
+                height="97"
+                frameBorder="0"
+                scrolling="no"
+                allowTransparency="true"
+                title="D-U-N-S Registered Seal"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           <div className="footer-col">
@@ -833,29 +847,29 @@ function Footer() {
             </ul>
           </div>
 
-
-          {/* D-U-N-S REGISTERED SEAL */}
-
-          <div className="footer-duns-seal">
-            <iframe
-              id="Iframe1"
-              src="https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1"
-              width="114"
-              height="97"
-              frameBorder="0"
-              scrolling="no"
-              allowTransparency="true"
-              title="D-U-N-S Registered Seal"
-              loading="lazy"
-            />
-          </div>
-
         </div>
 
 
         <div className="footer-bottom">
           <span>
             © {currentYear} Dynalektric · Power · Motion · Safety
+          </span>
+
+          <span style={{ textTransform: 'none', fontSize: '12px' }}>
+            Designed by{' '}
+            <a
+              href="https://innooryze.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+                fontSize: 'inherit',
+                fontWeight: 'inherit'
+              }}
+            >
+              InnooRyze
+            </a>
           </span>
 
           <span>

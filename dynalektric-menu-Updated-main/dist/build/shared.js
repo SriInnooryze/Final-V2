@@ -660,20 +660,24 @@ function Footer() {
       loading: "lazy",
       decoding: "async"
     }
-  ), /* @__PURE__ */ React.createElement("p", { className: "footer-tag" }, "Magnetics, control panel assemblies, power electronics and cross segment solutions.")), /* @__PURE__ */ React.createElement("div", { className: "footer-col" }, /* @__PURE__ */ React.createElement("h4", null, "Sitemap"), /* @__PURE__ */ React.createElement("nav", { "aria-label": "Footer navigation" }, /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./index.html" }, "Home")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./about.html" }, "About")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./products-solutions.html" }, "Products & Solutions")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./innovation-rd.html" }, "Innovation Portfolio")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./industries-applications.html" }, "Industries & Applications")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./export.html" }, "Export")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./contact.html" }, "Contact"))))), /* @__PURE__ */ React.createElement("div", { className: "footer-col" }, /* @__PURE__ */ React.createElement("h4", null, "Product groups"), /* @__PURE__ */ React.createElement("ul", null, PRODUCTS.map((p) => /* @__PURE__ */ React.createElement("li", { key: p.id }, /* @__PURE__ */ React.createElement("a", { href: `./products-solutions.html?focus=${p.id}` }, p.name))))), /* @__PURE__ */ React.createElement("div", { className: "footer-col" }, /* @__PURE__ */ React.createElement("h4", null, "Enquiries"), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "tel:+919035542821" }, "+91-903 554 2821")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "tel:+919035542827" }, "+91-903 554 2827")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "mailto:sales01@dynalektric.com" }, "sales01@dynalektric.com")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "mailto:cs@dynalektric.com" }, "cs@dynalektric.com")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./contact.html" }, "Submit RFQ \u2192")))), /* @__PURE__ */ React.createElement("div", { className: "footer-duns-seal" }, /* @__PURE__ */ React.createElement(
-    "iframe",
-    {
-      id: "Iframe1",
-      src: "https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1",
-      width: "114",
-      height: "97",
-      frameBorder: "0",
-      scrolling: "no",
-      allowTransparency: "true",
-      title: "D-U-N-S Registered Seal",
-      loading: "lazy"
-    }
-  ))), /* @__PURE__ */ React.createElement("div", { className: "footer-bottom" }, /* @__PURE__ */ React.createElement("span", null, "\xA9 ", currentYear, " Dynalektric \xB7 Power \xB7 Motion \xB7 Safety"), /* @__PURE__ */ React.createElement("span", null, "Engineered in India \xB7 Exported worldwide"))));
+  ), /* @__PURE__ */ React.createElement("p", { className: "footer-tag" }, "Magnetics, control panel assemblies, power electronics and cross segment solutions."), /* @__PURE__ */ React.createElement(
+    "div",
+    { className: "footer-duns-seal" },
+    /* @__PURE__ */ React.createElement(
+      "iframe",
+      {
+        id: "Iframe1",
+        src: "https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1",
+        width: "114",
+        height: "97",
+        frameBorder: "0",
+        scrolling: "no",
+        allowTransparency: "true",
+        title: "D-U-N-S Registered Seal",
+        loading: "lazy"
+      }
+    )
+  )), /* @__PURE__ */ React.createElement("div", { className: "footer-col" }, /* @__PURE__ */ React.createElement("h4", null, "Sitemap"), /* @__PURE__ */ React.createElement("nav", { "aria-label": "Footer navigation" }, /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./index.html" }, "Home")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./about.html" }, "About")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./products-solutions.html" }, "Products & Solutions")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./innovation-rd.html" }, "Innovation Portfolio")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./industries-applications.html" }, "Industries & Applications")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./export.html" }, "Export")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./contact.html" }, "Contact"))))), /* @__PURE__ */ React.createElement("div", { className: "footer-col" }, /* @__PURE__ */ React.createElement("h4", null, "Product groups"), /* @__PURE__ */ React.createElement("ul", null, PRODUCTS.map((p) => /* @__PURE__ */ React.createElement("li", { key: p.id }, /* @__PURE__ */ React.createElement("a", { href: `./products-solutions.html?focus=${p.id}` }, p.name))))), /* @__PURE__ */ React.createElement("div", { className: "footer-col" }, /* @__PURE__ */ React.createElement("h4", null, "Enquiries"), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "tel:+919035542821" }, "+91-903 554 2821")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "tel:+919035542827" }, "+91-903 554 2827")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "mailto:sales01@dynalektric.com" }, "sales01@dynalektric.com")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "mailto:cs@dynalektric.com" }, "cs@dynalektric.com")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("a", { href: "./contact.html" }, "Submit RFQ \u2192"))))), /* @__PURE__ */ React.createElement("div", { className: "footer-bottom" }, /* @__PURE__ */ React.createElement("span", null, "\xA9 ", currentYear, " Dynalektric \xB7 Power \xB7 Motion \xB7 Safety"), /* @__PURE__ */ React.createElement("span", { style: { textTransform: "none", fontSize: "12px" } }, "Designed by ", /* @__PURE__ */ React.createElement("a", { href: "https://innooryze.com", target: "_blank", rel: "noopener noreferrer", style: { color: "inherit", textDecoration: "none", fontSize: "inherit", fontWeight: "inherit" } }, "InnooRyze")), /* @__PURE__ */ React.createElement("span", null, "Engineered in India \xB7 Exported worldwide"))));
 }
 function FinalCTA({
   navigate,
