@@ -227,8 +227,8 @@ function PageContact({ navigate }) {
       };
 
       const APPS_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec"
-
+        /*"https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec"*/
+           
 
       console.log("Submitting payload:", payload);
       console.log("APPS_SCRIPT_URL", APPS_SCRIPT_URL)

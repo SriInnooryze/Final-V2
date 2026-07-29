@@ -351,12 +351,10 @@ function PageExport({ navigate }) {
                 ))}
               </div>
             </div>
-            <div className="page-hero-visual">
+            <div className="page-hero-visual export-hero-visual">
               <img
-                src="./assets/export-hero-optimized.webp"
-                alt="Dynalektric integrated and assembled engineered systems"
-                width="720"
-                height="540"
+                src="./assets/export-hero.png"
+                alt="Dynalektric export - global delivery of engineered power systems"
                 decoding="async"
                 fetchpriority="high"
               />

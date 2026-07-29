@@ -25,6 +25,7 @@ const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
   "01.2",
   "01.3",
   "01.4",
+  "01.5",
   "01.6",
   "02.1",
   "02.2",
@@ -34,7 +35,10 @@ const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
   "04.2",
   "04.3",
   "04.4",
-  "04.5"
+  "04.5",
+  "04.6",
+  "04.7",
+  "04.8"
 ]);
 function PageProducts({ navigate, focusId }) {
   useReveal();

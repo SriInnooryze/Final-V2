@@ -205,13 +205,11 @@ function PageExport({ navigate }) {
   } }, "Request an Export Quote ", /* @__PURE__ */ React.createElement("span", { className: "arrow", "aria-hidden": "true" }, "\u2192")), /* @__PURE__ */ React.createElement("button", { className: "btn btn-secondary", onClick: () => {
     exportTrack("supplier_qualification_click");
     navigate("contact");
-  } }, "Start Supplier Qualification")), /* @__PURE__ */ React.createElement("div", { className: "export-trust-row" }, EXP_TRUST.map((t) => /* @__PURE__ */ React.createElement("span", { className: `export-trust-chip ${t.state === "cond" ? "is-cond" : ""}`, key: t.label }, /* @__PURE__ */ React.createElement("span", { className: "export-trust-mark", "aria-hidden": "true" }), /* @__PURE__ */ React.createElement("span", { className: "export-trust-label" }, t.label), /* @__PURE__ */ React.createElement("span", { className: "export-trust-note" }, t.note))))), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual" }, /* @__PURE__ */ React.createElement(
+  } }, "Start Supplier Qualification")), /* @__PURE__ */ React.createElement("div", { className: "export-trust-row" }, EXP_TRUST.map((t) => /* @__PURE__ */ React.createElement("span", { className: `export-trust-chip ${t.state === "cond" ? "is-cond" : ""}`, key: t.label }, /* @__PURE__ */ React.createElement("span", { className: "export-trust-mark", "aria-hidden": "true" }), /* @__PURE__ */ React.createElement("span", { className: "export-trust-label" }, t.label), /* @__PURE__ */ React.createElement("span", { className: "export-trust-note" }, t.note))))), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual export-hero-visual" }, /* @__PURE__ */ React.createElement(
     "img",
     {
-      src: "./assets/export-hero-optimized.webp",
-      alt: "Dynalektric integrated and assembled engineered systems",
-      width: "720",
-      height: "540",
+      src: "./assets/export-hero.png",
+      alt: "Dynalektric export - global delivery of engineered power systems",
       decoding: "async",
       fetchpriority: "high"
     }

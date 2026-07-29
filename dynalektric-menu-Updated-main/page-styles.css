@@ -2602,7 +2602,7 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 .export-hero-meta {
   background: var(--bg-card);
@@ -3864,4 +3864,36 @@ img, video, svg, image-slot { max-width: 100%; }
   .desktop-br {
     display: none;
   }
+}
+
+/* ============================================================
+   Export page — hero image: show full image, no cropping
+   ============================================================ */
+.export-hero-visual {
+  aspect-ratio: unset !important;
+  overflow: visible !important;
+  background: transparent !important;
+  border: none !important;
+  display: block !important;
+  min-height: unset !important;
+  height: auto !important;
+}
+.export-hero-visual img {
+  position: static !important;
+  inset: unset !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  transform: none !important;
+  animation: none !important;
+  display: block !important;
+  border-radius: 4px;
+}
+.export-hero-grid {
+  align-items: flex-start !important;
+}
+.export-page-hero > .container {
+  align-items: flex-start !important;
+  min-height: unset !important;
 }

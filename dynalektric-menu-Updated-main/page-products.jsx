@@ -6,10 +6,10 @@ const GROUP_IMG_FILENAME = {
 };
 // Sub-category codes that have a corresponding image file in assets/
 const SUBCAT_IMG_SET = new Set([
-  '01.1','01.2','01.3','01.4','01.6',
+  '01.1','01.2','01.3','01.4','01.5','01.6',
   '02.1','02.2',
   '03.1','03.2',
-  '04.1','04.2','04.3','04.4','04.5',
+  '04.1','04.2','04.3','04.4','04.5','04.6','04.7','04.8',
 ]);
 
 function PageProducts({ navigate, focusId }) {
