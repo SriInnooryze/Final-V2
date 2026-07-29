@@ -3529,6 +3529,15 @@ img, video, svg, image-slot { max-width: 100%; }
   .prodx-subcat-grid { grid-template-columns: 1fr; }
   .prodx-group-image { aspect-ratio: 16/10; }
   .prodx-tab { font-size: 11px; padding: 8px 10px; }
+  .prodx-detail-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .prodx-detail-cta .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* ============================================================

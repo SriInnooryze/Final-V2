@@ -598,3 +598,10 @@ image-slot {
   height: 97px;
   border: 0;
 }
+
+@media (max-width: 720px) {
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
