@@ -2468,7 +2468,22 @@
   margin-bottom: 48px;
 }
 @media (min-width: 1100px) {
-  .anon-buyer-grid { grid-template-columns: repeat(3, 1fr); }
+  .anon-buyer-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .focus-grid,
+  .subcat-grid,
+  .region-grid,
+  .export-doc-grid,
+  .anon-buyer-grid,
+  .process-flow-6 {
+    grid-template-columns: 1fr;
+  }
+  .cap-card {
+    padding: 28px 20px;
+    min-height: 0;
+  }
 }
 .anon-buyer-card {
   background: var(--bg-card);
