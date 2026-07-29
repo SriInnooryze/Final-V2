@@ -365,6 +365,7 @@
   min-height: 520px;
   background: #1a1c1e;
   overflow: hidden;
+  touch-action: pan-y;
 }
 .case-img {
   position: absolute;
@@ -901,6 +902,7 @@
   overflow: hidden;
   background: #1a1c1e;
   border: 1px solid rgba(255,255,255,0.10);
+  touch-action: pan-y;
 }
 .indstage-img {
   position: absolute;
