@@ -3612,6 +3612,7 @@ img, video, svg, image-slot { max-width: 100%; }
   .page-hero--split.about-hero .page-hero-copy h1 {
     font-size: clamp(1.75rem, 6.5vw, 2.35rem);
     letter-spacing: -0.015em;
+    max-width: 100%;
     overflow-wrap: break-word;
   }
   .page-hero--split .page-hero-copy .lead {
