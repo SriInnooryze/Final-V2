@@ -1116,7 +1116,7 @@
 /* Mobile */
 @media (max-width: 720px) {
   .indstage-main { height: 480px; }
-  .indstage-content { left: 24px; right: 24px; bottom: 28px; max-width: 100%; }
+  .indstage-content { left: 24px; right: 24px; bottom: 28px; width: calc(100% - 48px); max-width: 100%; }
   .indstage-rail { grid-template-columns: repeat(2, 1fr); }
   .indstage-controls { flex-wrap: wrap; gap: 16px; }
   .indstage-foot { margin-left: 0; flex-basis: 100%; }
