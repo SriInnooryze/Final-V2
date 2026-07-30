@@ -287,13 +287,13 @@ function PageAbout({ navigate }) {
             <div className="eyebrow"><span className="mono">Facility</span></div>
             <div>
               <h2>
-                One floor, one team,<br className="desktop-br" />
+                One floor, one team,<br className="desktop-br" />{' '}
                 One engineering culture.
               </h2>
             </div>
           </div>
           <div className="about-facility-grid">
-            <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '8px' }}>
+            <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '0' }}>
               <img
                 src="./assets/facility-wide-shot-optimized.webp"
                 alt="Dynalektric manufacturing facility"
@@ -303,7 +303,7 @@ function PageAbout({ navigate }) {
               />
             </div>
             <div className="about-facility-sub">
-              <div style={{ overflow: 'hidden', borderRadius: '8px', height: '100%' }}>
+              <div style={{ overflow: 'hidden', borderRadius: '0', height: '100%' }}>
                 <img
                   src="./assets/winding-floor.jpg"
                   alt="Winding floor — transformer and magnetics winding"
@@ -312,7 +312,7 @@ function PageAbout({ navigate }) {
                   decoding="async"
                 />
               </div>
-              <div style={{ overflow: 'hidden', borderRadius: '8px', height: '100%' }}>
+              <div style={{ overflow: 'hidden', borderRadius: '0', height: '100%' }}>
                 <img
                   src="./assets/test-bay.png"
                   alt="Dynalektric test bay"
