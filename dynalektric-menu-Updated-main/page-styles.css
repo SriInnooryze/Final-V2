@@ -2831,12 +2831,18 @@
   gap: 28px;
 }
 .form-err {
-  color: var(--accent);
+  color: var(--red);
   font-family: var(--font-mono);
   font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-top: 4px;
+}
+.form-row.has-err input,
+.form-row.has-err select,
+.form-row.has-err textarea {
+  border-bottom-color: var(--red);
 }
 
 /* File upload */

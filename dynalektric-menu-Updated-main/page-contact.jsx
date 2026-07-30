@@ -146,8 +146,11 @@ function PageContact({ navigate }) {
       errs.email = 'Invalid email';
     }
 
+    const phoneDigits = form.phone.replace(/\D/g, '');
     if (!form.phone.trim()) {
       errs.phone = 'Required';
+    } else if (!/^[+\d\s\-()]{7,25}$/.test(form.phone.trim()) || phoneDigits.length < 7) {
+      errs.phone = 'Invalid phone number';
     }
 
     if (!form.country.trim()) {
@@ -158,10 +161,21 @@ function PageContact({ navigate }) {
     setSubmitError('');
 
     if (Object.keys(errs).length > 0) {
-      const formElement = document.querySelector('.contact-form');
-      if (formElement) {
-        formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      setTimeout(() => {
+        const firstErrEl = document.querySelector('.form-row.has-err, .form-err');
+        if (firstErrEl) {
+          firstErrEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const inputEl = firstErrEl.querySelector('input, select, textarea');
+          if (inputEl && typeof inputEl.focus === 'function') {
+            try { inputEl.focus({ preventScroll: true }); } catch (err) {}
+          }
+        } else {
+          const formElement = document.querySelector('.contact-form');
+          if (formElement) {
+            formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }, 50);
       return;
     }
 
@@ -478,30 +492,30 @@ function PageContact({ navigate }) {
               </div>
 
               <div className="contact-form-row">
-                <div className="form-row">
+                <div className={`form-row ${errors.name ? 'has-err' : ''}`}>
                   <label>Name *</label>
                   <input value={form.name} onChange={e => set('name', e.target.value)} placeholder="Full name" />
                   {errors.name && <span className="form-err">{errors.name}</span>}
                 </div>
-                <div className="form-row">
+                <div className={`form-row ${errors.company ? 'has-err' : ''}`}>
                   <label>Company *</label>
                   <input value={form.company} onChange={e => set('company', e.target.value)} placeholder="Organisation name" />
                   {errors.company && <span className="form-err">{errors.company}</span>}
                 </div>
               </div>
               <div className="contact-form-row">
-                <div className="form-row">
+                <div className={`form-row ${errors.email ? 'has-err' : ''}`}>
                   <label>Email *</label>
                   <input type="email" value={form.email} onChange={e => set('email', e.target.value)} placeholder="you@company.com" />
                   {errors.email && <span className="form-err">{errors.email}</span>}
                 </div>
-                <div className="form-row">
+                <div className={`form-row ${errors.phone ? 'has-err' : ''}`}>
                   <label>Phone *</label>
-                  <input required value={form.phone} onChange={e => set('phone', e.target.value)} placeholder="+ country code, number" />
+                  <input type="tel" value={form.phone} onChange={e => set('phone', e.target.value)} placeholder="+ country code, number" />
                   {errors.phone && <span className="form-err">{errors.phone}</span>}
                 </div>
               </div>
-              <div className="form-row">
+              <div className={`form-row ${errors.country ? 'has-err' : ''}`}>
                 <label>Country *</label>
                 <input value={form.country} onChange={e => set('country', e.target.value)} placeholder="e.g. Germany, UAE, USA, India" />
                 {errors.country && <span className="form-err">{errors.country}</span>}
