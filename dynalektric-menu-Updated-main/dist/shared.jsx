@@ -75,8 +75,8 @@ const PRODUCTS = [
     id: 'cross-segment',
     num: '04',
     name: 'Cross-Segment Solutions',
-    tagline: 'Busbars, Cable Harnessing, UPS, Driver Display Unit, Current Sensors, DC-DC Converters, Fire Detection Unit and Minimum Voltage Relay',
-    overview: 'Dynalektric offers a comprehensive range of power distribution, control, monitoring and protection solutions engineered for railway, industrial and renewable energy applications. The portfolio includes Busbars, Cable Harnesses, UPS Systems, Driver Display Units, Current Sensors, DC-DC Converters, Fire Detection Units and Minimum Voltage Relays, delivering reliable power distribution, real-time monitoring, equipment protection and operational safety while meeting demanding industry standards.',
+    tagline: 'Busbars, Cable Harnessing, UPS, Driver Display Unit, Current Sensors, DC-DC Converters, Fire Detection Unit and Maximum Voltage Relay',
+    overview: 'Dynalektric offers a comprehensive range of power distribution, control, monitoring and protection solutions engineered for railway, industrial and renewable energy applications. The portfolio includes Busbars, Cable Harnesses, UPS Systems, Driver Display Units, Current Sensors, DC-DC Converters, Fire Detection Units and Maximum Voltage Relays, delivering reliable power distribution, real-time monitoring, equipment protection and operational safety while meeting demanding industry standards.',
     subcategories: [
       { code: '04.1', name: 'Busbars',                 detail: 'High-conductivity copper and aluminium busbars designed for efficient power collection and distribution in switchgear, substations and industrial power systems.' },
       { code: '04.2', name: 'Cable Harnessing',        detail: 'Custom cable harness assemblies engineered for reliable power and signal transmission with organized routing, identification and protection.' },
@@ -85,7 +85,7 @@ const PRODUCTS = [
       { code: '04.5', name: 'Current Sensors',         detail: 'High-precision closed-loop current sensors for traction control, harmonic filtering and railway power electronics.' },
       { code: '04.6', name: 'DC-DC Converters',        detail: 'High-efficiency railway DC-DC converters providing regulated auxiliary power for control, communication and monitoring systems.' },
       { code: '04.7', name: 'Fire Detection Unit',     detail: 'Air-sampling smoke detection system providing early fire detection for electric locomotives and critical industrial installations.' },
-      { code: '04.8', name: 'Minimum Voltage Relay',   detail: 'Protective monitoring relay for undervoltage detection and safe operation of railway traction and industrial electrical systems.' },
+      { code: '04.8', name: 'Maximum Voltage Relay',   detail: 'Protective monitoring relay for overvoltage detection and safe operation of railway traction and industrial electrical systems.' },
     ],
     placeholders: [
       { k: 'Customisation',    v: 'OEM-specific designs' },
@@ -515,7 +515,7 @@ const SUBCAT_DETAIL = {
     industries: ['railways', 'heavy', 'datacenter'],
   },
   '04.8': {
-    description: 'Protective monitoring relay for undervoltage detection and safe operation of railway traction and industrial electrical systems.',
+    description: 'Protective monitoring relay for overvoltage detection and safe operation of railway traction and industrial electrical systems.',
     applications: ['Electric Locomotives', 'Traction Systems', 'Railway Control Circuits', 'Power Monitoring', 'Protection Systems'],
     specs: [
       { k: 'Input voltage',    v: '240 VAC ±10%' },
