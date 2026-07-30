@@ -137,9 +137,10 @@ function PageProducts({ navigate, focusId }) {
       decoding: "async",
       style: {
         width: "100%",
-        height: "100%",
+        height: "auto",
         objectFit: "contain",
-        borderRadius: "12px"
+        borderRadius: "12px",
+        display: "block"
       }
     }
   ))), /* @__PURE__ */ React.createElement("div", { className: "prodx-group-specs" }, /* @__PURE__ */ React.createElement("div", { className: "mono", style: { color: "var(--accent)", fontWeight: 600, marginBottom: 16 } }, "Specification placeholders for ", group.name), /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-row" }, group.placeholders.map((s) => /* @__PURE__ */ React.createElement("div", { className: "prodx-spec-cell", key: s.k }, /* @__PURE__ */ React.createElement("div", { className: "k" }, s.k), /* @__PURE__ */ React.createElement("div", { className: "v" }, s.v))))), /* @__PURE__ */ React.createElement("div", { className: "prodx-subcat" }, /* @__PURE__ */ React.createElement("div", { className: "prodx-subcat-head" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "mono", style: { color: "var(--ink-muted)" } }, "Sub-category explorer"), /* @__PURE__ */ React.createElement("h3", { style: { marginTop: 6 } }, "Select a sub-category")), /* @__PURE__ */ React.createElement("div", { className: "mono", style: { color: "var(--ink-muted)" } }, group.subcategories.length, " items in ", group.name)), /* @__PURE__ */ React.createElement("div", { className: "prodx-subcat-grid" }, group.subcategories.map((s) => {
@@ -183,7 +184,7 @@ function PageProducts({ navigate, focusId }) {
         },
         style: {
           width: "100%",
-          height: "100%",
+          height: "auto",
           objectFit: "contain",
           display: "block"
         }

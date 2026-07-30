@@ -175,12 +175,13 @@ function PageProducts({ navigate, focusId }) {
                  height="540"
                  loading="lazy"
                  decoding="async"
-                 style={{
-                   width: "100%",
-                   height: "100%",
-                   objectFit: "contain",
-                   borderRadius: "12px"
-                   }}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                    borderRadius: "12px",
+                    display: "block"
+                    }}
                  />
                </div>
               </div>
@@ -270,7 +271,7 @@ function PageProducts({ navigate, focusId }) {
         }}
         style={{
           width: "100%",
-          height: "100%",
+          height: "auto",
           objectFit: "contain",
           display: "block"
         }}
