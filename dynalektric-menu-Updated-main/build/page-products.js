@@ -20,6 +20,9 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 const GROUP_IMG_FILENAME = {
   "control-panels": "control-Panels.jpg"
 };
+const SUBCAT_IMG_FILENAME = {
+  "04.4": "04.4.png"
+};
 const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
   "01.1",
   "01.2",
@@ -168,7 +171,7 @@ function PageProducts({ navigate, focusId }) {
     /* @__PURE__ */ React.createElement("div", { className: "prodx-detail-img-wrap" }, SUBCAT_IMG_SET.has(sub.code) ? /* @__PURE__ */ React.createElement(
       "img",
       {
-        src: `./assets/${sub.code}.jpg`,
+        src: `./assets/${SUBCAT_IMG_FILENAME[sub.code] || sub.code + ".jpg"}`,
         alt: sub.name,
         loading: "lazy",
         decoding: "async",

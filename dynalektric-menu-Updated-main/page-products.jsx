@@ -4,6 +4,9 @@
 const GROUP_IMG_FILENAME = {
   'control-panels': 'control-Panels.jpg',
 };
+const SUBCAT_IMG_FILENAME = {
+  '04.4': '04.4.png',
+};
 // Sub-category codes that have a corresponding image file in assets/
 const SUBCAT_IMG_SET = new Set([
   '01.1','01.2','01.3','01.4','01.5','01.6',
@@ -255,10 +258,15 @@ function PageProducts({ navigate, focusId }) {
   <div className="prodx-detail-img-wrap">
     {SUBCAT_IMG_SET.has(sub.code) ? (
       <img
-        src={`./assets/${sub.code}.jpg`}
+        src={`./assets/${SUBCAT_IMG_FILENAME[sub.code] || sub.code + '.jpg'}`}
         alt={sub.name}
         loading="lazy"
         decoding="async"
+        onError={(e) => {
+          if (e.target.src.indexOf('.png') !== -1) {
+            e.target.src = `./assets/${sub.code}.jpg`;
+          }
+        }}
         style={{
           width: "100%",
           height: "100%",
