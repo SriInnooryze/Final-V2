@@ -296,7 +296,7 @@ const EXPORT_CUSTOMER_LOGOS = [
   "./assets/Logo4.1.png",
   "./assets/Logo5.webp",
   "./assets/Logo6.jpg",
-  "./assets/Logo7.png",
+  "./assets/Logo7.webp",
   "./assets/Logo8.webp",
   "./assets/Logo9.webp",
 ];
@@ -532,6 +532,11 @@ function PageExport({ navigate }) {
                         alt={`Customer logo ${index + 1}`}
                         loading="lazy"
                         decoding="async"
+                        onError={(e) => {
+                          if (e.target.src.indexOf('.png') !== -1) {
+                            e.target.src = logo.replace('.png', '.webp');
+                          }
+                        }}
                       />
                     </div>
                   ))}

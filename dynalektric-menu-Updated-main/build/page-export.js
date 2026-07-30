@@ -176,7 +176,7 @@ const EXPORT_CUSTOMER_LOGOS = [
   "./assets/Logo4.1.png",
   "./assets/Logo5.webp",
   "./assets/Logo6.jpg",
-  "./assets/Logo7.png",
+  "./assets/Logo7.webp",
   "./assets/Logo8.webp",
   "./assets/Logo9.webp"
 ];
@@ -231,7 +231,12 @@ function PageExport({ navigate }) {
       src: logo,
       alt: `Customer logo ${index + 1}`,
       loading: "lazy",
-      decoding: "async"
+      decoding: "async",
+      onError: (e) => {
+        if (e.target.src.indexOf(".png") !== -1) {
+          e.target.src = logo.replace(".png", ".webp");
+        }
+      }
     }
   ))))), /* @__PURE__ */ React.createElement("div", { className: "export-verify-actions" }, /* @__PURE__ */ React.createElement("button", { className: "btn btn-ghost on-dark", onClick: () => exportTrack("clearance_scheme_view", { action: "view_address" }) }, "View Registered Address"), /* @__PURE__ */ React.createElement("button", { className: "btn btn-ghost on-dark", onClick: () => {
     exportTrack("supplier_qualification_click");
