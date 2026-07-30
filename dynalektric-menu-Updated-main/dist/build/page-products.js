@@ -22,6 +22,8 @@ const GROUP_IMG_FILENAME = {
   "cross-segment": "card-integrated-optimized.webp"
 };
 const SUBCAT_IMG_FILENAME = {
+  "02.3": "02.3.png",
+  "02.4": "02.4.png",
   "04.4": "04.4.png"
 };
 const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
@@ -33,6 +35,8 @@ const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
   "01.6",
   "02.1",
   "02.2",
+  "02.3",
+  "02.4",
   "03.1",
   "03.2",
   "04.1",

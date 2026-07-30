@@ -6,13 +6,16 @@ const GROUP_IMG_FILENAME = {
   'cross-segment': 'card-integrated-optimized.webp'
 };
 const SUBCAT_IMG_FILENAME = {
+  '02.3': '02.3.png',
+  '02.4': '02.4.png',
+  '03.3': '03.3.png',
   '04.4': '04.4.png',
 };
 // Sub-category codes that have a corresponding image file in assets/
 const SUBCAT_IMG_SET = new Set([
   '01.1','01.2','01.3','01.4','01.5','01.6',
-  '02.1','02.2',
-  '03.1','03.2',
+  '02.1','02.2','02.3','02.4',
+  '03.1','03.2','03.3',
   '04.1','04.2','04.3','04.4','04.5','04.6','04.7','04.8',
 ]);
 
