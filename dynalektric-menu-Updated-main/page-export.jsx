@@ -296,7 +296,7 @@ const EXPORT_CUSTOMER_LOGOS = [
   "./assets/Logo4.1.png",
   "./assets/Logo5.webp",
   "./assets/Logo6.jpg",
-  "./assets/Logo7.webp",
+  "./assets/Logo 7.png",
   "./assets/Logo8.webp",
   "./assets/Logo9.webp",
 ];
@@ -533,8 +533,10 @@ function PageExport({ navigate }) {
                         loading="lazy"
                         decoding="async"
                         onError={(e) => {
-                          if (e.target.src.indexOf('.png') !== -1) {
-                            e.target.src = logo.replace('.png', '.webp');
+                          if (e.target.src.indexOf('Logo%207.png') !== -1 || e.target.src.indexOf('Logo%207') !== -1) {
+                            e.target.src = './assets/Logo7.png';
+                          } else if (e.target.src.indexOf('Logo7.png') !== -1) {
+                            e.target.src = './assets/Logo7.webp';
                           }
                         }}
                       />
