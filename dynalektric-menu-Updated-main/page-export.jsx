@@ -296,9 +296,9 @@ const EXPORT_CUSTOMER_LOGOS = [
   "./assets/Logo4.1.png",
   "./assets/Logo5.webp",
   "./assets/Logo6.jpg",
-  "./assets/Logo7.webp",
+  "./assets/Logo7.png",
   "./assets/Logo8.webp",
-  "./assets/Logo9.webp", 
+  "./assets/Logo9.webp",
 ];
 
 /* ============================================================
@@ -496,18 +496,18 @@ function PageExport({ navigate }) {
                   </div>
                 ))}
               </div>
-             <div className="export-map">
-  <iframe
-    title="Dynalektric Registered Address"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.2830804704245!2d77.62583052848488!3d12.769318741084197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae69fde1bc74cd%3A0x9dbf3aaa6f14c1c7!2sDynalektric%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1781670618586!5m2!1sen!2sin"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    loading="lazy"
-    allowFullScreen
-    referrerPolicy="no-referrer-when-downgrade"
-  />
-</div>
+              <div className="export-map">
+                <iframe
+                  title="Dynalektric Registered Address"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.2830804704245!2d77.62583052848488!3d12.769318741084197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae69fde1bc74cd%3A0x9dbf3aaa6f14c1c7!2sDynalektric%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1781670618586!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
             <div className="export-verify-side">
               <div className="export-verify-panel">
@@ -525,20 +525,20 @@ function PageExport({ navigate }) {
                 <div className="mono export-verify-title">Social proof</div>
                 <p className="export-verify-p">Approved customer logos, anonymous case studies and approved testimonials are shared once the supplier qualification request is reviewed.</p>
                 <div className="export-logo-row">
-  {EXPORT_CUSTOMER_LOGOS.map((logo, index) => (
-    <div className="export-logo-slot" key={index}>
-      <img
-        src={logo}
-        alt={`Customer logo ${index + 1}`}
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  ))}
-</div>
+                  {EXPORT_CUSTOMER_LOGOS.map((logo, index) => (
+                    <div className="export-logo-slot" key={index}>
+                      <img
+                        src={logo}
+                        alt={`Customer logo ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="export-verify-actions">
-               {/* <button className="btn btn-primary" onClick={() => exportTrack('company_verification_download')}>
+                {/* <button className="btn btn-primary" onClick={() => exportTrack('company_verification_download')}>
                   Download Company Verification Pack <span className="arrow" aria-hidden="true">→</span>
                 </button> */}
                 <button className="btn btn-ghost on-dark" onClick={() => exportTrack('clearance_scheme_view', { action: 'view_address' })}>
