@@ -167,7 +167,7 @@ function PageContact({ navigate }) {
           firstErrEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
           const inputEl = firstErrEl.querySelector('input, select, textarea');
           if (inputEl && typeof inputEl.focus === 'function') {
-            try { inputEl.focus({ preventScroll: true }); } catch (err) {}
+            try { inputEl.focus({ preventScroll: true }); } catch (err) { }
           }
         } else {
           const formElement = document.querySelector('.contact-form');
@@ -241,7 +241,8 @@ function PageContact({ navigate }) {
       };
 
       const APPS_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec";
+        /*"https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec";*/
+        "https://script.google.com/macros/s/AKfycbwJ-_zxHK3TsfBNDv--ecQvNgiqenFzFgt0C3S37vvB0eFkK8dKLvzdfObkSLjj5BsYCQ/exec"
 
       console.log("Submitting payload:", payload);
       console.log("APPS_SCRIPT_URL", APPS_SCRIPT_URL)

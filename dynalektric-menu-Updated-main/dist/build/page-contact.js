@@ -209,7 +209,10 @@ function PageContact({ navigate }) {
         uploadedDocument,
         receivedAt: (/* @__PURE__ */ new Date()).toISOString()
       };
-      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec";
+      const APPS_SCRIPT_URL = (
+        /*"https://script.google.com/macros/s/AKfycby1UatbrZ2r8O-eeGhmKKyKbiTjHBOZ_vW-19MKHifZEd0cq4PGcXFw-0Jkoy71bWx2/exec";*/
+        "https://script.google.com/macros/s/AKfycbwJ-_zxHK3TsfBNDv--ecQvNgiqenFzFgt0C3S37vvB0eFkK8dKLvzdfObkSLjj5BsYCQ/exec"
+      );
       console.log("Submitting payload:", payload);
       console.log("APPS_SCRIPT_URL", APPS_SCRIPT_URL);
       const response = await fetch(

@@ -3243,15 +3243,17 @@ img, video, svg, image-slot { max-width: 100%; }
   line-height: 1.65;
 }
 .prodx-group-image {
-  aspect-ratio: 4 / 3;
-  background: var(--bg-card);
+  aspect-ratio: auto;
+  height: auto;
+  background: transparent;
   border: 1px solid var(--rule);
   overflow: hidden;
+  border-radius: 12px;
 }
 .prodx-group-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover !important;
+  height: auto;
+  object-fit: contain !important;
   display: block;
 }
 .prodx-group-image image-slot {
@@ -3669,16 +3671,17 @@ img, video, svg, image-slot { max-width: 100%; }
    visible on mobile even when the source file is missing.
    ============================================================ */
 .prodx-detail-img-wrap {
-  aspect-ratio: 4 / 3;
-  background: var(--bg-card);
+  aspect-ratio: auto;
+  height: auto;
+  background: transparent;
   border: 1px solid var(--rule);
   overflow: hidden;
   border-radius: 8px;
 }
 .prodx-detail-img-wrap img {
   width: 100%;
-  height: 100%;
-  object-fit: cover !important;
+  height: auto;
+  object-fit: contain !important;
   display: block;
 }
 .prodx-img-placeholder {
@@ -3883,19 +3886,19 @@ img, video, svg, image-slot { max-width: 100%; }
    ============================================================ */
 .export-hero-visual {
   position: relative !important;
-  aspect-ratio: 4 / 3 !important;
+  aspect-ratio: auto !important;
+  height: auto !important;
   overflow: hidden !important;
-  background: var(--bg-alt) !important;
+  background: transparent !important;
   border: 1px solid var(--rule) !important;
   display: block !important;
   width: 100% !important;
 }
 .export-hero-visual img {
-  position: absolute !important;
-  inset: 0 !important;
+  position: static !important;
   width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+  height: auto !important;
+  object-fit: contain !important;
   transform: none !important;
   animation: none !important;
   display: block !important;
