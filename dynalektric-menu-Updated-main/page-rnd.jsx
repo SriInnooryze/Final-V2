@@ -145,7 +145,7 @@ function PageRnd({ navigate }) {
             </div>
            <div style={{ aspectRatio: '4/3' }}>
             <img
-              src="./assets/engineering-npd-optimized.webp"
+              src="./assets/Eng-bench.png"
               alt="Dynalektric engineering and manufacturing"
               width="720"
               height="540"

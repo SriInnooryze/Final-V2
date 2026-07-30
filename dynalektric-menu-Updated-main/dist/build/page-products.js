@@ -24,6 +24,7 @@ const GROUP_IMG_FILENAME = {
 const SUBCAT_IMG_FILENAME = {
   "02.3": "02.3.png",
   "02.4": "02.4.png",
+  "03.3": "03.3.png",
   "04.4": "04.4.png"
 };
 const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
@@ -39,6 +40,7 @@ const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
   "02.4",
   "03.1",
   "03.2",
+  "03.3",
   "04.1",
   "04.2",
   "04.3",

@@ -612,7 +612,7 @@ function PageHome({ navigate, tweaks }) {
     "image-slot",
     {
       id: "home-engineering-npd",
-      src: window.__resources && window.__resources.engineeringNpd || "assets/engineering-npd-optimized.webp",
+      src: window.__resources && window.__resources.engineeringNpd || "assets/Eng-bench.png",
       fit: "cover",
       position: "50% 50%",
       placeholder: "Replace with a Dynalektric in-house engineering and assembly image",
