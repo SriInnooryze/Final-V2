@@ -3,6 +3,7 @@
 // Actual filenames on disk differ from group IDs for case-sensitive Linux servers
 const GROUP_IMG_FILENAME = {
   'control-panels': 'control-Panels.jpg',
+  'cross-segment': 'card-integrated-optimized.webp'
 };
 const SUBCAT_IMG_FILENAME = {
   '04.4': '04.4.png',

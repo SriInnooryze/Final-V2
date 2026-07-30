@@ -3,6 +3,7 @@
 // Actual filenames on disk differ from group IDs for case-sensitive Linux servers
 const GROUP_IMG_FILENAME = {
   'control-panels': 'control-Panels.jpg',
+  'cross-segment': 'card-integrated-optimized.webp'
 };
 const SUBCAT_IMG_FILENAME = {
   '04.4': '04.4.png',
@@ -262,6 +263,11 @@ function PageProducts({ navigate, focusId }) {
         alt={sub.name}
         loading="lazy"
         decoding="async"
+        onError={(e) => {
+          if (e.target.src.indexOf('.png') !== -1) {
+            e.target.src = `./assets/${sub.code}.jpg`;
+          }
+        }}
         style={{
           width: "100%",
           height: "100%",

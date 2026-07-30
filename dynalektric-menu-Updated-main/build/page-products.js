@@ -18,7 +18,8 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 const GROUP_IMG_FILENAME = {
-  "control-panels": "control-Panels.jpg"
+  "control-panels": "control-Panels.jpg",
+  "cross-segment": "card-integrated-optimized.webp"
 };
 const SUBCAT_IMG_FILENAME = {
   "04.4": "04.4.png"
@@ -176,7 +177,7 @@ function PageProducts({ navigate, focusId }) {
         loading: "lazy",
         decoding: "async",
         onError: (e) => {
-          if (e.target.src.indexOf('.png') !== -1) {
+          if (e.target.src.indexOf(".png") !== -1) {
             e.target.src = `./assets/${sub.code}.jpg`;
           }
         },
