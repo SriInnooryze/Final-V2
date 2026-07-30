@@ -175,6 +175,11 @@ function PageProducts({ navigate, focusId }) {
         alt: sub.name,
         loading: "lazy",
         decoding: "async",
+        onError: (e) => {
+          if (e.target.src.indexOf('.png') !== -1) {
+            e.target.src = `./assets/${sub.code}.jpg`;
+          }
+        },
         style: {
           width: "100%",
           height: "100%",
