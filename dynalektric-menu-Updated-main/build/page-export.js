@@ -233,8 +233,10 @@ function PageExport({ navigate }) {
       loading: "lazy",
       decoding: "async",
       onError: (e) => {
-        if (e.target.src.indexOf(".png") !== -1) {
-          e.target.src = logo.replace(".png", ".webp");
+        if (e.target.src.indexOf("Logo%207.png") !== -1 || e.target.src.indexOf("Logo%207") !== -1) {
+          e.target.src = "./assets/Logo7.png";
+        } else if (e.target.src.indexOf("Logo7.png") !== -1) {
+          e.target.src = "./assets/Logo7.webp";
         }
       }
     }
