@@ -756,10 +756,10 @@
   font-size: 13px;
   font-weight: 500;
   padding: 8px 14px;
-  background: var(--bg-alt);
-  border: 1px solid var(--rule);
+  background: var(--accent-2-soft);
+  border: 1px solid var(--accent-2-soft);
   border-radius: var(--radius);
-  color: var(--ink-soft);
+  color: var(--accent-2);
 }
 .exp-reach-chip-ind {
   background: var(--accent-2-soft);

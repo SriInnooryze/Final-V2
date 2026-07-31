@@ -5,7 +5,7 @@
    kept local so the About/Export pages that reuse CERTIFICATIONS are
    unaffected.
    ============================================================ */
-const HOME_CERTIFICATIONS = [...CERTIFICATIONS, { code: 'UL', label: 'USA & Canada' }];
+const HOME_CERTIFICATIONS = CERTIFICATIONS;
 
 /* ============================================================
    Capability flip carousel (Home — "What we engineer")
