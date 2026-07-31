@@ -293,11 +293,11 @@
 .org-caps {
   list-style: none;
   margin-top: 34px;
-  border-top: 1px solid var(--rule-soft);
+  border-top: 1px solid var(--rule);
 }
 .org-caps li {
   padding: 20px 0;
-  border-bottom: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule);
 }
 .org-caps h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.005em; color: var(--ink); }
 .org-caps p { margin-top: 6px; color: var(--ink-soft); max-width: 52ch; }
@@ -307,8 +307,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: var(--rule-soft);
-  border: 1px solid var(--rule-soft);
+  background: var(--rule);
+  border: 1px solid var(--rule);
 }
 .org-proof-item {
   background: var(--bg);
@@ -3910,4 +3910,39 @@ img, video, svg, image-slot { max-width: 100%; }
 .export-page-hero > .container {
   align-items: flex-start !important;
   min-height: unset !important;
+}
+
+/* ============================================================
+   Site-Wide Unified Side Headings & Eyebrows
+   Enforces consistent font-family, font-size, font-weight,
+   letter-spacing, uppercase transform and brand color everywhere.
+   ============================================================ */
+.eyebrow,
+.eyebrow-label,
+.about-eyebrow,
+.section-head .eyebrow,
+.section-head .eyebrow .mono,
+.section-head .eyebrow .label,
+.page-hero-copy .mono,
+.page-hero .mono,
+.qa-process-heading,
+.home-main .eyebrow-label {
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+}
+
+.on-dark .eyebrow,
+.on-dark .eyebrow-label,
+.eyebrow-label.on-dark,
+.section-head .eyebrow .mono.on-dark {
+  color: var(--brand-light) !important;
+}
+
+.about-stats .mono {
+  color: rgba(244, 244, 241, 0.6) !important;
 }
