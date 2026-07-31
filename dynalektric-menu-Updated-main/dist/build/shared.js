@@ -170,7 +170,8 @@ const CERTIFICATIONS = [
   { code: "ISO 14001", label: "Environmental management" },
   { code: "ISO 45001", label: "Occupational health and safety" },
   { code: "IEC", label: "International standards" },
-  { code: "CE", label: "European conformity" }
+  { code: "CE", label: "European conformity" },
+  { code: "UL", label: "USA & Canada" }
 ];
 const STATS = [
   { value: "40+", label: "Years of in-house engineering", sub: "Established 2020" },

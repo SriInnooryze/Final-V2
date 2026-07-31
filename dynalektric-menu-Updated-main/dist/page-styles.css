@@ -1272,7 +1272,7 @@
 
 .cert-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--rule-soft);
   border: 1px solid var(--rule-soft);
@@ -1777,6 +1777,7 @@
 }
 .industry-detail .apps li:last-child:nth-child(odd) {
   grid-column: span 2;
+  text-align: center;
 }
 .industry-info-row {
   display: grid;
@@ -3774,6 +3775,7 @@ img, video, svg, image-slot { max-width: 100%; }
   }
   .industry-detail .apps li:last-child:nth-child(odd) {
     grid-column: span 1;
+    text-align: center;
   }
   .industry-detail .apps li {
     padding: 8px 10px;

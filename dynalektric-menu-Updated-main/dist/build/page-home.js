@@ -1,4 +1,4 @@
-const HOME_CERTIFICATIONS = [...CERTIFICATIONS, { code: "UL", label: "USA & Canada" }];
+const HOME_CERTIFICATIONS = CERTIFICATIONS;
 const CAPABILITIES = [
   {
     num: "01",
