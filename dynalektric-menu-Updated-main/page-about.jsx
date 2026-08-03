@@ -12,8 +12,8 @@ const FOUNDERS = [
 // page-home.jsx for the same pattern); `src` supplies the real logo so the
 // slot no longer falls back to the empty-state placeholder.
 const SUPPORTED_BY = [
-  { id: 'royal-group', name: 'Royal Group', logoSlotId: 'about-supported-royal-group', url: 'https://www.royalconstruct.com/', img: './assets/royal-group-logo.jpg' },
-  { id: 'pride-group', name: 'Pride Group', logoSlotId: 'about-supported-pride-group', url: 'https://www.pridegroup.net/', img: './assets/pride-group-logo.png' },
+  { id: 'royal-group', name: 'Royal Group', logoSlotId: 'about-supported-royal-group', url: 'https://www.royalconstruct.com/', img: './assets/royal-group-logo.jpg', width: 168 },
+  { id: 'pride-group', name: 'Pride Group', logoSlotId: 'about-supported-pride-group', url: 'https://www.pridegroup.net/', img: './assets/pride-group-logo.png', width: 64 },
 ];
 
 function PageAbout({ navigate }) {
@@ -112,7 +112,7 @@ function PageAbout({ navigate }) {
                 <image-slot
                   id={p.logoSlotId}
                   src={(window.__resources && window.__resources[p.id]) || p.img}
-                  style={{ width: 168, height: 64, marginBottom: 24 }}
+                  style={{ width: p.width, height: 64, marginBottom: 24 }}
                   fit="contain"
                   shape="rect"
                   placeholder={`Replace with official ${p.name} logo`}

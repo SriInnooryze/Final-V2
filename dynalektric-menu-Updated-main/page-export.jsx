@@ -492,7 +492,34 @@ function PageExport({ navigate }) {
                 {EXP_LEGAL.map(f => (
                   <div className="exp-spec-row" key={f.k}>
                     <span className="exp-label">{f.k}</span>
-                    <span className="exp-spec-val">{f.v}</span>
+                    <span className="exp-spec-val">
+                      {f.cta ? (
+                        <a
+                          href={f.url || '#'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="exp-cert-cta-btn"
+                          onClick={(e) => {
+                            if (typeof exportTrack === 'function') exportTrack('iec_certificate_view');
+                            if (!f.url || f.url === '#') {
+                              e.preventDefault();
+                              alert('IEC Certificate is on file and available upon request.');
+                            }
+                          }}
+                        >
+                          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                          </svg>
+                          <span>{f.ctaText || 'View Certificate'}</span>
+                          <span aria-hidden="true">→</span>
+                        </a>
+                      ) : (
+                        f.v
+                      )}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -548,7 +575,7 @@ function PageExport({ navigate }) {
                 {/* <button className="btn btn-primary" onClick={() => exportTrack('company_verification_download')}>
                   Download Company Verification Pack <span className="arrow" aria-hidden="true">→</span>
                 </button> */}
-                <button className="btn btn-ghost on-dark" onClick={() => exportTrack('clearance_scheme_view', { action: 'view_address' })}>
+                <button className="btn btn-ghost on-dark" onClick={() => { exportTrack('clearance_scheme_view', { action: 'view_address' }); navigate('contact', 'map'); }}>
                   View Registered Address
                 </button>
                 <button className="btn btn-ghost on-dark" onClick={() => { exportTrack('supplier_qualification_click'); navigate('contact'); }}>
