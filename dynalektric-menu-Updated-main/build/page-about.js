@@ -4,8 +4,8 @@ const FOUNDERS = [
   { num: "03", name: "Sangam Patil", role: "Director", linkedin: "https://www.linkedin.com/in/sangamp53/" }
 ];
 const SUPPORTED_BY = [
-  { id: "royal-group", name: "Royal Group", logoSlotId: "about-supported-royal-group", url: "" },
-  { id: "pride-group", name: "Pride Group", logoSlotId: "about-supported-pride-group", url: "" }
+  { id: "royal-group", name: "Royal Group", logoSlotId: "about-supported-royal-group", url: "https://www.royalconstruct.com/", img: "./assets/royal-group-logo.jpg" },
+  { id: "pride-group", name: "Pride Group", logoSlotId: "about-supported-pride-group", url: "https://www.pridegroup.net/", img: "./assets/pride-group-logo.png" }
 ];
 function PageAbout({ navigate }) {
   useReveal();
@@ -34,6 +34,7 @@ function PageAbout({ navigate }) {
     "image-slot",
     {
       id: p.logoSlotId,
+      src: window.__resources && window.__resources[p.id] || p.img,
       style: { width: 168, height: 64, marginBottom: 24 },
       fit: "contain",
       shape: "rect",

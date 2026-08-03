@@ -6,15 +6,14 @@ const FOUNDERS = [
   { num: '03', name: 'Sangam Patil', role: 'Director', linkedin: 'https://www.linkedin.com/in/sangamp53/' },
 ];
 
-// No official Royal Group / Pride Group logo files or website URLs exist
-// anywhere in this project yet. `logoSlotId` renders via the site's existing
-// <image-slot> placeholder convention (see CAPABILITIES in page-home.jsx for
-// the same pattern) so the empty state is obvious and non-breaking. `url` is
-// intentionally blank — fill in the real website once provided, which
-// switches the "Visit Website" control from disabled text to a live link.
+// Official logos fetched from each company's own site (royalconstruct.com,
+// pridegroup.net) and saved under assets/. `logoSlotId` renders via the
+// site's existing <image-slot> placeholder convention (see CAPABILITIES in
+// page-home.jsx for the same pattern); `src` supplies the real logo so the
+// slot no longer falls back to the empty-state placeholder.
 const SUPPORTED_BY = [
-  { id: 'royal-group', name: 'Royal Group', logoSlotId: 'about-supported-royal-group', url: '' },
-  { id: 'pride-group', name: 'Pride Group', logoSlotId: 'about-supported-pride-group', url: '' },
+  { id: 'royal-group', name: 'Royal Group', logoSlotId: 'about-supported-royal-group', url: 'https://www.royalconstruct.com/', img: './assets/royal-group-logo.jpg' },
+  { id: 'pride-group', name: 'Pride Group', logoSlotId: 'about-supported-pride-group', url: 'https://www.pridegroup.net/', img: './assets/pride-group-logo.png' },
 ];
 
 function PageAbout({ navigate }) {
@@ -112,6 +111,7 @@ function PageAbout({ navigate }) {
               <div className="about-partner-item" key={p.id}>
                 <image-slot
                   id={p.logoSlotId}
+                  src={(window.__resources && window.__resources[p.id]) || p.img}
                   style={{ width: 168, height: 64, marginBottom: 24 }}
                   fit="contain"
                   shape="rect"
