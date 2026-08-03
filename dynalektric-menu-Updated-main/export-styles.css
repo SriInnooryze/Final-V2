@@ -38,7 +38,7 @@
 }
 .exp-spec-row:last-child { border-bottom: 0; }
 .exp-label { align-self: center; }
-.exp-spec-val { font-size: 15px; line-height: 1.45; color: var(--ink); font-weight: 500; align-self: center; }
+.exp-spec-val { font-size: 14px; line-height: 1.45; color: var(--ink); font-weight: 500; align-self: center; }
 .exp-spec-rows.on-dark .exp-spec-row { border-color: rgba(255,255,255,0.1); }
 .exp-spec-rows.on-dark .exp-label { color: rgba(244,244,241,0.55); }
 .exp-spec-rows.on-dark .exp-spec-val { color: var(--on-dark); }

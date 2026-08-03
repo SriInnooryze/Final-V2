@@ -58,7 +58,7 @@ const EXP_PORTFOLIO = [
 
 /* ---------- Section 3: trust & verification ---------- */
 const EXP_LEGAL = [
-  { k: 'Company legal name', v: 'DYNALEKTRIC EQUIPMENT PRIVATE LIMITED' },
+  { k: 'Company legal name', v: 'Dynalektric Equipment Private Limited' },
   { k: 'CIN', v: 'U29309KA2019PTC130052' },
   { k: 'GST', v: '29AAHCD5377K1Z1' },
   { k: 'IEC (Importer Exporter Code)', cta: true, ctaText: 'View Certificate', url: './assets/IEC-Certificate.pdf' },

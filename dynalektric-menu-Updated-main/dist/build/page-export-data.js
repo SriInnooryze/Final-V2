@@ -67,10 +67,10 @@ const EXP_PORTFOLIO = [
   }
 ];
 const EXP_LEGAL = [
-  { k: "Company legal name", v: "Awaiting client-approved value" },
-  { k: "CIN", v: "Awaiting client-approved value" },
-  { k: "GST", v: "Awaiting client-approved value" },
-  { k: "IEC (Importer Exporter Code)", v: "On file, reference on request" },
+  { k: "Company legal name", v: "Dynalektric Equipment Private Limited" },
+  { k: "CIN", v: "U29309KA2019PTC130052" },
+  { k: "GST", v: "29AAHCD5377K1Z1" },
+  { k: "IEC (Importer Exporter Code)", cta: true, ctaText: "View Certificate", url: "./assets/IEC-Certificate.pdf" },
   { k: "Registered address", v: "Dynalektric Pvt. Ltd. Manufacturing facility, No-49/2, Vaderamanchanahalli Village,Kallubalu, Anekal Taluk, Jigani Hobli,Bangalore, India- 560105" },
   { k: "D-U-N-S number", v: "Provided if available on request" }
 ];
