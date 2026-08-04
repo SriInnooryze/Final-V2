@@ -295,7 +295,7 @@ function PageAbout({ navigate }) {
           <div className="about-facility-grid">
             <div style={{ aspectRatio: '16/9', overflow: 'hidden', borderRadius: '0' }}>
               <img
-                src="./assets/facility-wide-shot-optimized.webp"
+                src="./assets/facility-wide-shot 2.jpg"
                 alt="Dynalektric manufacturing facility"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 loading="lazy"

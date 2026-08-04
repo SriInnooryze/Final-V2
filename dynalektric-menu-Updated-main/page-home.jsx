@@ -23,7 +23,7 @@ const CAPABILITIES = [
   },
   {
     num: '02', productId: 'control-panels', slotId: 'cap-control',
-    resKey: 'cardControl', img: 'assets/card-control-optimized.webp',
+    resKey: 'cardControl', img: 'assets/card-control-optimized.png',
     title: 'Control Panel Assemblies',
     back: 'Panel and distribution assemblies developed around control, operating, safety and application requirements for railway, power and industrial equipment.',
     labels: ['Control integration', 'Assembly and wiring', 'Testing and documentation'],
@@ -33,7 +33,7 @@ const CAPABILITIES = [
   },
   {
     num: '03', productId: 'power-electronics', slotId: 'cap-power',
-    resKey: 'cardPower', img: 'assets/card-power-optimized.webp',
+    resKey: 'cardPower', img: 'assets/card-power-optimized.png',
     title: 'Power Electronics',
     back: 'DC power, charging and electronic systems configured for equipment duty, operational environments and specialised industrial applications.',
     labels: ['Duty-specific design', 'Power conversion', 'Validation and testing'],
@@ -43,7 +43,7 @@ const CAPABILITIES = [
   },
   {
     num: '04', productId: 'cross-segment', slotId: 'cap-integrated',
-    resKey: 'cardIntegrated', img: 'assets/card-integrated-optimized.webp',
+    resKey: 'cardIntegrated', img: 'assets/card-integrated-optimized.png',
     title: 'Cross Segment Solutions',
     back: 'Supporting electrical and electronic components integrated into railway, power, equipment and cross-sector industrial systems.',
     labels: ['Component integration', 'Custom assemblies', 'Cross-sector applications'],
