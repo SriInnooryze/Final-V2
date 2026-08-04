@@ -63,7 +63,7 @@ function PageRnd({ navigate }) {
             <div className="mono">INNOVATION PORTFOLIO</div>
             <h1>Innovation and R&amp;D portfolio for custom power solutions.</h1>
             <p className="lead">
-              Our engineering capability covers transformers, reactors, control panels, battery chargers and custom electrical assemblies. From design and manufacturing to testing and documentation, Dynalektric supports OEMs, utilities and industrial customers with reliable power solutions.
+              Our engineering capability covers magnetics, control panel assemblies, power electronics and cross segment solutions . From design and manufacturing to testing and documentation, Dynalektric supports OEMs, utilities and industrial customers with reliable power solutions.
             </p>
           </div>
           <div className="page-hero-visual">

@@ -55,6 +55,15 @@ function PageContact({ navigate, focusId }) {
       }, 300);
     }
   }, [focusId]);
+  const [submitted, setSubmitted] = React.useState(false);
+  React.useEffect(() => {
+    if (!submitted) return;
+    const t = setTimeout(() => {
+      const el = document.querySelector(".success-summary");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+    return () => clearTimeout(t);
+  }, [submitted]);
   const [form, setForm] = React.useState({
     name: "",
     company: "",
@@ -70,7 +79,6 @@ function PageContact({ navigate, focusId }) {
   const [file, setFile] = React.useState(null);
   const [fileError, setFileError] = React.useState("");
   const [errors, setErrors] = React.useState({});
-  const [submitted, setSubmitted] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitError, setSubmitError] = React.useState("");
   const [leadId, setLeadId] = React.useState("");
@@ -256,10 +264,6 @@ function PageContact({ navigate, focusId }) {
         result.leadId || ""
       );
       setSubmitted(true);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
     } catch (error) {
       console.error("Submission error details:", error);
       setSubmitError(
@@ -289,63 +293,7 @@ function PageContact({ navigate, focusId }) {
         }
       },
       "Submission reference"
-    ), leadId && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "RFQ Reference"), /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("strong", null, leadId))), form.product && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Product interest"), /* @__PURE__ */ React.createElement("span", null, (PRODUCTS.find((p) => p.id === form.product) || {}).name || form.product)), form.industry && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Industry"), /* @__PURE__ */ React.createElement("span", null, (INDUSTRY_OPTS.find((i) => i.id === form.industry) || {}).label || form.industry)), form.reqType && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Requirement type"), /* @__PURE__ */ React.createElement("span", null, form.reqType)), form.qty && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Quantity range"), /* @__PURE__ */ React.createElement("span", null, form.qty)), file && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Document"), /* @__PURE__ */ React.createElement("span", null, file.name))), /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        style: {
-          display: "flex",
-          gap: 16,
-          justifyContent: "center",
-          flexWrap: "wrap",
-          marginTop: 32
-        }
-      },
-      /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          className: "btn btn-secondary",
-          onClick: () => {
-            setSubmitted(false);
-            setForm({
-              name: "",
-              company: "",
-              email: "",
-              phone: "",
-              country: "",
-              product: "",
-              industry: "",
-              reqType: "",
-              qty: "",
-              message: ""
-            });
-            setFile(null);
-            setFileError("");
-            setErrors({});
-            setSubmitError("");
-            setLeadId("");
-            setIsSubmitting(false);
-            submissionIdRef.current = crypto.randomUUID();
-            const input = document.getElementById(
-              "rfq-file-input"
-            );
-            if (input) {
-              input.value = "";
-            }
-          }
-        },
-        "Submit another"
-      ),
-      /* @__PURE__ */ React.createElement(
-        "button",
-        {
-          className: "btn btn-primary",
-          onClick: () => navigate("home")
-        },
-        "Back to home",
-        " ",
-        /* @__PURE__ */ React.createElement("span", { className: "arrow" }, "\u2192")
-      )
-    )))), /* @__PURE__ */ React.createElement(Footer, { navigate }));
+    ), leadId && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "RFQ Reference"), /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("strong", null, leadId))), form.product && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Product interest"), /* @__PURE__ */ React.createElement("span", null, (PRODUCTS.find((p) => p.id === form.product) || {}).name || form.product)), form.industry && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Industry"), /* @__PURE__ */ React.createElement("span", null, (INDUSTRY_OPTS.find((i) => i.id === form.industry) || {}).label || form.industry)), form.reqType && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Requirement type"), /* @__PURE__ */ React.createElement("span", null, form.reqType)), form.qty && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Quantity range"), /* @__PURE__ */ React.createElement("span", null, form.qty)), file && /* @__PURE__ */ React.createElement("div", { className: "success-row" }, /* @__PURE__ */ React.createElement("span", { className: "mono" }, "Document"), /* @__PURE__ */ React.createElement("span", null, file.name)))))), /* @__PURE__ */ React.createElement(Footer, { navigate }));
   }
   return /* @__PURE__ */ React.createElement("main", { className: "page-enter" }, /* @__PURE__ */ React.createElement("section", { className: "page-hero page-hero--split contact-hero" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "page-hero-copy" }, /* @__PURE__ */ React.createElement("div", { className: "mono" }, "CONTACT DYNALEKTRIC"), /* @__PURE__ */ React.createElement("h1", null, "Discuss your engineering requirement."), /* @__PURE__ */ React.createElement("p", { className: "lead" }, "Share your product requirement, application details and a supporting document. Our team will review and respond with the next steps.")), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual" }, /* @__PURE__ */ React.createElement(
     "img",
@@ -392,7 +340,7 @@ function PageContact({ navigate, focusId }) {
       disabled: isSubmitting
     },
     isSubmitting ? "Submitting..." : /* @__PURE__ */ React.createElement(React.Fragment, null, "Submit RFQ", " ", /* @__PURE__ */ React.createElement("span", { className: "arrow" }, "\u2192"))
-  ))), /* @__PURE__ */ React.createElement("aside", { className: "contact-info reveal" }, /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Sales enquiries"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "sales01@dynalektric.com")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "General email"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "cs@dynalektric.com")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Phone"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "+91-903 554 2821"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "+91-903 554 2827")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Address"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "Dynalektric Pvt. Ltd.", /* @__PURE__ */ React.createElement("br", null), "Manufacturing facility", /* @__PURE__ */ React.createElement("br", null), "No-49/2 Vaderamanchanahalli Village, Kallubalu, Anekal Taluk, Jigani Hobli, Bangalore, India- 560105")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Working hours"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "Mon to Sat, 09:00 to 21:00 IST")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "For procurement teams"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "Request our supplier qualification pack, ISO certificates and sample test reports by email.")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Response window"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "One business day for complete specifications. Larger scopes may take longer, subject to engineering review.")), /* @__PURE__ */ React.createElement("div", { className: "contact-map", id: "contact-map" }, /* @__PURE__ */ React.createElement(
+  ))), /* @__PURE__ */ React.createElement("aside", { className: "contact-info reveal" }, /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Sales enquiries"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "sales01@dynalektric.com")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "General email"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "cs@dynalektric.com")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Phone"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "+91-903 554 2821"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "+91-903 554 2827")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Address"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "Dynalektric Equipment Pvt. Ltd.", /* @__PURE__ */ React.createElement("br", null), "Manufacturing facility,", /* @__PURE__ */ React.createElement("br", null), "No-49/2 Vaderamanchanahalli Village, Kallubalu, Anekal Taluk, Jigani Hobli, Bangalore, India- 560105")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Working hours"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "Mon to Sat, 09:00 to 21:00 IST")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "For procurement teams"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "Request our supplier qualification pack, ISO certificates and sample test reports by email.")), /* @__PURE__ */ React.createElement("div", { className: "contact-info-block" }, /* @__PURE__ */ React.createElement("div", { className: "label" }, "Response window"), /* @__PURE__ */ React.createElement("div", { className: "value" }, "One business day for complete specifications. Larger scopes may take longer, subject to engineering review.")), /* @__PURE__ */ React.createElement("div", { className: "contact-map", id: "contact-map" }, /* @__PURE__ */ React.createElement(
     "iframe",
     {
       src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.2830804704245!2d77.62583052848488!3d12.769318741084197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae69fde1bc74cd%3A0x9dbf3aaa6f14c1c7!2sDynalektric%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1781670618586!5m2!1sen!2sin",

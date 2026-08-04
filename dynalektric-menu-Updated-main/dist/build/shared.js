@@ -174,7 +174,7 @@ const CERTIFICATIONS = [
   { code: "UL", label: "USA & Canada" }
 ];
 const STATS = [
-  { value: "40+", label: "Years of in-house engineering", sub: "Established 2020" },
+  { value: "5+", label: "Years of in-house engineering", sub: "Established 2020" },
   { value: "500+", label: "Custom designs delivered", sub: "Magnetics, panels and systems" },
   { value: "15+", label: "Export markets served", sub: "Europe, Middle East, Asia" },
   { value: "1 day", label: "Typical RFQ response time", sub: "For complete specifications" }

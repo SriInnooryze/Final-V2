@@ -101,6 +101,14 @@ const CERT_STATUS = {
   progress:  { label: 'In Progress', cls: 'is-progress' },
   available: { label: 'Available based on requirement', cls: 'is-available' },
 };
+// The "available" label is long enough to blow the badge out to double the
+// width of the others, which throws off row alignment in the certs table —
+// wrap it onto two lines wherever it renders as a badge (not the legend key,
+// which has room to run on one line).
+function CertBadgeLabel({ status }) {
+  if (status === 'available') return <React.Fragment>Available based on<br />requirement</React.Fragment>;
+  return CERT_STATUS[status].label;
+}
 
 /* ---------- Section 5: destination-market clearance ---------- */
 const EXP_CLEARANCE = [
@@ -379,7 +387,7 @@ function CertMatrix() {
                 </span>
                 <span role="cell">
                   <span className={`exp-cert-badge ${CERT_STATUS[r.status].cls}`}>
-                    <span className="exp-cert-dot" aria-hidden="true" />{CERT_STATUS[r.status].label}
+                    <span className="exp-cert-dot" aria-hidden="true" /><CertBadgeLabel status={r.status} />
                   </span>
                 </span>
                 <span role="cell" className="exp-cert-meta">{r.product}</span>
@@ -408,7 +416,7 @@ function CertCard({ r }) {
       <button className="exp-cert-card-head" aria-expanded={open} onClick={() => { setOpen(!open); if (!open) exportTrack('clearance_scheme_view', { cert: r.name }); }}>
         <span className="exp-cert-card-name">{r.name}</span>
         <span className={`exp-cert-badge ${CERT_STATUS[r.status].cls}`}>
-          <span className="exp-cert-dot" aria-hidden="true" />{CERT_STATUS[r.status].label}
+          <span className="exp-cert-dot" aria-hidden="true" /><CertBadgeLabel status={r.status} />
         </span>
         <span className="exp-cert-card-icon" aria-hidden="true">{open ? '–' : '+'}</span>
       </button>

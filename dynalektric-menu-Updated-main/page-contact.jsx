@@ -43,6 +43,17 @@ function PageContact({ navigate, focusId }) {
       }, 300);
     }
   }, [focusId]);
+
+  const [submitted, setSubmitted] = React.useState(false);
+  React.useEffect(() => {
+    if (!submitted) return;
+    const t = setTimeout(() => {
+      const el = document.querySelector('.success-summary');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+    return () => clearTimeout(t);
+  }, [submitted]);
+
   const [form, setForm] = React.useState({
     name: '', company: '', email: '', phone: '', country: '',
     product: '', industry: '', reqType: '', qty: '',
@@ -51,7 +62,6 @@ function PageContact({ navigate, focusId }) {
   const [file, setFile] = React.useState(null);
   const [fileError, setFileError] = React.useState('');
   const [errors, setErrors] = React.useState({});
-  const [submitted, setSubmitted] = React.useState(false);
 
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitError, setSubmitError] = React.useState('');
@@ -298,11 +308,6 @@ function PageContact({ navigate, focusId }) {
 
       setSubmitted(true);
 
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-
     } catch (error) {
       console.error("Submission error details:", error);
 
@@ -402,64 +407,6 @@ function PageContact({ navigate, focusId }) {
                     <span>{file.name}</span>
                   </div>
                 )}
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 16,
-                  justifyContent: 'center',
-                  flexWrap: 'wrap',
-                  marginTop: 32
-                }}
-              >
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => {
-                    setSubmitted(false);
-
-                    setForm({
-                      name: '',
-                      company: '',
-                      email: '',
-                      phone: '',
-                      country: '',
-                      product: '',
-                      industry: '',
-                      reqType: '',
-                      qty: '',
-                      message: ''
-                    });
-
-                    setFile(null);
-                    setFileError('');
-                    setErrors({});
-                    setSubmitError('');
-                    setLeadId('');
-                    setIsSubmitting(false);
-
-                    submissionIdRef.current =
-                      crypto.randomUUID();
-
-                    const input =
-                      document.getElementById(
-                        'rfq-file-input'
-                      );
-
-                    if (input) {
-                      input.value = '';
-                    }
-                  }}
-                >
-                  Submit another
-                </button>
-
-                <button
-                  className="btn btn-primary"
-                  onClick={() => navigate('home')}
-                >
-                  Back to home{' '}
-                  <span className="arrow">→</span>
-                </button>
               </div>
             </div>
           </div>
@@ -670,7 +617,7 @@ function PageContact({ navigate, focusId }) {
             </div>
             <div className="contact-info-block">
               <div className="label">Address</div>
-              <div className="value">Dynalektric Pvt. Ltd.<br />Manufacturing facility<br />No-49/2
+              <div className="value">Dynalektric Equipment Pvt. Ltd.<br />Manufacturing facility,<br />No-49/2
                 Vaderamanchanahalli Village,
                 Kallubalu, Anekal Taluk,
                 Jigani Hobli,

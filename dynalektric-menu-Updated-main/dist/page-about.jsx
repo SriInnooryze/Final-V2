@@ -6,15 +6,14 @@ const FOUNDERS = [
   { num: '03', name: 'Sangam Patil', role: 'Director', linkedin: 'https://www.linkedin.com/in/sangamp53/' },
 ];
 
-// No official Royal Group / Pride Group logo files or website URLs exist
-// anywhere in this project yet. `logoSlotId` renders via the site's existing
-// <image-slot> placeholder convention (see CAPABILITIES in page-home.jsx for
-// the same pattern) so the empty state is obvious and non-breaking. `url` is
-// intentionally blank — fill in the real website once provided, which
-// switches the "Visit Website" control from disabled text to a live link.
+// Official logos fetched from each company's own site (royalconstruct.com,
+// pridegroup.net) and saved under assets/. `logoSlotId` renders via the
+// site's existing <image-slot> placeholder convention (see CAPABILITIES in
+// page-home.jsx for the same pattern); `src` supplies the real logo so the
+// slot no longer falls back to the empty-state placeholder.
 const SUPPORTED_BY = [
-  { id: 'royal-group', name: 'Royal Group', logoSlotId: 'about-supported-royal-group', url: '' },
-  { id: 'pride-group', name: 'Pride Group', logoSlotId: 'about-supported-pride-group', url: '' },
+  { id: 'royal-group', name: 'Royal Group', logoSlotId: 'about-supported-royal-group', url: 'https://www.royalconstruct.com/', img: './assets/royal-group-logo.jpg', width: 168 },
+  { id: 'pride-group', name: 'Pride Group', logoSlotId: 'about-supported-pride-group', url: 'https://www.pridegroup.net/', img: './assets/pride-group-logo.png', width: 64 },
 ];
 
 function PageAbout({ navigate }) {
@@ -28,7 +27,7 @@ function PageAbout({ navigate }) {
             <div className="mono">ABOUT DYNALEKTRIC</div>
             <h1>Engineering-led electrical and electronics manufacturing.</h1>
             <p className="lead">
-              Dynalektric designs and manufactures custom magnetics, transformers, control panels and power electronics for OEMs, EPC contractors and utilities. We engineer to specification, test in-house and document everything we ship.
+              Dynalektric designs and manufactures magnetics, control panel assemblies, power electronics and cross segment solutions for OEMs, EPC contractors and utilities. We engineer to specification, test in-house and document everything we ship.
             </p>
           </div>
           <div className="page-hero-visual">
@@ -112,7 +111,8 @@ function PageAbout({ navigate }) {
               <div className="about-partner-item" key={p.id}>
                 <image-slot
                   id={p.logoSlotId}
-                  style={{ width: 168, height: 64, marginBottom: 24 }}
+                  src={(window.__resources && window.__resources[p.id]) || p.img}
+                  style={{ width: p.width, height: 64, marginBottom: 24 }}
                   fit="contain"
                   shape="rect"
                   placeholder={`Replace with official ${p.name} logo`}
@@ -147,7 +147,7 @@ function PageAbout({ navigate }) {
           <div className="mono" style={{ color: 'rgba(244,244,241,0.6)', marginBottom: 40, textAlign: 'center' }}>By the numbers</div>
           <div className="about-stats">
             <div style={{ textAlign: 'center' }}>
-              <div className="big-num" style={{ marginBottom: 16, color: '#ffffff' }}><Counter to={40} />+</div>
+              <div className="big-num" style={{ marginBottom: 16, color: '#ffffff' }}><Counter to={5} />+</div>
               <div className="mono" style={{ color: 'rgba(244,244,241,0.6)', marginBottom: 8 }}>Years</div>
               <p style={{ fontSize: 14, color: 'rgba(244,244,241,0.75)' }}>Of in-house engineering and manufacturing</p>
             </div>

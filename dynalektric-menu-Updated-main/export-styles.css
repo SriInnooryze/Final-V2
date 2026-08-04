@@ -237,8 +237,10 @@
   background-size: 24px 24px;
 }
 .export-map .mono { color: rgba(244,244,241,0.45); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
-.export-logo-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 18px; }
+.export-logo-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 18px; }
 .export-logo-slot {
+  flex: 0 0 calc((100% - 10px) / 2);
+  box-sizing: border-box;
   height: 80px;
   border: 1px dashed rgba(255,255,255,0.18);
   border-radius: var(--radius);
@@ -1027,7 +1029,6 @@
   .export-timeline { grid-template-columns: 1fr; }
   .export-doc-cols { grid-template-columns: 1fr; gap: 18px; }
   .export-quality-list .export-tick-list { columns: 1; }
-  .export-logo-row { grid-template-columns: 1fr 1fr; }
   .exp-select-result-head { flex-direction: column; }
   .exp-path-tags { align-items: flex-start; flex-direction: row; }
   .exp-spec-row { grid-template-columns: 1fr; gap: 4px; }

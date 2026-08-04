@@ -570,7 +570,7 @@ function OrgSection({ navigate }) {
     { t: 'Testing and documentation', d: 'Inspection, validation and documentation aligned to product and project requirements.' },
   ];
   const proof = [
-    { k: 'Since 1980', v: 'Engineering and manufacturing' },
+    { k: 'Since 2020', v: 'Engineering and manufacturing' },
     { k: 'In-house', v: 'Design, production and testing' },
     { k: 'Six sectors', v: 'Industries supported' },
     { k: 'Export ready', v: 'Documentation and delivery' },
@@ -849,9 +849,10 @@ function PageHome({ navigate, tweaks }) {
               <div className="rnd-teaser-figure">
                 <image-slot
                   id="home-engineering-npd"
-                  src={(window.__resources && window.__resources.engineeringNpd) || 'assets/Eng-bench.png'}
-                  fit="cover"
-                  position="50% 50%"
+                  src={(window.__resources && window.__resources.engineeringNpd) || 'assets/Home-Eng-bench.png'}
+                  fit="contain"
+                  position="center"
+                  
                   placeholder="Replace with a Dynalektric in-house engineering and assembly image"
                   aria-label="Dynalektric engineers developing and assembling a custom electrical solution in-house"
                   shape="rect"

@@ -28,8 +28,32 @@ const INDUSTRY_OPTS = [
 
 const ACCEPTED_FILE_TYPES = '.pdf,.doc,.docx,.xls,.xlsx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
-function PageContact({ navigate }) {
+function PageContact({ navigate, focusId }) {
   useReveal();
+
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    const searchFocus = focusId || new URLSearchParams(window.location.search).get('focus');
+    if (searchFocus === 'map' || searchFocus === 'address' || hash === '#map' || hash === '#contact-map') {
+      setTimeout(() => {
+        const el = document.getElementById('contact-map') || document.querySelector('.contact-map');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 300);
+    }
+  }, [focusId]);
+
+  const [submitted, setSubmitted] = React.useState(false);
+  React.useEffect(() => {
+    if (!submitted) return;
+    const t = setTimeout(() => {
+      const el = document.querySelector('.success-summary');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+    return () => clearTimeout(t);
+  }, [submitted]);
+
   const [form, setForm] = React.useState({
     name: '', company: '', email: '', phone: '', country: '',
     product: '', industry: '', reqType: '', qty: '',
@@ -38,7 +62,6 @@ function PageContact({ navigate }) {
   const [file, setFile] = React.useState(null);
   const [fileError, setFileError] = React.useState('');
   const [errors, setErrors] = React.useState({});
-  const [submitted, setSubmitted] = React.useState(false);
 
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submitError, setSubmitError] = React.useState('');
@@ -285,11 +308,6 @@ function PageContact({ navigate }) {
 
       setSubmitted(true);
 
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-
     } catch (error) {
       console.error("Submission error details:", error);
 
@@ -389,64 +407,6 @@ function PageContact({ navigate }) {
                     <span>{file.name}</span>
                   </div>
                 )}
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 16,
-                  justifyContent: 'center',
-                  flexWrap: 'wrap',
-                  marginTop: 32
-                }}
-              >
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => {
-                    setSubmitted(false);
-
-                    setForm({
-                      name: '',
-                      company: '',
-                      email: '',
-                      phone: '',
-                      country: '',
-                      product: '',
-                      industry: '',
-                      reqType: '',
-                      qty: '',
-                      message: ''
-                    });
-
-                    setFile(null);
-                    setFileError('');
-                    setErrors({});
-                    setSubmitError('');
-                    setLeadId('');
-                    setIsSubmitting(false);
-
-                    submissionIdRef.current =
-                      crypto.randomUUID();
-
-                    const input =
-                      document.getElementById(
-                        'rfq-file-input'
-                      );
-
-                    if (input) {
-                      input.value = '';
-                    }
-                  }}
-                >
-                  Submit another
-                </button>
-
-                <button
-                  className="btn btn-primary"
-                  onClick={() => navigate('home')}
-                >
-                  Back to home{' '}
-                  <span className="arrow">→</span>
-                </button>
               </div>
             </div>
           </div>
@@ -657,7 +617,7 @@ function PageContact({ navigate }) {
             </div>
             <div className="contact-info-block">
               <div className="label">Address</div>
-              <div className="value">Dynalektric Pvt. Ltd.<br />Manufacturing facility<br />No-49/2
+              <div className="value">Dynalektric Equipment Pvt. Ltd.<br />Manufacturing facility,<br />No-49/2
                 Vaderamanchanahalli Village,
                 Kallubalu, Anekal Taluk,
                 Jigani Hobli,
@@ -679,7 +639,7 @@ function PageContact({ navigate }) {
                 One business day for complete specifications. Larger scopes may take longer, subject to engineering review.
               </div>
             </div>
-            <div className="contact-map">
+            <div className="contact-map" id="contact-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7782.2830804704245!2d77.62583052848488!3d12.769318741084197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae69fde1bc74cd%3A0x9dbf3aaa6f14c1c7!2sDynalektric%20Equipment%20Private%20Limited!5e0!3m2!1sen!2sin!4v1781670618586!5m2!1sen!2sin"
                 width="100%"
