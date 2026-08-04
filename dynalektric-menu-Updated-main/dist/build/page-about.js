@@ -64,7 +64,7 @@ function PageAbout({ navigate }) {
   )), /* @__PURE__ */ React.createElement("div", { className: "about-facility-sub" }, /* @__PURE__ */ React.createElement("div", { style: { overflow: "hidden", borderRadius: "0", height: "100%" } }, /* @__PURE__ */ React.createElement(
     "img",
     {
-      src: "./assets/winding-floor.jpg",
+      src: "./assets/Ab_2.png",
       alt: "Winding floor \u2014 transformer and magnetics winding",
       style: { width: "100%", height: "100%", objectFit: "cover", display: "block" },
       loading: "lazy",

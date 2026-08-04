@@ -305,7 +305,7 @@ function PageAbout({ navigate }) {
             <div className="about-facility-sub">
               <div style={{ overflow: 'hidden', borderRadius: '0', height: '100%' }}>
                 <img
-                  src="./assets/winding-floor.jpg"
+                  src="./assets/Ab_2.png"
                   alt="Winding floor — transformer and magnetics winding"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   loading="lazy"

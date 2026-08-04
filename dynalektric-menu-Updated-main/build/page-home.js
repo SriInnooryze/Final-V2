@@ -471,7 +471,7 @@ function OrgSection({ navigate }) {
     "image-slot",
     {
       id: "org-image",
-      src: window.__resources && window.__resources.cardMagnetics || "assets/inside-dynalektric.jpg",
+      src: window.__resources && window.__resources.cardMagnetics || "assets/Home_Hero.png",
       fit: "cover",
       position: "50% 50%",
       placeholder: "Replace with a Dynalektric factory floor, engineering team or testing image",

@@ -54,7 +54,7 @@ function PageRnd({ navigate }) {
   return /* @__PURE__ */ React.createElement("main", { className: "page-enter" }, /* @__PURE__ */ React.createElement("section", { className: "page-hero page-hero--split" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "page-hero-copy" }, /* @__PURE__ */ React.createElement("div", { className: "mono" }, "INNOVATION PORTFOLIO"), /* @__PURE__ */ React.createElement("h1", null, "Innovation and R&D portfolio for custom power solutions."), /* @__PURE__ */ React.createElement("p", { className: "lead" }, "Our engineering capability covers magnetics, control panel assemblies, power electronics and cross segment solutions . From design and manufacturing to testing and documentation, Dynalektric supports OEMs, utilities and industrial customers with reliable power solutions.")), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual" }, /* @__PURE__ */ React.createElement(
     "img",
     {
-      src: "./assets/innovation-hero-rnd.png",
+      src: "./assets/innovation-hero.png",
       alt: "Dynalektric R&D lab - engineers testing transformers and control panels",
       width: "720",
       height: "540",
