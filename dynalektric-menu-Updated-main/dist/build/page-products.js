@@ -19,13 +19,15 @@ var __spreadValues = (a, b) => {
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 const GROUP_IMG_FILENAME = {
   "control-panels": "control-Panels.jpg",
-  "cross-segment": "card-integrated-optimized.webp"
+  "cross-segment": "card-integrated-optimized.png"
 };
 const SUBCAT_IMG_FILENAME = {
   "02.3": "02.3.png",
   "02.4": "02.4.png",
   "03.3": "03.3.png",
-  "04.4": "04.4.png"
+  "04.4": "04.4.png",
+  "01.7": "01.7.jpeg",
+  "01.8": "01.8.jpeg"
 };
 const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
   "01.1",
@@ -34,6 +36,8 @@ const SUBCAT_IMG_SET = /* @__PURE__ */ new Set([
   "01.4",
   "01.5",
   "01.6",
+  "01.7",
+  "01.8",
   "02.1",
   "02.2",
   "02.3",
@@ -145,7 +149,7 @@ function PageProducts({ navigate, focusId }) {
         width: "100%",
         height: "auto",
         objectFit: "contain",
-        borderRadius: "12px",
+        borderRadius: "0",
         display: "block"
       }
     }

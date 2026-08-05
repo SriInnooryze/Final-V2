@@ -348,7 +348,7 @@ function PageContact({ navigate, focusId }) {
       height: "400",
       style: {
         border: 0,
-        borderRadius: "12px"
+        borderRadius: "0"
       },
       allowFullScreen: "",
       loading: "lazy",

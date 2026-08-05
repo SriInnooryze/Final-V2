@@ -3,17 +3,19 @@
 // Actual filenames on disk differ from group IDs for case-sensitive Linux servers
 const GROUP_IMG_FILENAME = {
   'control-panels': 'control-Panels.jpg',
-  'cross-segment': 'card-integrated-optimized.webp'
+  'cross-segment': 'card-integrated-optimized.png'
 };
 const SUBCAT_IMG_FILENAME = {
   '02.3': '02.3.png',
   '02.4': '02.4.png',
   '03.3': '03.3.png',
   '04.4': '04.4.png',
+  '01.7': '01.7.jpeg',
+  '01.8': '01.8.jpeg',
 };
 // Sub-category codes that have a corresponding image file in assets/
 const SUBCAT_IMG_SET = new Set([
-  '01.1','01.2','01.3','01.4','01.5','01.6',
+  '01.1','01.2','01.3','01.4','01.5','01.6','01.7','01.8',
   '02.1','02.2','02.3','02.4',
   '03.1','03.2','03.3',
   '04.1','04.2','04.3','04.4','04.5','04.6','04.7','04.8',
@@ -182,7 +184,7 @@ function PageProducts({ navigate, focusId }) {
                     width: "100%",
                     height: "auto",
                     objectFit: "contain",
-                    borderRadius: "12px",
+                    borderRadius: "0",
                     display: "block"
                     }}
                  />

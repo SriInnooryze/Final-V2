@@ -481,7 +481,7 @@ p { color: var(--ink-soft); text-wrap: pretty; font-size: clamp(15px, 1vw, 17px)
 }
 .contact-map{
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 0;
     border: 1px solid var(--rule);
     background: var(--bg-alt);
 }

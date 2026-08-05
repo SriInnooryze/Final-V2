@@ -32,7 +32,7 @@ function PageAbout({ navigate }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="./assets/facility-wide-shot-optimized.webp"
+              src="./assets/About_Hero.jpg"
               alt="Dynalektric manufacturing facility"
               width="720"
               height="540"

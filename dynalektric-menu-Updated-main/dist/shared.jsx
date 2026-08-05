@@ -5,8 +5,8 @@ const PRODUCTS = [
     id: 'magnetics',
     num: '01',
     name: 'Magnetics',
-    tagline: 'LV Transformers, MV Transformers, K-Rated Transformers, Air-Core Reactors, Oil-Cooled Reactors and De-tuned Reactors',
-    overview: 'We design and manufacture a comprehensive range of electrical products including LV Transformers, MV Transformers, K-Rated Transformers, Air-Core Reactors, Oil-Cooled Reactors and De-tuned Reactors. Our solutions are engineered for reliable performance, efficient power distribution and superior power quality across industrial, commercial and utility applications while ensuring safety, durability and optimized system performance.',
+    tagline: 'LV Transformers, MV Transformers, K-Rated Transformers, Air-Core Reactors, Oil-Cooled Reactors, De-tuned Reactors, Converter & Inverter Duty Transformers and Traction Transformers',
+    overview: 'We design and manufacture a comprehensive range of electrical products including LV Transformers, MV Transformers, K-Rated Transformers, Air-Core Reactors, Oil-Cooled Reactors, De-tuned Reactors, Converter & Inverter Duty Transformers, and Traction Transformers. Our solutions are engineered for reliable performance, efficient power distribution, superior power quality, electrical isolation, and dependable operation across industrial, commercial, transportation, renewable energy, and utility applications while ensuring safety, durability, and optimized system performance.',
     subcategories: [
       { code: '01.1', name: 'LV Transformers',          detail: 'LV Transformers are designed to step down electrical voltage to safer and usable levels for industrial, commercial and residential applications. They ensure efficient power distribution with minimal losses and high operational safety.' },
       { code: '01.2', name: 'MV Transformers',          detail: 'MV Transformers are used for voltage transformation in medium-voltage distribution systems and industrial power networks. They provide excellent insulation performance, high efficiency and reliable operation for demanding electrical applications.' },
@@ -14,6 +14,8 @@ const PRODUCTS = [
       { code: '01.4', name: 'Air-Core Reactor',         detail: 'Air-Core Reactors are inductive components without an iron core. They are widely used for fault current limitation, harmonic filtering, voltage stabilization and capacitor bank protection.' },
       { code: '01.5', name: 'Oil-Cooled Reactors',      detail: 'Oil-Cooled Reactors are designed for high-power applications where efficient heat dissipation and continuous operation are essential. They provide dependable performance under heavy electrical loads.' },
       { code: '01.6', name: 'De-tuned Reactor',         detail: 'De-tuned Reactors are used in capacitor banks to prevent harmonic resonance, improve power quality and protect electrical equipment from excessive harmonic currents.' },
+      { code: '01.7', name: 'Converter & Inverter Duty Transformers', detail: 'Specially designed transformers for power electronic applications where AC power is converted to DC or DC power is converted to AC. Engineered for high harmonic currents, voltage stresses, and demanding industrial environments.' },
+      { code: '01.8', name: 'Traction Transformer (Dry-Type & Oil-Cooled)', detail: 'High-reliability traction transformers designed for railway and metro electrification systems, available in both dry-type and oil-cooled configurations.' },
     ],
     placeholders: [
       { k: 'Rating range',    v: '50 VA to 5 MVA' },
@@ -302,6 +304,36 @@ const SUBCAT_DETAIL = {
       { k: 'Datasheet',         v: 'Based on specification' },
     ],
     industries: ['powergrid', 'renewables', 'heavy'],
+  },
+  '01.7': {
+    description: 'Converter & Inverter Duty Transformers are designed for power electronic applications where AC is converted to DC and DC to AC. Built to handle harmonic currents, voltage stress, and varying loads, they provide efficient electrical isolation, reliable voltage transformation, and dependable performance in demanding industrial environments.',
+    applications: ['Variable Frequency Drives (VFDs)', 'Renewable Energy Systems (Solar PV & Wind)', 'Battery Energy Storage Systems (BESS)', 'HVDC Transmission Systems', 'Industrial Motor Drives', 'Static Frequency Converters', 'UPS Systems', 'Electric Vehicle (EV) Charging Infrastructure', 'Electrolysis Plants', 'Railway Traction Systems'],
+    specs: [
+      { k: 'Rating Range',  v: 'Up to 10 MVA' },
+      { k: 'Voltage Class', v: '33 kV Class' },
+      { k: 'Insulation',    v: 'Class A' },
+      { k: 'Cooling',       v: 'ONAN / ONAF' },
+      { k: 'Enclosure',     v: 'IP65' },
+      { k: 'Tests',         v: 'As per Standards' },
+      { k: 'Datasheet',     v: 'As per Standard' },
+      { k: 'Standards',     v: 'IEC 60076 Series, IEEE C57 Series, IS 2026, IEC 61378 (Converter Transformers), IEC 60034 (Motor Drive Applications), IEC 60529 (IP Protection), IEC 60085 (Thermal Classification of Insulation), ANSI/IEEE Standards (as applicable)' },
+    ],
+    industries: ['renewables', 'datacenter', 'heavy', 'powergrid', 'railways'],
+  },
+  '01.8': {
+    description: 'Traction Transformers are engineered for railway and metro electrification systems, supplying power to traction converters and auxiliary equipment. Available in dry-type and oil-cooled designs, they deliver high reliability, excellent thermal performance, and long service life under demanding operating conditions.',
+    applications: ['Electric Railways', 'Metro Rail Systems', 'High-Speed Rail', 'Light Rail Transit (LRT)', 'Tram Systems', 'Locomotives', 'Electric Multiple Units (EMU)', 'Diesel-Electric Locomotives (Auxiliary Supply)', 'Railway Traction Substations', 'Industrial Rail Transport'],
+    specs: [
+      { k: 'Rating Range',  v: 'Up to 7775 kVA' },
+      { k: 'Voltage Class', v: '11 kV Dry Type / 33 kV ONAN' },
+      { k: 'Insulation',    v: 'Class A, F & H' },
+      { k: 'Cooling',       v: 'ONAN / ONAF' },
+      { k: 'Enclosure',     v: 'IP65' },
+      { k: 'Tests',         v: 'As per IS 2026 & IEC 60076' },
+      { k: 'Standards',     v: 'As per Customer Specification' },
+      { k: 'Datasheet',     v: 'As per Customer Requirement' },
+    ],
+    industries: ['railways', 'heavy'],
   },
 
   /* Control Panel Assemblies */
