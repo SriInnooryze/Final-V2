@@ -18,7 +18,7 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 const GROUP_IMG_FILENAME = {
-  "control-panels": "control-Panels.jpg",
+  "control-panels": "Control-hero.png",
   "cross-segment": "card-integrated-optimized.png"
 };
 const SUBCAT_IMG_FILENAME = {
@@ -108,7 +108,7 @@ function PageProducts({ navigate, focusId }) {
   return /* @__PURE__ */ React.createElement("main", { className: "page-enter" }, /* @__PURE__ */ React.createElement("section", { className: "page-hero page-hero--split" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "page-hero-copy" }, /* @__PURE__ */ React.createElement("div", { className: "mono" }, "PRODUCTS AND SOLUTIONS"), /* @__PURE__ */ React.createElement("h1", null, "Electrical and electronics products for industrial applications."), /* @__PURE__ */ React.createElement("p", { className: "lead" }, "Custom magnetics, power systems, control panels and integrated assemblies, engineered for industrial requirements across six sectors. Select a product group to explore specifications.")), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual" }, /* @__PURE__ */ React.createElement(
     "img",
     {
-      src: "./assets/Product-hero.jpg",
+      src: "./assets/Product_hero.png",
       alt: "Dynalektric control panel and power electronics manufacturing",
       width: "720",
       height: "540",

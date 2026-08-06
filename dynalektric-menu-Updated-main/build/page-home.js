@@ -68,7 +68,7 @@ function FlipCard({ cap, navigate }) {
       id: `home-${cap.slotId}`,
       src: window.__resources && window.__resources[cap.resKey] || cap.img,
       fit: "cover",
-      position: "50% 50%",
+      position: cap.imgPosition || "50% 50%",
       placeholder: cap.imgPlaceholder,
       "aria-label": cap.imgAlt,
       shape: "rect",
@@ -471,7 +471,7 @@ function OrgSection({ navigate }) {
     "image-slot",
     {
       id: "org-image",
-      src: window.__resources && window.__resources.cardMagnetics || "assets/Home_Hero.png",
+      src: window.__resources && window.__resources.cardMagnetics || "assets/Hero-Home.png",
       fit: "cover",
       position: "50% 50%",
       placeholder: "Replace with a Dynalektric factory floor, engineering team or testing image",
@@ -489,10 +489,10 @@ const FEATURED_CASES = [
     challenge: "A leading machinery manufacturer required a custom three-phase auto transformer to support multiple international input voltages and deliver a stable 400 V output for CNC woodworking equipment. The solution had to maintain high electrical efficiency under continuous industrial duty and integrate seamlessly into the customer's machine architecture while meeting international standards.",
     response: "Dynalektric engineered and manufactured a 55 kVA three-phase copper-wound auto transformer specifically for this application. The design incorporated optimized magnetic construction, Class F insulation, and tropicalized winding treatment. Every unit underwent comprehensive factory electrical testing and inspection before delivery, ensuring stable voltage conversion and reliable operation in demanding industrial manufacturing environments.",
     capability: ["Custom Transformer Engineering", "Copper Winding Technology", "Industrial Manufacturing", "Factory Tested"],
-    img: "assets/industry-railways-optimized.webp",
-    resKey: "indRailways",
-    placeholder: "Replace with approved Dynalektric railway project or product-in-application image",
-    alt: "Representative railway and traction application image",
+    img: "assets/case-1.png",
+    resKey: "caseCncTransformer",
+    placeholder: "Dynalektric 55 kVA three-phase auto transformer in CNC woodworking machine application",
+    alt: "Photorealistic industrial 55 kVA transformer for CNC woodworking machinery",
     to: "railways"
   },
   {
@@ -502,10 +502,10 @@ const FEATURED_CASES = [
     challenge: "A power quality project required a high-performance air core reactor for integration into a Static VAR Generator (SVG) system. The component had to deliver dependable harmonic mitigation and reactive power compensation while maintaining stable electrical characteristics under continuous operation in demanding industrial and utility environments.",
     response: "Dynalektric developed a custom air core reactor engineered for optimized inductance and thermal stability. Designed using proven electromagnetic principles and built under stringent quality controls, the reactor underwent comprehensive routine testing to ensure reliable integration into the SVG system, supporting improved grid stability and power quality.",
     capability: ["Power Quality Engineering", "Custom Reactor Design", "Thermal Optimization", "Performance Validation"],
-    img: "assets/industry-renewables.jpg",
-    resKey: "indRenewables",
-    placeholder: "Replace with approved Dynalektric renewable-energy project image",
-    alt: "Representative renewable-energy application image",
+    img: "assets/case-2.png",
+    resKey: "caseSvgReactor",
+    placeholder: "Dynalektric 25 kV air core reactor in SVG power quality application",
+    alt: "Photorealistic 25 kV air core reactor coil and SVG substation equipment",
     to: "renewables"
   },
   {
@@ -515,10 +515,10 @@ const FEATURED_CASES = [
     challenge: "An industrial rectifier power application required a high-capacity dry type auto transformer to deliver stable voltage transformation under continuous, heavy-duty operating conditions. The design demanded excellent thermal performance, dependable insulation, optimized electrical efficiency, and robust mechanical construction to satisfy demanding industrial operating environments.",
     response: "Dynalektric engineered and manufactured a 300 kVA copper-wound dry type auto transformer for industrial power conversion. The design combined optimized winding geometry, robust insulation systems, and precision manufacturing. Comprehensive routine testing validated all electrical performance parameters, ensuring dependable operation across critical industrial installations.",
     capability: ["Copper Winding", "Dry Type Engineering", "Heavy Duty Applications", "Quality Assurance"],
-    img: "assets/industry-powergrid.jpg",
-    resKey: "indPowergrid",
-    placeholder: "Replace with approved Dynalektric utility or substation project image",
-    alt: "Representative power and utilities application image",
+    img: "assets/case-3.png",
+    resKey: "case300KvaTransformer",
+    placeholder: "Dynalektric 300 kVA dry type auto transformer in industrial substation",
+    alt: "Photorealistic 300 kVA dry type transformer enclosure in electrical room",
     to: "powergrid"
   },
   {
@@ -528,10 +528,10 @@ const FEATURED_CASES = [
     challenge: "Industrial warehouses and logistics facilities required a dependable charging solution for flooded lead-acid traction batteries used in pallet trucks, stackers, reach trucks, and other material handling equipment. The charger needed to provide safe, efficient charging, intelligent battery protection, and reliable continuous operation in demanding industrial environments while complying with DIN 41772 and IEC standards.",
     response: "Dynalektric engineered a transformer-based SCR battery charger with DIN 41772 charging characteristics, intelligent microcontroller-based control, adaptive charging modes, comprehensive protection features, and robust thermal management. Every unit undergoes comprehensive testing to ensure reliable charging performance, extended battery life, and long-term industrial reliability.",
     capability: ["DIN 41772 Charging", "Industrial Battery Charging", "Material Handling Equipment", "Transformer-Based SCR Technology"],
-    img: "assets/industry-mhe-optimized.webp",
-    resKey: "indMhe",
-    placeholder: "Replace with approved Dynalektric MHE battery charger application image",
-    alt: "Representative material handling equipment battery charging application image",
+    img: "assets/case-4.png",
+    resKey: "caseMheCharger",
+    placeholder: "Dynalektric DC1 industrial battery charger station in warehouse bay",
+    alt: "Photorealistic material handling equipment battery charger in logistics warehouse",
     to: "mhe"
   },
   {
@@ -541,10 +541,10 @@ const FEATURED_CASES = [
     challenge: "Industrial facilities required a reliable Float Cum Boost Charger capable of providing uninterrupted regulated DC power for critical systems while operating continuously under demanding industrial conditions with high reliability and IEC compliance.",
     response: "Dynalektric developed an SCR-based Float Cum Boost Charger supporting automatic Float and Boost charging modes, regulated DC output, robust industrial construction, comprehensive quality assurance, Factory Acceptance Testing, and IEC 60146-1-1 compliant performance for long-term dependable industrial operation.",
     capability: ["Float & Boost Charging", "IEC 60146-1-1", "Industrial DC Power", "Factory Acceptance Tested"],
-    img: "assets/industry-datacenter-optimized.webp",
-    resKey: "indDatacenter",
-    placeholder: "Replace with approved Dynalektric Float Cum Boost Charger application image",
-    alt: "Representative industrial DC power and SCR charger application image",
+    img: "assets/case-5.png",
+    resKey: "caseScrFcbcCharger",
+    placeholder: "Dynalektric SCR Float Cum Boost Charger cabinet in industrial control room",
+    alt: "Photorealistic SCR Float Cum Boost Charger switchgear panels in control room",
     to: "powergrid"
   }
 ];
@@ -612,7 +612,7 @@ function PageHome({ navigate, tweaks }) {
     "image-slot",
     {
       id: "home-engineering-npd",
-      src: window.__resources && window.__resources.engineeringNpd || "assets/Home-Eng-bench.png",
+      src: window.__resources && window.__resources.engineeringNpd || "assets/Eng-Bench-Cleared.png",
       fit: "contain",
       position: "center",
       placeholder: "Replace with a Dynalektric in-house engineering and assembly image",

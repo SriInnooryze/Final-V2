@@ -72,7 +72,7 @@ function FlipCard({ cap, navigate }) {
             id={`home-${cap.slotId}`}
             src={(window.__resources && window.__resources[cap.resKey]) || cap.img}
             fit="cover"
-            position="50% 50%"
+            position={cap.imgPosition || '50% 50%'}
             placeholder={cap.imgPlaceholder}
             aria-label={cap.imgAlt}
             shape="rect"
@@ -201,7 +201,7 @@ function CapabilityCarousel({ navigate }) {
             disabled={atStart}
             onClick={() => setIndex(i => Math.max(0, i - 1))}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
           <button
             type="button"
@@ -210,7 +210,7 @@ function CapabilityCarousel({ navigate }) {
             disabled={atEnd}
             onClick={() => setIndex(i => Math.min(maxIndex, i + 1))}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
         </div>
         <div className="capcar-count" aria-live="polite">
@@ -406,7 +406,7 @@ function IndustryStage({ navigate }) {
             disabled={active <= 0}
             onClick={() => go(-1)}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
           <button
             type="button"
@@ -415,7 +415,7 @@ function IndustryStage({ navigate }) {
             disabled={active >= total - 1}
             onClick={() => go(1)}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
         </div>
         <div className="indstage-count" aria-hidden="true">
@@ -444,7 +444,7 @@ function HeroVideo({ navigate }) {
   React.useEffect(() => {
     const mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
     const video = videoRef.current;
-   
+
 
     const applyMotionPreference = () => {
       if (!video || !mq) return;
@@ -549,9 +549,9 @@ function HeroVideo({ navigate }) {
         onClick={toggleVideo}
       >
         {playing ? (
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1"/><rect x="13.9" y="5" width="3.6" height="14" rx="1"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1" /><rect x="13.9" y="5" width="3.6" height="14" rx="1" /></svg>
         ) : (
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.54.84l10-6.5a1 1 0 0 0 0-1.68l-10-6.5A1 1 0 0 0 8 5.5z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.54.84l10-6.5a1 1 0 0 0 0-1.68l-10-6.5A1 1 0 0 0 8 5.5z" /></svg>
         )}
       </button>
     </section>
@@ -582,7 +582,7 @@ function OrgSection({ navigate }) {
           <div className="org-visual">
             <image-slot
               id="org-image"
-              src={(window.__resources && window.__resources.cardMagnetics) || 'assets/Home_Hero.png'}
+              src={(window.__resources && window.__resources.cardMagnetics) || 'assets/Hero-Home.png'}
               fit="cover"
               position="50% 50%"
               placeholder="Replace with a Dynalektric factory floor, engineering team or testing image"
@@ -632,9 +632,9 @@ const FEATURED_CASES = [
     challenge: 'A leading machinery manufacturer required a custom three-phase auto transformer to support multiple international input voltages and deliver a stable 400 V output for CNC woodworking equipment. The solution had to maintain high electrical efficiency under continuous industrial duty and integrate seamlessly into the customer\'s machine architecture while meeting international standards.',
     response: 'Dynalektric engineered and manufactured a 55 kVA three-phase copper-wound auto transformer specifically for this application. The design incorporated optimized magnetic construction, Class F insulation, and tropicalized winding treatment. Every unit underwent comprehensive factory electrical testing and inspection before delivery, ensuring stable voltage conversion and reliable operation in demanding industrial manufacturing environments.',
     capability: ['Custom Transformer Engineering', 'Copper Winding Technology', 'Industrial Manufacturing', 'Factory Tested'],
-    img: 'assets/industry-railways-optimized.webp', resKey: 'indRailways',
-    placeholder: 'Replace with approved Dynalektric railway project or product-in-application image',
-    alt: 'Representative railway and traction application image',
+    img: 'assets/case-1.png', resKey: 'caseCncTransformer',
+    placeholder: 'Dynalektric 55 kVA three-phase auto transformer in CNC woodworking machine application',
+    alt: 'Photorealistic industrial 55 kVA transformer for CNC woodworking machinery',
     to: 'railways',
   },
   {
@@ -643,9 +643,9 @@ const FEATURED_CASES = [
     challenge: 'A power quality project required a high-performance air core reactor for integration into a Static VAR Generator (SVG) system. The component had to deliver dependable harmonic mitigation and reactive power compensation while maintaining stable electrical characteristics under continuous operation in demanding industrial and utility environments.',
     response: 'Dynalektric developed a custom air core reactor engineered for optimized inductance and thermal stability. Designed using proven electromagnetic principles and built under stringent quality controls, the reactor underwent comprehensive routine testing to ensure reliable integration into the SVG system, supporting improved grid stability and power quality.',
     capability: ['Power Quality Engineering', 'Custom Reactor Design', 'Thermal Optimization', 'Performance Validation'],
-    img: 'assets/industry-renewables.jpg', resKey: 'indRenewables',
-    placeholder: 'Replace with approved Dynalektric renewable-energy project image',
-    alt: 'Representative renewable-energy application image',
+    img: 'assets/case-2.png', resKey: 'caseSvgReactor',
+    placeholder: 'Dynalektric 25 kV air core reactor in SVG power quality application',
+    alt: 'Photorealistic 25 kV air core reactor coil and SVG substation equipment',
     to: 'renewables',
   },
   {
@@ -654,9 +654,9 @@ const FEATURED_CASES = [
     challenge: 'An industrial rectifier power application required a high-capacity dry type auto transformer to deliver stable voltage transformation under continuous, heavy-duty operating conditions. The design demanded excellent thermal performance, dependable insulation, optimized electrical efficiency, and robust mechanical construction to satisfy demanding industrial operating environments.',
     response: 'Dynalektric engineered and manufactured a 300 kVA copper-wound dry type auto transformer for industrial power conversion. The design combined optimized winding geometry, robust insulation systems, and precision manufacturing. Comprehensive routine testing validated all electrical performance parameters, ensuring dependable operation across critical industrial installations.',
     capability: ['Copper Winding', 'Dry Type Engineering', 'Heavy Duty Applications', 'Quality Assurance'],
-    img: 'assets/industry-powergrid.jpg', resKey: 'indPowergrid',
-    placeholder: 'Replace with approved Dynalektric utility or substation project image',
-    alt: 'Representative power and utilities application image',
+    img: 'assets/case-3.png', resKey: 'case300KvaTransformer',
+    placeholder: 'Dynalektric 300 kVA dry type auto transformer in industrial substation',
+    alt: 'Photorealistic 300 kVA dry type transformer enclosure in electrical room',
     to: 'powergrid',
   },
   {
@@ -665,9 +665,9 @@ const FEATURED_CASES = [
     challenge: 'Industrial warehouses and logistics facilities required a dependable charging solution for flooded lead-acid traction batteries used in pallet trucks, stackers, reach trucks, and other material handling equipment. The charger needed to provide safe, efficient charging, intelligent battery protection, and reliable continuous operation in demanding industrial environments while complying with DIN 41772 and IEC standards.',
     response: 'Dynalektric engineered a transformer-based SCR battery charger with DIN 41772 charging characteristics, intelligent microcontroller-based control, adaptive charging modes, comprehensive protection features, and robust thermal management. Every unit undergoes comprehensive testing to ensure reliable charging performance, extended battery life, and long-term industrial reliability.',
     capability: ['DIN 41772 Charging', 'Industrial Battery Charging', 'Material Handling Equipment', 'Transformer-Based SCR Technology'],
-    img: 'assets/industry-mhe-optimized.webp', resKey: 'indMhe',
-    placeholder: 'Replace with approved Dynalektric MHE battery charger application image',
-    alt: 'Representative material handling equipment battery charging application image',
+    img: 'assets/case-4.png', resKey: 'caseMheCharger',
+    placeholder: 'Dynalektric DC1 industrial battery charger station in warehouse bay',
+    alt: 'Photorealistic material handling equipment battery charger in logistics warehouse',
     to: 'mhe',
   },
   {
@@ -676,9 +676,9 @@ const FEATURED_CASES = [
     challenge: 'Industrial facilities required a reliable Float Cum Boost Charger capable of providing uninterrupted regulated DC power for critical systems while operating continuously under demanding industrial conditions with high reliability and IEC compliance.',
     response: 'Dynalektric developed an SCR-based Float Cum Boost Charger supporting automatic Float and Boost charging modes, regulated DC output, robust industrial construction, comprehensive quality assurance, Factory Acceptance Testing, and IEC 60146-1-1 compliant performance for long-term dependable industrial operation.',
     capability: ['Float & Boost Charging', 'IEC 60146-1-1', 'Industrial DC Power', 'Factory Acceptance Tested'],
-    img: 'assets/industry-datacenter-optimized.webp', resKey: 'indDatacenter',
-    placeholder: 'Replace with approved Dynalektric Float Cum Boost Charger application image',
-    alt: 'Representative industrial DC power and SCR charger application image',
+    img: 'assets/case-5.png', resKey: 'caseScrFcbcCharger',
+    placeholder: 'Dynalektric SCR Float Cum Boost Charger cabinet in industrial control room',
+    alt: 'Photorealistic SCR Float Cum Boost Charger switchgear panels in control room',
     to: 'powergrid',
   },
 ];
@@ -753,10 +753,10 @@ function FeaturedCases({ navigate }) {
             </button>
             <div className="case-arrows">
               <button type="button" className="case-arrow" aria-label="Previous case study" onClick={() => go(-1)}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M15 5l-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
               <button type="button" className="case-arrow" aria-label="Next case study" onClick={() => go(1)}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
             </div>
           </div>
@@ -849,10 +849,10 @@ function PageHome({ navigate, tweaks }) {
               <div className="rnd-teaser-figure">
                 <image-slot
                   id="home-engineering-npd"
-                  src={(window.__resources && window.__resources.engineeringNpd) || 'assets/Home-Eng-bench.png'}
+                  src={(window.__resources && window.__resources.engineeringNpd) || 'assets/Eng-Bench-Cleared.png'}
                   fit="contain"
                   position="center"
-                  
+
                   placeholder="Replace with a Dynalektric in-house engineering and assembly image"
                   aria-label="Dynalektric engineers developing and assembling a custom electrical solution in-house"
                   shape="rect"
@@ -913,49 +913,49 @@ function PageHome({ navigate, tweaks }) {
             </div>
           </div>
 
-<div className="stats-fullwidth">
-  <div className="stats-inner">
-    <div className="stats-row">
-      {STATS.map((s, i) => (
-        <div
-          className="stats-item reveal"
-          key={i}
-          style={{
-            transitionDelay: `${i * 80}ms`,
-            textAlign: 'center'
-          }}
-        >
-          <div className="big-num" style={{ color: '#ffffff' }}>
-            {s.value.includes('+')
-              ? <><Counter to={parseInt(s.value)} />+</>
-              : s.value
-            }
-          </div>
+          <div className="stats-fullwidth">
+            <div className="stats-inner">
+              <div className="stats-row">
+                {STATS.map((s, i) => (
+                  <div
+                    className="stats-item reveal"
+                    key={i}
+                    style={{
+                      transitionDelay: `${i * 80}ms`,
+                      textAlign: 'center'
+                    }}
+                  >
+                    <div className="big-num" style={{ color: '#ffffff' }}>
+                      {s.value.includes('+')
+                        ? <><Counter to={parseInt(s.value)} />+</>
+                        : s.value
+                      }
+                    </div>
 
-          <div
-            className="mono"
-            style={{
-              marginTop: 12,
-              color: 'rgba(244,244,241,0.55)'
-            }}
-          >
-            {s.sub}
-          </div>
+                    <div
+                      className="mono"
+                      style={{
+                        marginTop: 12,
+                        color: 'rgba(244,244,241,0.55)'
+                      }}
+                    >
+                      {s.sub}
+                    </div>
 
-          <div
-            style={{
-              fontSize: 14,
-              color: 'rgba(244,244,241,0.75)',
-              marginTop: 8
-            }}
-          >
-            {s.label}
+                    <div
+                      style={{
+                        fontSize: 14,
+                        color: 'rgba(244,244,241,0.75)',
+                        marginTop: 8
+                      }}
+                    >
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
         </div>
       </section>
 

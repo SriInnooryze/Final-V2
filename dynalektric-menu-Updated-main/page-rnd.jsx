@@ -143,12 +143,12 @@ function PageRnd({ navigate }) {
                 <button className="btn btn-secondary" onClick={() => navigate('products')}>Browse products</button>
               </div>
             </div>
-           <div style={{ aspectRatio: '4/3' }}>
+           <div style={{ aspectRatio: '1517/1037' }}>
             <img
-              src="./assets/Eng-bench.png"
+              src="./assets/Eng-Bench-Cleared.png"
               alt="Dynalektric engineering and manufacturing"
-              width="720"
-              height="540"
+              width="1517"
+              height="1037"
               loading="lazy"
               decoding="async"
               style={{

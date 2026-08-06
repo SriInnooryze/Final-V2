@@ -2,7 +2,7 @@
 
 // Actual filenames on disk differ from group IDs for case-sensitive Linux servers
 const GROUP_IMG_FILENAME = {
-  'control-panels': 'control-Panels.jpg',
+  'control-panels': 'Control-hero.png',
   'cross-segment': 'card-integrated-optimized.png'
 };
 const SUBCAT_IMG_FILENAME = {
@@ -96,7 +96,7 @@ function PageProducts({ navigate, focusId }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="./assets/Product-hero.jpg"
+              src="./assets/Product_hero.png"
               alt="Dynalektric control panel and power electronics manufacturing"
               width="720"
               height="540"

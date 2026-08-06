@@ -22,12 +22,12 @@ function PageIndustries({ navigate, focusId }) {
               Six sectors served across Power, Motion and Safety. Use the matrix to see which product groups apply to each industry, then jump into a detailed view of applications and buyer profile.
             </p>
           </div>
-          <div className="page-hero-visual">
+          <div className="page-hero-visual" style={{ alignSelf: 'start', marginTop: '70px' }}>
             <img
-              src="./assets/industry-railways-optimized.webp"
+              src="./assets/Industries-hero.png"
               alt="Railway infrastructure — Dynalektric traction and industrial applications"
-              width="720"
-              height="540"
+              width="800"
+              height="800"
               decoding="async"
               fetchpriority="high"
             />
