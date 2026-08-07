@@ -105,8 +105,8 @@ const CERT_STATUS = {
 // width of the others, which throws off row alignment in the certs table —
 // wrap it onto two lines wherever it renders as a badge (not the legend key,
 // which has room to run on one line).
-function CertBadgeLabel({ status }) {
-  if (status === 'available') return <React.Fragment>Available based on<br />requirement</React.Fragment>;
+function CertBadgeLabel({ status, isMobile }) {
+  if (status === 'available') return isMobile ? 'Available on req.' : <React.Fragment>Available based on<br />requirement</React.Fragment>;
   return CERT_STATUS[status].label;
 }
 
@@ -415,10 +415,12 @@ function CertCard({ r }) {
     <div className={`exp-cert-card ${open ? 'open' : ''}`}>
       <button className="exp-cert-card-head" aria-expanded={open} onClick={() => { setOpen(!open); if (!open) exportTrack('clearance_scheme_view', { cert: r.name }); }}>
         <span className="exp-cert-card-name">{r.name}</span>
-        <span className={`exp-cert-badge ${CERT_STATUS[r.status].cls}`}>
-          <span className="exp-cert-dot" aria-hidden="true" /><CertBadgeLabel status={r.status} />
-        </span>
-        <span className="exp-cert-card-icon" aria-hidden="true">{open ? '–' : '+'}</span>
+        <div className="exp-cert-card-actions">
+          <span className={`exp-cert-badge ${CERT_STATUS[r.status].cls}`}>
+            <span className="exp-cert-dot" aria-hidden="true" /><CertBadgeLabel status={r.status} isMobile={true} />
+          </span>
+          <span className="exp-cert-card-icon" aria-hidden="true">{open ? '–' : '+'}</span>
+        </div>
       </button>
       <div className="exp-cert-card-body">
         <div className="exp-cert-card-inner">

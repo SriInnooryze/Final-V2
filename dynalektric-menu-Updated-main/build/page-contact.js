@@ -276,7 +276,7 @@ function PageContact({ navigate, focusId }) {
     return /* @__PURE__ */ React.createElement("main", { className: "page-enter" }, /* @__PURE__ */ React.createElement("section", { className: "page-hero page-hero--split" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "page-hero-copy" }, /* @__PURE__ */ React.createElement("div", { className: "mono" }, "CONTACT DYNALEKTRIC"), /* @__PURE__ */ React.createElement("h1", null, "Thank you. Your requirement has been received.")), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual" }, /* @__PURE__ */ React.createElement(
       "img",
       {
-        src: "./assets/card-magnetics-optimized.webp",
+        src: "./assets/contact-hero.png",
         alt: "Dynalektric precision magnetics and transformer manufacturing",
         width: "720",
         height: "540",
@@ -298,7 +298,7 @@ function PageContact({ navigate, focusId }) {
   return /* @__PURE__ */ React.createElement("main", { className: "page-enter" }, /* @__PURE__ */ React.createElement("section", { className: "page-hero page-hero--split contact-hero" }, /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", { className: "page-hero-copy" }, /* @__PURE__ */ React.createElement("div", { className: "mono" }, "CONTACT DYNALEKTRIC"), /* @__PURE__ */ React.createElement("h1", null, "Discuss your engineering requirement."), /* @__PURE__ */ React.createElement("p", { className: "lead" }, "Share your product requirement, application details and a supporting document. Our team will review and respond with the next steps.")), /* @__PURE__ */ React.createElement("div", { className: "page-hero-visual" }, /* @__PURE__ */ React.createElement(
     "img",
     {
-      src: "./assets/inside-dynalektric.jpg",
+      src: "./assets/contact-hero.png",
       alt: "Dynalektric precision magnetics and transformer manufacturing",
       width: "720",
       height: "540",

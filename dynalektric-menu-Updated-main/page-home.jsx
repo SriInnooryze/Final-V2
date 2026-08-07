@@ -269,7 +269,7 @@ const HOME_INDUSTRIES = [
   },
   {
     id: 'mhe', num: '05', name: 'Material Handling & Warehousing',
-    img: 'assets/industry-mhe.jpg', resKey: 'indMhe',
+    img: 'assets/industry-mhe-optimized.webp', resKey: 'indMhe',
     desc: 'Charging, power electronics and control systems supporting forklifts, AGVs and warehouse equipment.',
     labels: ['Forklifts', 'AGVs', 'Charging systems'],
     cta: 'Explore Material Handling Applications',
@@ -278,7 +278,7 @@ const HOME_INDUSTRIES = [
   },
   {
     id: 'datacenter', num: '06', name: 'Data Centers',
-    img: 'assets/industry-datacenter.jpg', resKey: 'indDatacenter',
+    img: 'assets/industry-datacenter-optimized.webp', resKey: 'indDatacenter',
     desc: 'Distribution, UPS interface and critical-power support for data-centre infrastructure and operational continuity.',
     labels: ['Critical power', 'UPS interface', 'Distribution systems'],
     cta: 'Explore Data Center Applications',
@@ -501,7 +501,7 @@ function HeroVideo({ navigate }) {
           loop
           playsInline
           preload="metadata"
-          poster={(window.__resources && window.__resources.heroPoster) || 'assets/hero-poster-optimized.webp'}
+          poster={(window.__resources && window.__resources.heroPoster) || 'assets/hero-poster-optimized.png'}
           aria-label="Dynalektric factory, engineering and manufacturing"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}

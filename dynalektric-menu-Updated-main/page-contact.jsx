@@ -332,7 +332,7 @@ function PageContact({ navigate, focusId }) {
             </div>
             <div className="page-hero-visual">
               <img
-                src="./assets/card-magnetics-optimized.webp"
+                src="./assets/contact-hero.png"
                 alt="Dynalektric precision magnetics and transformer manufacturing"
                 width="720"
                 height="540"
@@ -432,7 +432,7 @@ function PageContact({ navigate, focusId }) {
           </div>
           <div className="page-hero-visual">
             <img
-              src="./assets/inside-dynalektric.jpg"
+              src="./assets/contact-hero.png"
               alt="Dynalektric precision magnetics and transformer manufacturing"
               width="720"
               height="540"

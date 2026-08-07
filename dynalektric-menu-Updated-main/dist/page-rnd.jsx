@@ -66,14 +66,15 @@ function PageRnd({ navigate }) {
               Our engineering capability covers magnetics, control panel assemblies, power electronics and cross segment solutions . From design and manufacturing to testing and documentation, Dynalektric supports OEMs, utilities and industrial customers with reliable power solutions.
             </p>
           </div>
-          <div className="page-hero-visual">
+          <div className="page-hero-visual" style={{ aspectRatio: '1447/1087' }}>
             <img
               src="./assets/innovation-hero.png"
               alt="Dynalektric R&D lab - engineers testing transformers and control panels"
-              width="720"
-              height="540"
+              width="1447"
+              height="1087"
               decoding="async"
               fetchpriority="high"
+              style={{ objectFit: 'contain', transform: 'none', animation: 'none' }}
             />
           </div>
         </div>
@@ -145,7 +146,7 @@ function PageRnd({ navigate }) {
             </div>
            <div style={{ aspectRatio: '1517/1037' }}>
             <img
-              src="./assets/Eng-Bench-Cleared.png"
+              src="./assets/custom-eng.png"
               alt="Dynalektric engineering and manufacturing"
               width="1517"
               height="1037"
